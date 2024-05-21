@@ -11,6 +11,17 @@
 		04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAD2BF5D45400E8218C /* ContentView.swift */; };
 		04527CB02BF5D45500E8218C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04527CAF2BF5D45500E8218C /* Assets.xcassets */; };
 		04527CB32BF5D45500E8218C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04527CB22BF5D45500E8218C /* Preview Assets.xcassets */; };
+		0C5024E92BFC3C86000FA0FB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024E82BFC3C86000FA0FB /* Event.swift */; };
+		0C5024EB2BFC3CA5000FA0FB /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024EA2BFC3CA5000FA0FB /* EventStore.swift */; };
+		0C5024EE2BFC3CFA000FA0FB /* ListViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024ED2BFC3CFA000FA0FB /* ListViewRow.swift */; };
+		0C5024F32BFC3D5F000FA0FB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024F22BFC3D5F000FA0FB /* Date+Extension.swift */; };
+		0C5024F52BFC3DAC000FA0FB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024F42BFC3DAC000FA0FB /* CalendarView.swift */; };
+		0C5024F72BFC3DCB000FA0FB /* EventsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024F62BFC3DCB000FA0FB /* EventsCalendarView.swift */; };
+		0C5024FC2BFC3E79000FA0FB /* EventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FB2BFC3E79000FA0FB /* EventFormViewModel.swift */; };
+		0C5024FE2BFC3E9F000FA0FB /* EventFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FD2BFC3E9F000FA0FB /* EventFormView.swift */; };
+		0C5025002BFC3EC8000FA0FB /* EventFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FF2BFC3EC8000FA0FB /* EventFormType.swift */; };
+		0C5025022BFC3F3A000FA0FB /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5025012BFC3F3A000FA0FB /* EventsListView.swift */; };
+		0C5025042BFC3F86000FA0FB /* DaysEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5025032BFC3F86000FA0FB /* DaysEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +30,17 @@
 		04527CAD2BF5D45400E8218C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04527CAF2BF5D45500E8218C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04527CB22BF5D45500E8218C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0C5024E82BFC3C86000FA0FB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0C5024EA2BFC3CA5000FA0FB /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
+		0C5024ED2BFC3CFA000FA0FB /* ListViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewRow.swift; sourceTree = "<group>"; };
+		0C5024F22BFC3D5F000FA0FB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		0C5024F42BFC3DAC000FA0FB /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		0C5024F62BFC3DCB000FA0FB /* EventsCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCalendarView.swift; sourceTree = "<group>"; };
+		0C5024FB2BFC3E79000FA0FB /* EventFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormViewModel.swift; sourceTree = "<group>"; };
+		0C5024FD2BFC3E9F000FA0FB /* EventFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormView.swift; sourceTree = "<group>"; };
+		0C5024FF2BFC3EC8000FA0FB /* EventFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormType.swift; sourceTree = "<group>"; };
+		0C5025012BFC3F3A000FA0FB /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
+		0C5025032BFC3F86000FA0FB /* DaysEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +73,10 @@
 		04527CAA2BF5D45400E8218C /* ALP_MAD */ = {
 			isa = PBXGroup;
 			children = (
+				0C5024FA2BFC3E4C000FA0FB /* EditUpdateCalendarView */,
+				0C5024F12BFC3D4C000FA0FB /* Extension */,
+				0C5024EC2BFC3CE7000FA0FB /* CalendarView */,
+				0C5024E72BFC3C65000FA0FB /* Model */,
 				04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */,
 				04527CAD2BF5D45400E8218C /* ContentView.swift */,
 				04527CAF2BF5D45500E8218C /* Assets.xcassets */,
@@ -65,6 +91,45 @@
 				04527CB22BF5D45500E8218C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0C5024E72BFC3C65000FA0FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C5024E82BFC3C86000FA0FB /* Event.swift */,
+				0C5024EA2BFC3CA5000FA0FB /* EventStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C5024EC2BFC3CE7000FA0FB /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				0C5024ED2BFC3CFA000FA0FB /* ListViewRow.swift */,
+				0C5024F42BFC3DAC000FA0FB /* CalendarView.swift */,
+				0C5024F62BFC3DCB000FA0FB /* EventsCalendarView.swift */,
+				0C5025012BFC3F3A000FA0FB /* EventsListView.swift */,
+				0C5025032BFC3F86000FA0FB /* DaysEvent.swift */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		0C5024F12BFC3D4C000FA0FB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0C5024F22BFC3D5F000FA0FB /* Date+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0C5024FA2BFC3E4C000FA0FB /* EditUpdateCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				0C5024FB2BFC3E79000FA0FB /* EventFormViewModel.swift */,
+				0C5024FD2BFC3E9F000FA0FB /* EventFormView.swift */,
+				0C5024FF2BFC3EC8000FA0FB /* EventFormType.swift */,
+			);
+			path = EditUpdateCalendarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +202,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C5025022BFC3F3A000FA0FB /* EventsListView.swift in Sources */,
 				04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */,
+				0C5024E92BFC3C86000FA0FB /* Event.swift in Sources */,
+				0C5025002BFC3EC8000FA0FB /* EventFormType.swift in Sources */,
+				0C5024F52BFC3DAC000FA0FB /* CalendarView.swift in Sources */,
+				0C5024FE2BFC3E9F000FA0FB /* EventFormView.swift in Sources */,
+				0C5024EB2BFC3CA5000FA0FB /* EventStore.swift in Sources */,
+				0C5024F72BFC3DCB000FA0FB /* EventsCalendarView.swift in Sources */,
+				0C5025042BFC3F86000FA0FB /* DaysEvent.swift in Sources */,
+				0C5024F32BFC3D5F000FA0FB /* Date+Extension.swift in Sources */,
 				04527CAC2BF5D45400E8218C /* ALP_MADApp.swift in Sources */,
+				0C5024EE2BFC3CFA000FA0FB /* ListViewRow.swift in Sources */,
+				0C5024FC2BFC3E79000FA0FB /* EventFormViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +355,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +384,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

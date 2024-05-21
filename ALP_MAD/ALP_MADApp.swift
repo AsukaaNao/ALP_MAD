@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ALP_MADApp: App {
+    @StateObject var myEvents = EventStore(preview: true)
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
         }
     }
 }
