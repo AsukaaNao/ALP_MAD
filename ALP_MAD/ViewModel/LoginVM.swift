@@ -59,6 +59,8 @@ class LoginVM: ObservableObject {
                 let userdata = try await AuthenticationManager.shared.signInWithEmailPassword(email: email, password: password)
                 print("Success Login")
                 print(userdata)
+//                let uid = try AuthenticationManager.shared.getAuthenticatedUser().uid
+//                print(uid)
                 completion(true)
             } catch {
                 print(error.localizedDescription)

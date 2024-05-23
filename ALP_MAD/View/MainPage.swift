@@ -30,12 +30,13 @@ struct UserAnnotationView: View {
     }
 }
 
-
 final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published var UID: String? = ""
     
     var locationManager: CLLocationManager?
+    private var updateLocationTimer: Timer?
+    private var fetchLocationsTimer: Timer?
     
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: -7.28522, longitude: 112.63184),
@@ -48,11 +49,16 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
     
     override init() {
         super.init()
+        checkIfLocationServiceIsEnabled()
     }
     
     func getUserUID() {
         do {
-            UID = try AuthenticationManager.shared.getAuthenticatedUser().uid
+            let uid = try AuthenticationManager.shared.getAuthenticatedUser().uid
+            UID = uid
+            print("UID main page \(uid)")
+            startUpdatingLocation()
+            startFetchingLocations()
         } catch {
             print("Error getting authenticated user UID: \(error)")
         }
@@ -122,7 +128,6 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
     }
     
     func fetchUserLocations(userUIDs: [String]) {
-        
         db.collection("users").whereField(FieldPath.documentID(), in: userUIDs).getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -143,6 +148,49 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
             self.userLocations = locations
         }
     }
+    
+    func startUpdatingLocation() {
+        updateLocationTimer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] _ in
+            self?.updateUserLocation()
+        }
+    }
+    
+    func startFetchingLocations() {
+        fetchLocationsTimer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] _ in
+            self?.fetchUserUIDs()
+        }
+    }
+    
+    func stopUpdatingLocation() {
+        updateLocationTimer?.invalidate()
+        updateLocationTimer = nil
+    }
+    
+    func stopFetchingLocations() {
+        fetchLocationsTimer?.invalidate()
+        fetchLocationsTimer = nil
+    }
+    
+    func updateUserLocation() {
+        guard let location = locationManager?.location, let uid = UID else { return }
+        
+        let geoPoint = GeoPoint(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        
+        db.collection("users").document(uid).updateData([
+            "location": geoPoint
+        ]) { error in
+            if let error = error {
+                print("Error updating location: \(error)")
+            } else {
+                print("User location updated successfully")
+            }
+        }
+    }
+    
+    deinit {
+        stopUpdatingLocation()
+        stopFetchingLocations()
+    }
 }
 
 struct MainPage: View {
@@ -160,17 +208,16 @@ struct MainPage: View {
                 viewModel.checkIfLocationServiceIsEnabled()
                 viewModel.getUserUID()
             }
+            .onDisappear {
+                viewModel.stopUpdatingLocation()
+                viewModel.stopFetchingLocations()
+            }
             
             VStack {
                 Spacer()
                 
                 VStack {
                     List {
-                        if let uid = viewModel.UID {
-                            Text("Authenticated User UID: \(uid)")
-                                .foregroundColor(.black)
-                                .padding()
-                        }
                         Button("Log Out") {
                             Task {
                                 do {

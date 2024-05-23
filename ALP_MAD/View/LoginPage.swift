@@ -106,7 +106,7 @@ struct LoginPage: View {
             }
             .padding()
             .navigationDestination(isPresented: $isSignInSuccess) {
-                Settings(showSignInView: .constant(true))
+                MainPage(showSignInView: .constant(true))
             }
             .navigationDestination(isPresented: $navigateToSignUp) {
                 SignUpPage()
