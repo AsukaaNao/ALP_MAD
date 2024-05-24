@@ -15,53 +15,67 @@ struct EventsCalendarView: View {
     @EnvironmentObject var myEvents: EventStore
     
     var body: some View {
-        
         NavigationStack {
-            ScrollView {
-                VStack {
-                    CalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture), eventStore: eventStore, dateSelected: $dateSelected, displayEvents: $displayEvents)
-                }
-                
-                ForEach(Array(myEvents.events.sorted { $0.date < $1.date }.enumerated()), id: \.element.id) { index, event in
+            VStack {
+                ScrollView {
                     VStack {
-                        HStack {
-                            ListViewRow(event: event, formType: $formType)
-                                .padding(.horizontal)
-                            Button(role: .destructive) {
-                                myEvents.delete(event)
-                            } label: {
-                                Image(systemName: "trash")
+                        CalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture), eventStore: eventStore, dateSelected: $dateSelected, displayEvents: $displayEvents)
+                    }
+                    
+                    Spacer()
+                        .frame(height: 30)
+                    
+                    Text("All Events")
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .padding(.leading, 10)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Spacer()
+                        .frame(height:20)
+                    
+                    ForEach(Array(myEvents.events.sorted { $0.date < $1.date }.enumerated()), id: \.element.id) { index, event in
+                        VStack {
+                            HStack {
+                                ListViewRow(event: event, formType: $formType)
+                                    .padding(.horizontal)
+                                Button(role: .destructive) {
+                                    myEvents.delete(event)
+                                } label: {
+                                    Image(systemName: "trash")
+                                        .padding(.trailing, 10)
+                                }
                             }
-                            
                         }
-                        
+                        if index < myEvents.events.count - 1 {
+                            Divider()
+                                .padding(.horizontal)
+                        }
                     }
-                    if index < myEvents.events.count - 1 {
-                        Divider()
-                            .padding(.horizontal)
+                }
+                .padding(.vertical)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        Text("Add Event")
+                            .fontWeight(.bold)
+                        Button {
+                            formType = .new
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                                .imageScale(.medium)
+                        }
                     }
                 }
             }
-            .padding(.vertical)
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    formType = .new
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .imageScale(.medium)
-                }
+            .sheet(item: $formType) { $0 }
+            .sheet(isPresented: $displayEvents) {
+                DaysEventsListView(dateSelected: $dateSelected)
+                    .presentationDetents([.medium, .large])
             }
         }
-        .sheet(item: $formType) { $0 }
-        .sheet(isPresented: $displayEvents) {
-            DaysEventsListView(dateSelected: $dateSelected)
-                .presentationDetents([.medium, .large])
-        }
-        
     }
-    
 }
 
 
