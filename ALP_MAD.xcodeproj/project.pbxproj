@@ -11,6 +11,9 @@
 		04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAD2BF5D45400E8218C /* ContentView.swift */; };
 		04527CB02BF5D45500E8218C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04527CAF2BF5D45500E8218C /* Assets.xcassets */; };
 		04527CB32BF5D45500E8218C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04527CB22BF5D45500E8218C /* Preview Assets.xcassets */; };
+		3F9228E52C005049001F7211 /* ShareLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9228E22C005049001F7211 /* ShareLocationModel.swift */; };
+		3F9228E62C005049001F7211 /* ShareLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9228E32C005049001F7211 /* ShareLocationView.swift */; };
+		3F9228E72C005049001F7211 /* ShareLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9228E42C005049001F7211 /* ShareLocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		04527CAD2BF5D45400E8218C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04527CAF2BF5D45500E8218C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04527CB22BF5D45500E8218C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3F9228E22C005049001F7211 /* ShareLocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareLocationModel.swift; path = ALP_MAD/ShareLocationModel.swift; sourceTree = "<group>"; };
+		3F9228E32C005049001F7211 /* ShareLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareLocationView.swift; path = ALP_MAD/ShareLocationView.swift; sourceTree = "<group>"; };
+		3F9228E42C005049001F7211 /* ShareLocationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareLocationViewModel.swift; path = ALP_MAD/ShareLocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,9 @@
 		04527C9F2BF5D45400E8218C = {
 			isa = PBXGroup;
 			children = (
+				3F9228E22C005049001F7211 /* ShareLocationModel.swift */,
+				3F9228E32C005049001F7211 /* ShareLocationView.swift */,
+				3F9228E42C005049001F7211 /* ShareLocationViewModel.swift */,
 				04527CAA2BF5D45400E8218C /* ALP_MAD */,
 				04527CA92BF5D45400E8218C /* Products */,
 			);
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F9228E52C005049001F7211 /* ShareLocationModel.swift in Sources */,
+				3F9228E62C005049001F7211 /* ShareLocationView.swift in Sources */,
 				04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */,
 				04527CAC2BF5D45400E8218C /* ALP_MADApp.swift in Sources */,
+				3F9228E72C005049001F7211 /* ShareLocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
