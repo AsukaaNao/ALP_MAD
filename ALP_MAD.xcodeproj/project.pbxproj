@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0443767A2C005BC500BA8C04 /* MainPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044376792C005BC500BA8C04 /* MainPageVM.swift */; };
 		04527CAC2BF5D45400E8218C /* ALP_MADApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */; };
 		04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAD2BF5D45400E8218C /* ContentView.swift */; };
 		04527CB02BF5D45500E8218C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04527CAF2BF5D45500E8218C /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044376792C005BC500BA8C04 /* MainPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageVM.swift; sourceTree = "<group>"; };
 		04527CA82BF5D45400E8218C /* HeartLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_MADApp.swift; sourceTree = "<group>"; };
 		04527CAD2BF5D45400E8218C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				04527CC92BF5D67F00E8218C /* SignUpVM.swift */,
 				04527CCF2BF61E3900E8218C /* LoginVM.swift */,
+				044376792C005BC500BA8C04 /* MainPageVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04527CBD2BF5D5AC00E8218C /* AuthenticationManager.swift in Sources */,
+				0443767A2C005BC500BA8C04 /* MainPageVM.swift in Sources */,
 				04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */,
 				04527CD22BF622BD00E8218C /* MainPage.swift in Sources */,
 				04527CC42BF5D62F00E8218C /* SignUpPage.swift in Sources */,
@@ -352,6 +356,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,6 +391,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
