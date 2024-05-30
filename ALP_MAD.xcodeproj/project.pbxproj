@@ -22,6 +22,18 @@
 		0C5025002BFC3EC8000FA0FB /* EventFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FF2BFC3EC8000FA0FB /* EventFormType.swift */; };
 		0C5025022BFC3F3A000FA0FB /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5025012BFC3F3A000FA0FB /* EventsListView.swift */; };
 		0C5025042BFC3F86000FA0FB /* DaysEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5025032BFC3F86000FA0FB /* DaysEvent.swift */; };
+		0C6F00692C083F6100126EFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00682C083F6100126EFF /* ContentView.swift */; };
+		0C6F006B2C083F6300126EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F006A2C083F6300126EFF /* Assets.xcassets */; };
+		0C6F006E2C083F6300126EFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F006D2C083F6300126EFF /* Preview Assets.xcassets */; };
+		0C6F00742C08402A00126EFF /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024EA2BFC3CA5000FA0FB /* EventStore.swift */; };
+		0C6F00752C08402A00126EFF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024F22BFC3D5F000FA0FB /* Date+Extension.swift */; };
+		0C6F00772C08402A00126EFF /* ListViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024ED2BFC3CFA000FA0FB /* ListViewRow.swift */; };
+		0C6F00782C08402A00126EFF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024E82BFC3C86000FA0FB /* Event.swift */; };
+		0C6F00792C08402A00126EFF /* ALP_MADApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */; };
+		0C6F007A2C08402A00126EFF /* DaysEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5025032BFC3F86000FA0FB /* DaysEvent.swift */; };
+		0C6F007B2C08407800126EFF /* EventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FB2BFC3E79000FA0FB /* EventFormViewModel.swift */; };
+		0C6F007C2C08407800126EFF /* EventFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FD2BFC3E9F000FA0FB /* EventFormView.swift */; };
+		0C6F007D2C08407800126EFF /* EventFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FF2BFC3EC8000FA0FB /* EventFormType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,10 +53,22 @@
 		0C5024FF2BFC3EC8000FA0FB /* EventFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormType.swift; sourceTree = "<group>"; };
 		0C5025012BFC3F3A000FA0FB /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		0C5025032BFC3F86000FA0FB /* DaysEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysEvent.swift; sourceTree = "<group>"; };
+		0C6F00642C083F6100126EFF /* MacHeartlink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacHeartlink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C6F00682C083F6100126EFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0C6F006A2C083F6300126EFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0C6F006D2C083F6300126EFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0C6F006F2C083F6300126EFF /* MacHeartlink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacHeartlink.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		04527CA52BF5D45400E8218C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6F00612C083F6100126EFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				04527CAA2BF5D45400E8218C /* ALP_MAD */,
+				0C6F00652C083F6100126EFF /* MacHeartlink */,
 				04527CA92BF5D45400E8218C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				04527CA82BF5D45400E8218C /* ALP_MAD.app */,
+				0C6F00642C083F6100126EFF /* MacHeartlink.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +158,25 @@
 			path = EditUpdateCalendarView;
 			sourceTree = "<group>";
 		};
+		0C6F00652C083F6100126EFF /* MacHeartlink */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F00682C083F6100126EFF /* ContentView.swift */,
+				0C6F006A2C083F6300126EFF /* Assets.xcassets */,
+				0C6F006F2C083F6300126EFF /* MacHeartlink.entitlements */,
+				0C6F006C2C083F6300126EFF /* Preview Content */,
+			);
+			path = MacHeartlink;
+			sourceTree = "<group>";
+		};
+		0C6F006C2C083F6300126EFF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F006D2C083F6300126EFF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +197,23 @@
 			productReference = 04527CA82BF5D45400E8218C /* ALP_MAD.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0C6F00632C083F6100126EFF /* MacHeartlink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C6F00722C083F6300126EFF /* Build configuration list for PBXNativeTarget "MacHeartlink" */;
+			buildPhases = (
+				0C6F00602C083F6100126EFF /* Sources */,
+				0C6F00612C083F6100126EFF /* Frameworks */,
+				0C6F00622C083F6100126EFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacHeartlink;
+			productName = MacHeartlink;
+			productReference = 0C6F00642C083F6100126EFF /* MacHeartlink.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -159,11 +221,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					04527CA72BF5D45400E8218C = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					0C6F00632C083F6100126EFF = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
@@ -181,6 +246,7 @@
 			projectRoot = "";
 			targets = (
 				04527CA72BF5D45400E8218C /* ALP_MAD */,
+				0C6F00632C083F6100126EFF /* MacHeartlink */,
 			);
 		};
 /* End PBXProject section */
@@ -192,6 +258,15 @@
 			files = (
 				04527CB32BF5D45500E8218C /* Preview Assets.xcassets in Resources */,
 				04527CB02BF5D45500E8218C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6F00622C083F6100126EFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6F006E2C083F6300126EFF /* Preview Assets.xcassets in Resources */,
+				0C6F006B2C083F6300126EFF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +290,23 @@
 				04527CAC2BF5D45400E8218C /* ALP_MADApp.swift in Sources */,
 				0C5024EE2BFC3CFA000FA0FB /* ListViewRow.swift in Sources */,
 				0C5024FC2BFC3E79000FA0FB /* EventFormViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6F00602C083F6100126EFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6F00772C08402A00126EFF /* ListViewRow.swift in Sources */,
+				0C6F007D2C08407800126EFF /* EventFormType.swift in Sources */,
+				0C6F007A2C08402A00126EFF /* DaysEvent.swift in Sources */,
+				0C6F00792C08402A00126EFF /* ALP_MADApp.swift in Sources */,
+				0C6F007C2C08407800126EFF /* EventFormView.swift in Sources */,
+				0C6F00692C083F6100126EFF /* ContentView.swift in Sources */,
+				0C6F00752C08402A00126EFF /* Date+Extension.swift in Sources */,
+				0C6F00782C08402A00126EFF /* Event.swift in Sources */,
+				0C6F00742C08402A00126EFF /* EventStore.swift in Sources */,
+				0C6F007B2C08407800126EFF /* EventFormViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +490,60 @@
 			};
 			name = Release;
 		};
+		0C6F00702C083F6300126EFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacHeartlink/MacHeartlink.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacHeartlink/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Shelfinna.MacHeartlink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0C6F00712C083F6300126EFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacHeartlink/MacHeartlink.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacHeartlink/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Shelfinna.MacHeartlink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -415,6 +561,15 @@
 			buildConfigurations = (
 				04527CB72BF5D45500E8218C /* Debug */,
 				04527CB82BF5D45500E8218C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C6F00722C083F6300126EFF /* Build configuration list for PBXNativeTarget "MacHeartlink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C6F00702C083F6300126EFF /* Debug */,
+				0C6F00712C083F6300126EFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
