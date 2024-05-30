@@ -36,7 +36,7 @@ struct ListViewRow: View {
 }
 
  struct ListViewRow_Previews: PreviewProvider {
-     static let event = Event(eventType: .social, date: Date(), note: "Let's party")
+     static let event = Event(eventType: .date, date: Date(), note: "Let's party")
     static var previews: some View {
         ListViewRow(event: event, formType: .constant(.new))
     }

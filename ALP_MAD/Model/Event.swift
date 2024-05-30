@@ -10,21 +10,21 @@ import Foundation
 
 struct Event: Identifiable {
     enum EventType: String, Identifiable, CaseIterable {
-        case work, home, social, sport, unspecified
+        case date, appointment, birthday, anniversary, unspecified
         var id: String {
             self.rawValue
         }
 
         var icon: String {
             switch self {
-            case .work:
-                return "💰"
-            case .home:
-                return "🏡"
-            case .social:
-                return "🎉"
-            case .sport:
-                return "🏟"
+            case .date:
+                return "👩‍❤️‍👨"
+            case .appointment:
+                return "📆"
+            case .birthday:
+                return "🎂"
+            case .anniversary:
+                return "💍"
             case .unspecified:
                 return "📌"
             }
@@ -59,12 +59,12 @@ struct Event: Identifiable {
     // Data to be used in the preview
     static var sampleEvents: [Event] {
         return [
-            Event(eventType: .home, date: Date().diff(numDays: 0), note: "Take dog to groomers"),
-            Event(date: Date().diff(numDays: -1), note: "Get gift for Emily"),
-            Event(eventType: .home, date: Date().diff(numDays: 6), note: "File tax returns."),
-            Event(eventType: .social, date: Date().diff(numDays: 2), note: "Dinner party at Dave and Janet's"),
-            Event(eventType: .work, date: Date().diff(numDays: -1), note: "Complete Audit."),
-            Event(eventType: .sport, date: Date().diff(numDays: -3), note: "Football Game"),
+            Event(eventType: .birthday, date: Date().diff(numDays: 0), note: "John's Birthday"),
+            Event(date: Date().diff(numDays: -20), note: "Get gift for Emily"),
+            Event(eventType: .anniversary, date: Date().diff(numDays: 7), note: "1 Year Anniversary"),
+            Event(eventType: .birthday, date: Date().diff(numDays: 25), note: "Emily's Birthday"),
+            Event(eventType: .appointment, date: Date().diff(numDays: -11), note: "Couple's Therapy"),
+            Event(eventType: .date, date: Date().diff(numDays: -6), note: "Movie Night"),
             Event(date: Date().diff(numDays: -4), note: "Plan for winter vacation.")
         ]
     }
