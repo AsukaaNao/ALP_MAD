@@ -18,7 +18,7 @@ struct Event: Identifiable {
         var icon: String {
             switch self {
             case .work:
-                return "🏦"
+                return "💰"
             case .home:
                 return "🏡"
             case .social:
