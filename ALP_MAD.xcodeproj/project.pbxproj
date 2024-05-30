@@ -34,6 +34,9 @@
 		0C6F007B2C08407800126EFF /* EventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FB2BFC3E79000FA0FB /* EventFormViewModel.swift */; };
 		0C6F007C2C08407800126EFF /* EventFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FD2BFC3E9F000FA0FB /* EventFormView.swift */; };
 		0C6F007D2C08407800126EFF /* EventFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FF2BFC3EC8000FA0FB /* EventFormType.swift */; };
+		0C6F00832C08443B00126EFF /* EventListViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00822C08443B00126EFF /* EventListViewMac.swift */; };
+		0C6F008A2C08767D00126EFF /* CalendarViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00892C08767D00126EFF /* CalendarViewMac.swift */; };
+		0C6F008C2C08785200126EFF /* EventsCalendarViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F008B2C08785200126EFF /* EventsCalendarViewMac.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		0C6F006A2C083F6300126EFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C6F006D2C083F6300126EFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C6F006F2C083F6300126EFF /* MacHeartlink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacHeartlink.entitlements; sourceTree = "<group>"; };
+		0C6F00822C08443B00126EFF /* EventListViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewMac.swift; sourceTree = "<group>"; };
+		0C6F00892C08767D00126EFF /* CalendarViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewMac.swift; sourceTree = "<group>"; };
+		0C6F008B2C08785200126EFF /* EventsCalendarViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCalendarViewMac.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,7 @@
 		0C6F00652C083F6100126EFF /* MacHeartlink */ = {
 			isa = PBXGroup;
 			children = (
+				0C6F00812C08441D00126EFF /* Calendar Feature */,
 				0C6F00682C083F6100126EFF /* ContentView.swift */,
 				0C6F006A2C083F6300126EFF /* Assets.xcassets */,
 				0C6F006F2C083F6300126EFF /* MacHeartlink.entitlements */,
@@ -175,6 +182,16 @@
 				0C6F006D2C083F6300126EFF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0C6F00812C08441D00126EFF /* Calendar Feature */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F00822C08443B00126EFF /* EventListViewMac.swift */,
+				0C6F00892C08767D00126EFF /* CalendarViewMac.swift */,
+				0C6F008B2C08785200126EFF /* EventsCalendarViewMac.swift */,
+			);
+			path = "Calendar Feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +316,8 @@
 			files = (
 				0C6F00772C08402A00126EFF /* ListViewRow.swift in Sources */,
 				0C6F007D2C08407800126EFF /* EventFormType.swift in Sources */,
+				0C6F008C2C08785200126EFF /* EventsCalendarViewMac.swift in Sources */,
+				0C6F00832C08443B00126EFF /* EventListViewMac.swift in Sources */,
 				0C6F007A2C08402A00126EFF /* DaysEvent.swift in Sources */,
 				0C6F00792C08402A00126EFF /* ALP_MADApp.swift in Sources */,
 				0C6F007C2C08407800126EFF /* EventFormView.swift in Sources */,
@@ -306,6 +325,7 @@
 				0C6F00752C08402A00126EFF /* Date+Extension.swift in Sources */,
 				0C6F00782C08402A00126EFF /* Event.swift in Sources */,
 				0C6F00742C08402A00126EFF /* EventStore.swift in Sources */,
+				0C6F008A2C08767D00126EFF /* CalendarViewMac.swift in Sources */,
 				0C6F007B2C08407800126EFF /* EventFormViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

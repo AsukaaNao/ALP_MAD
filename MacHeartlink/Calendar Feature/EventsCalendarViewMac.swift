@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+
 struct EventsCalendarViewMac: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        CalendarViewMac(interval: DateInterval(start: Date(), end: Calendar.current.date(byAdding: .year, value: 1, to: Date())!))
+                   .frame(width: 350)
+        }
 }
 
 #Preview {

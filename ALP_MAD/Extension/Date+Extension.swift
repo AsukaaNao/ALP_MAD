@@ -15,4 +15,11 @@ extension Date {
     var startOfDay: Date {
             return Calendar.current.startOfDay(for: self)
         }
+    
+    func changeDay(to day: Int) -> Date {
+            let calendar = Calendar.current
+            var dateComponents = calendar.dateComponents([.year, .month, .day], from: self)
+            dateComponents.day = day
+            return calendar.date(from: dateComponents) ?? self
+        }
 }

@@ -80,7 +80,7 @@ struct CalendarView: UIViewRepresentable{
                 }
             }
             
-            func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) -> Bool {
+        func dateSelection(_ selection: UICalendarSelectionSingleDate, canSelectDate dateComponents: DateComponents?) -> Bool {
                 return true
             }
         }
