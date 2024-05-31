@@ -129,6 +129,7 @@ struct UserInfoView: View {
             HStack {
                 Button(action: {
                     // Nudge action
+                    
                 }) {
                     HStack {
                         Image(systemName: "hand.thumbsup")
@@ -138,6 +139,7 @@ struct UserInfoView: View {
                 Spacer()
                 Button(action: {
                     // View notifications action
+                    
                 }) {
                     HStack {
                         Image(systemName: "bell")
