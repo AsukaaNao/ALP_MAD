@@ -27,6 +27,7 @@
 		04527CD22BF622BD00E8218C /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CD12BF622BD00E8218C /* MainPage.swift */; };
 		04862A442C08EBD6003078CF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04862A432C08EBD6003078CF /* ImagePicker.swift */; };
 		04C681512BF8FF1C006D3576 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C681502BF8FF1C006D3576 /* Settings.swift */; };
+		3FAD12AE2C098A9A00D0E052 /* AlertScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD12AD2C098A9A00D0E052 /* AlertScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		04862A432C08EBD6003078CF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		04C681502BF8FF1C006D3576 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		04C681522BF9114B006D3576 /* ALP-MAD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ALP-MAD-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3FAD12AD2C098A9A00D0E052 /* AlertScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				044376792C005BC500BA8C04 /* MainPageVM.swift */,
 				043DF4632C084B570016DE54 /* LandingPageVM.swift */,
 				04862A432C08EBD6003078CF /* ImagePicker.swift */,
+				3FAD12AD2C098A9A00D0E052 /* AlertScreen.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				04527CBD2BF5D5AC00E8218C /* AuthenticationManager.swift in Sources */,
 				0443767A2C005BC500BA8C04 /* MainPageVM.swift in Sources */,
 				043DF4622C084B150016DE54 /* LandingPage.swift in Sources */,
+				3FAD12AE2C098A9A00D0E052 /* AlertScreen.swift in Sources */,
 				04862A442C08EBD6003078CF /* ImagePicker.swift in Sources */,
 				043DF4642C084B570016DE54 /* LandingPageVM.swift in Sources */,
 				04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */,
