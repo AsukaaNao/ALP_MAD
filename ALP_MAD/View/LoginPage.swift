@@ -83,11 +83,11 @@ struct LoginPage: View {
                     .bold()
                     .padding(10)
                 
-                // SignInWithAppleButton { request in
-                //     // Handle request
-                // } onCompletion: { result in
-                //     // Handle result
-                // }
+//                 SignInWithAppleButton { request in
+//                     // Handle request
+//                 } onCompletion: { result in
+//                     // Handle result
+//                 }
                 
                 HStack {
                     Text("Don't have an account?")

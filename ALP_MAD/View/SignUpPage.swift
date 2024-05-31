@@ -27,6 +27,23 @@ struct SignUpPage: View {
                 
                 ZStack(alignment: .leading){
                     if viewModel.email.isEmpty {
+                        Text("Username")
+                            .foregroundColor(.purple)
+                    }
+                    TextField("", text: $viewModel.email)
+                }
+                .padding()
+                .foregroundColor(.black)
+                .background(Color.white)
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.secondary, lineWidth: 1)
+                )
+                .padding(.horizontal, 40)
+                
+                ZStack(alignment: .leading){
+                    if viewModel.email.isEmpty {
                         Text("Email")
                             .foregroundColor(.purple)
                     }
@@ -41,6 +58,7 @@ struct SignUpPage: View {
                         .stroke(.secondary, lineWidth: 1)
                 )
                 .padding(.horizontal, 40)
+                .padding(.top, 20)
                 
                 
                 ZStack(alignment: .leading) {
