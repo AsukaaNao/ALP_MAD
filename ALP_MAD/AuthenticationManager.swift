@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import UIKit
 
 struct AuthDataResultModel {
     let uid : String
@@ -19,6 +20,16 @@ struct AuthDataResultModel {
         self.photoUrl = user.photoURL?.absoluteString
     }
 }
+
+//struct FeedDataResultModel {
+//    let image: UIImage
+//    let caption: String
+//    
+//    init(feed: Feed) {
+//        self.image = feed.image
+//        self.caption = feed.caption
+//    }
+//}
 
 class AuthenticationManager {
     static let shared = AuthenticationManager()
@@ -45,5 +56,12 @@ class AuthenticationManager {
     func signOut() throws {
         try Auth.auth().signOut()
     }
+    
+    
+    
+//    func createFeed(image: UIImage, caption: String) async throws -> FeedDataResultModel {
+//        let feedDataResult = try await Auth.auth().createFeed(caption: caption)
+//        return FeedDataResultModel(feed: feedDataResult.feed)
+//    }
 }
     

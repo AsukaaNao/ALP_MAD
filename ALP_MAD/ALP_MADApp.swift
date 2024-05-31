@@ -17,7 +17,8 @@ struct ALP_MADApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            CreateFeedPage()
         }
     }
 }
