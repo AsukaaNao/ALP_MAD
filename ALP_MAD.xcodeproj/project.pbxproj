@@ -37,6 +37,8 @@
 		0C6F00832C08443B00126EFF /* EventListViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00822C08443B00126EFF /* EventListViewMac.swift */; };
 		0C6F008A2C08767D00126EFF /* CalendarViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00892C08767D00126EFF /* CalendarViewMac.swift */; };
 		0C6F008C2C08785200126EFF /* EventsCalendarViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F008B2C08785200126EFF /* EventsCalendarViewMac.swift */; };
+		0C6F00902C0994A500126EFF /* ListViewRowMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F008F2C0994A500126EFF /* ListViewRowMac.swift */; };
+		0C6F00962C09A92E00126EFF /* EventListViewMacToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00952C09A92E00126EFF /* EventListViewMacToday.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		0C6F00822C08443B00126EFF /* EventListViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewMac.swift; sourceTree = "<group>"; };
 		0C6F00892C08767D00126EFF /* CalendarViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewMac.swift; sourceTree = "<group>"; };
 		0C6F008B2C08785200126EFF /* EventsCalendarViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCalendarViewMac.swift; sourceTree = "<group>"; };
+		0C6F008F2C0994A500126EFF /* ListViewRowMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewRowMac.swift; sourceTree = "<group>"; };
+		0C6F00952C09A92E00126EFF /* EventListViewMacToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewMacToday.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,8 @@
 				0C6F00822C08443B00126EFF /* EventListViewMac.swift */,
 				0C6F00892C08767D00126EFF /* CalendarViewMac.swift */,
 				0C6F008B2C08785200126EFF /* EventsCalendarViewMac.swift */,
+				0C6F008F2C0994A500126EFF /* ListViewRowMac.swift */,
+				0C6F00952C09A92E00126EFF /* EventListViewMacToday.swift */,
 			);
 			path = "Calendar Feature";
 			sourceTree = "<group>";
@@ -315,10 +321,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C6F00772C08402A00126EFF /* ListViewRow.swift in Sources */,
+				0C6F00962C09A92E00126EFF /* EventListViewMacToday.swift in Sources */,
 				0C6F007D2C08407800126EFF /* EventFormType.swift in Sources */,
 				0C6F008C2C08785200126EFF /* EventsCalendarViewMac.swift in Sources */,
 				0C6F00832C08443B00126EFF /* EventListViewMac.swift in Sources */,
 				0C6F007A2C08402A00126EFF /* DaysEvent.swift in Sources */,
+				0C6F00902C0994A500126EFF /* ListViewRowMac.swift in Sources */,
 				0C6F00792C08402A00126EFF /* ALP_MADApp.swift in Sources */,
 				0C6F007C2C08407800126EFF /* EventFormView.swift in Sources */,
 				0C6F00692C083F6100126EFF /* ContentView.swift in Sources */,

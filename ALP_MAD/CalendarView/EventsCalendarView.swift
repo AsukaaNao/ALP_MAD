@@ -19,6 +19,7 @@ struct EventsCalendarView: View {
             VStack {
                 ScrollView {
                     VStack {
+                        
                         CalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture), eventStore: eventStore, dateSelected: $dateSelected, displayEvents: $displayEvents)
                     }
                     
@@ -26,9 +27,9 @@ struct EventsCalendarView: View {
                         .frame(height: 30)
                     
                     Text("All Events")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.leading, 10)
+                        .font(.system(size: 23))
+                        .fontWeight(.semibold)
+                        .padding(10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Spacer()
@@ -58,8 +59,8 @@ struct EventsCalendarView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
-                        Text("Add Event")
-                            .fontWeight(.bold)
+                        Text("New")
+                            .fontWeight(.medium)
                         Button {
                             formType = .new
                         } label: {

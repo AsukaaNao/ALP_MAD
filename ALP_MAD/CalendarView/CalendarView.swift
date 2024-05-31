@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct CalendarView: UIViewRepresentable{
+struct CalendarView: UIViewRepresentable {
     let interval: DateInterval
     @ObservedObject var eventStore: EventStore
     @Binding var dateSelected: DateComponents?
     @Binding var displayEvents: Bool
     
-    func makeUIView(context: Context) -> some UICalendarView{
+    func makeUIView(context: Context) -> some UICalendarView {
         let view = UICalendarView()
         view.delegate = context.coordinator
         view.calendar = Calendar(identifier: .gregorian)
@@ -22,9 +22,8 @@ struct CalendarView: UIViewRepresentable{
         view.selectionBehavior = dateSelection
         return view
     }
-    
     func makeCoordinator() -> Coordinator {
-        Coordinator(parent:self, eventStore: _eventStore)
+        Coordinator(parent: self, eventStore: _eventStore)
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
@@ -39,9 +38,7 @@ struct CalendarView: UIViewRepresentable{
         }
     }
     
-    class Coordinator : NSObject, UICalendarViewDelegate, UICalendarSelectionSingleDateDelegate{
-        
-        
+    class Coordinator: NSObject, UICalendarViewDelegate, UICalendarSelectionSingleDateDelegate {
         var parent: CalendarView
         @ObservedObject var eventStore: EventStore
         init(parent: CalendarView, eventStore: ObservedObject<EventStore>) {
@@ -50,38 +47,43 @@ struct CalendarView: UIViewRepresentable{
         }
         
         @MainActor
-        func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
-            let foundEvents = eventStore.events.filter { event in
-                event.date.startOfDay == dateComponents.date?.startOfDay
-            }
+        func calendarView(_ calendarView: UICalendarView,
+                          decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
+            let foundEvents = eventStore.events
+                .filter {$0.date.startOfDay == dateComponents.date?.startOfDay}
             if foundEvents.isEmpty { return nil }
-            
-            if foundEvents.count>1 {
+
+            if foundEvents.count > 1 {
                 return .image(UIImage(systemName: "doc.on.doc.fill"),
                               color: .red,
                               size: .large)
             }
-            
             let singleEvent = foundEvents.first!
-            return .customView{
+            return .customView {
                 let icon = UILabel()
+                icon.font = .systemFont(ofSize: 14)
                 icon.text = singleEvent.eventType.icon
                 return icon
             }
         }
         
-        func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
+        func dateSelection(_ selection: UICalendarSelectionSingleDate,
+                           didSelectDate dateComponents: DateComponents?) {
             parent.dateSelected = dateComponents
-            guard let dateComponents else {return}
-            let foundEvents = eventStore.events.filter { event in
-                event.date.startOfDay == dateComponents.date?.startOfDay}
-                if !foundEvents.isEmpty{
-                    parent.displayEvents.toggle()
-                }
-            }
-            
-        func dateSelection(_ selection: UICalendarSelectionSingleDate, canSelectDate dateComponents: DateComponents?) -> Bool {
-                return true
+            guard let dateComponents else { return }
+            let foundEvents = eventStore.events
+                .filter {$0.date.startOfDay == dateComponents.date?.startOfDay}
+            if !foundEvents.isEmpty {
+                parent.displayEvents.toggle()
             }
         }
+        
+        func dateSelection(_ selection: UICalendarSelectionSingleDate,
+                           canSelectDate dateComponents: DateComponents?) -> Bool {
+            return true
+        }
+        
     }
+    
+    
+}

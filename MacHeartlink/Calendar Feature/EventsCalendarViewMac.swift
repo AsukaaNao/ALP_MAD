@@ -7,14 +7,31 @@
 
 import SwiftUI
 
-
 struct EventsCalendarViewMac: View {
+    @EnvironmentObject var eventStore: EventStore
+    @State private var dateSelected: DateComponents? = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+    @State private var displayEvents = false
+    @State private var formType: EventFormType?
+    @EnvironmentObject var myEvents: EventStore
+    
     var body: some View {
-        CalendarViewMac(interval: DateInterval(start: Date(), end: Calendar.current.date(byAdding: .year, value: 1, to: Date())!))
-                   .frame(width: 350)
+        HStack {
+            EventListViewMac()
+                .background(Color.white)
+                .padding(.top, 10)
+            VStack {
+                CalendarViewMac(interval: DateInterval(start: .distantPast, end: .distantFuture), eventStore: eventStore, dateSelected: $dateSelected, displayEvents: $displayEvents)
+                    .padding(.top, 20)
+                EventListViewMacToday(dateSelected: $dateSelected)
+                    .background(Color.white)
+                    .padding(.top, 10)
+            }
         }
+        .background(Color.white)
+    }
 }
 
 #Preview {
-    EventsCalendarViewMac()
+    EventsCalendarViewMac().environmentObject(EventStore(preview: true))
 }
+

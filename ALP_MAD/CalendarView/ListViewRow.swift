@@ -16,12 +16,16 @@ struct ListViewRow: View {
                 HStack {
                     Text(event.eventType.icon)
                         .font(.system(size: 40))
-                    Text(event.note)
+                    VStack(alignment: .leading){
+                        Text(event.note)
+                        Text(
+                            event.date.formatted(date: .abbreviated,
+                                                 time: .shortened)
+                        )
+                        .font(.caption)
+                    }
                 }
-                Text(
-                    event.date.formatted(date: .abbreviated,
-                                         time: .shortened)
-                )
+                
             }
             Spacer()
             Button {
