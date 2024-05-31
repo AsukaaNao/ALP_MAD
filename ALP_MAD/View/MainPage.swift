@@ -14,7 +14,7 @@ import FirebaseFirestore
 struct IdentifiableCoordinate: Identifiable {
     let id = UUID()
     var coordinate: CLLocationCoordinate2D
-//    var user: User
+    //    var user: User
 }
 
 struct UserAnnotationView: View {
@@ -52,48 +52,31 @@ struct MainPage: View {
                 viewModel.stopUpdatingLocation()
                 viewModel.stopFetchingLocations()
             }
-            
-            
-//            VStack {
-//                Spacer()
-//                
-//                VStack {
-//                    List {
-//                        Button("Log Out") {
-//                            Task {
-//                                do {
-//                                    try viewModel.signOut()
-//                                    showSignInView = true
-//                                } catch {
-//                                    print(error.localizedDescription)
-//                                }
-//                            }
-//                        }
-//                        .frame(width: UIScreen.main.bounds.width * 0.25, height: 44)
-//                        .background(Color.blue)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(8)
-//                    }
-//                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.25)
-//                    .opacity(0.7)
-//                }
-//                .background(RoundedRectangle(cornerRadius: 20)
-//                    .fill(Color.white)
-//                    .shadow(radius: 10))
-//                .padding(.bottom, 20)
-//            }
-//            .padding()
             VStack {
                 Spacer()
                 
-//                            if let selectedUser = viewModel.selectedUser {
-//                                UserInfoView(user: selectedUser)
+                //                            if let selectedUser = viewModel.selectedUser {
+                //                                UserInfoView(user: selectedUser)
+                Button("Log Out") {
+                    Task {
+                        do {
+                            try viewModel.signOut()
+                            showSignInView = true
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+                .frame(width: UIScreen.main.bounds.width * 0.25, height: 44)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
                 UserInfoView()
-                        .background(Color.white)
-                        .cornerRadius(15)
-//                        .padding()
-                        .shadow(radius: 10)
-//                            }
+                    .background(Color.white)
+                    .cornerRadius(15)
+                //                        .padding()
+                    .shadow(radius: 10)
+                //                            }
             }
             .padding()
             
@@ -116,33 +99,33 @@ struct MainPage: View {
 }
 
 struct UserInfoView: View {
-//    var user: User
+    //    var user: User
     
     var body: some View {
         VStack (alignment:.leading){
             Text("Giselle")
                 .font(.headline)
                 .fontWeight(.bold)
-                
-                
-//            Text(user.name)
-//                .font(.headline)
-//            Text(user.address)
-//                .font(.subheadline)
+            
+            
+            //            Text(user.name)
+            //                .font(.headline)
+            //            Text(user.address)
+            //                .font(.subheadline)
             Text("Pakuwon Mall")
                 .font(.caption)
                 .foregroundColor(Color.gray)
-               
-//            Text("\(user.timeAgo) ago")
-//                .font(.caption)
-//                .foregroundColor(.gray)
+            
+            //            Text("\(user.timeAgo) ago")
+            //                .font(.caption)
+            //                .foregroundColor(.gray)
             Text("3 minutes ago")
-                    .font(.caption)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.black)
+                .font(.caption)
+                .fontWeight(.semibold)
+                .foregroundColor(.black)
             Spacer()
                 .frame(height: 20)
-                    
+            
             HStack {
                 Button(action: {
                     // Nudge action
