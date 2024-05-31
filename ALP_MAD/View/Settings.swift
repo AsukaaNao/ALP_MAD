@@ -33,7 +33,7 @@ struct Settings: View {
                 }
             }
         }
-        .navigationTitle("Main Page")
+        .navigationTitle("Settings")
     }
 }
 
