@@ -126,7 +126,7 @@ struct SignUpPage: View {
             .navigationDestination(isPresented: $navigateToLogIn) {
                 LoginPage()
             }
-            .background(Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all))
+            .background(Color.white)
             .navigationBarHidden(true)
         }
     }

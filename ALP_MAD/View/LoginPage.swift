@@ -83,18 +83,18 @@ struct LoginPage: View {
                     .bold()
                     .padding(10)
                 
-//                 SignInWithAppleButton { request in
-//                     // Handle request
-//                 } onCompletion: { result in
-//                     // Handle result
-//                 }
+                //                 SignInWithAppleButton { request in
+                //                     // Handle request
+                //                 } onCompletion: { result in
+                //                     // Handle result
+                //                 }
                 
                 HStack {
                     Text("Don't have an account?")
                         .foregroundColor(.gray)
                     Button {
                         navigateToSignUp = true
-//                        presentationMode.wrappedValue.dismiss()
+                        //                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Sign Up")
                             .foregroundColor(.purple)
@@ -106,14 +106,19 @@ struct LoginPage: View {
             }
             .padding()
             .navigationDestination(isPresented: $isSignInSuccess) {
-                MainPage(showSignInView: .constant(true))
+                if viewModel.hasCoupleId {
+                    MainPage(showSignInView: .constant(true))
+                } else {
+                    LandingPage(showSignInView: .constant(true))
+                }
             }
             .navigationDestination(isPresented: $navigateToSignUp) {
                 SignUpPage()
             }
             .navigationBarHidden(true)
+            .background(Color.white)
         }
-        .background(Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all))
+        .background(Color.white.edgesIgnoringSafeArea(.all))
     }
 }
 
