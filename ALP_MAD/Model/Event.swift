@@ -68,4 +68,11 @@ struct Event: Identifiable {
             Event(date: Date().diff(numDays: -4), note: "Plan for winter vacation.")
         ]
     }
+    
+    func timeString(from date: Date) -> String {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+            return formatter.string(from: date)
+        }
 }

@@ -39,7 +39,41 @@
 		0C6F008C2C08785200126EFF /* EventsCalendarViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F008B2C08785200126EFF /* EventsCalendarViewMac.swift */; };
 		0C6F00902C0994A500126EFF /* ListViewRowMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F008F2C0994A500126EFF /* ListViewRowMac.swift */; };
 		0C6F00962C09A92E00126EFF /* EventListViewMacToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00952C09A92E00126EFF /* EventListViewMacToday.swift */; };
+		0C6F00A02C0AFE3400126EFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F009F2C0AFE3400126EFF /* ContentView.swift */; };
+		0C6F00A22C0AFE3600126EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F00A12C0AFE3600126EFF /* Assets.xcassets */; };
+		0C6F00A52C0AFE3600126EFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F00A42C0AFE3600126EFF /* Preview Assets.xcassets */; };
+		0C6F00A82C0AFE3600126EFF /* WatchHeartlink Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0C6F009B2C0AFE3400126EFF /* WatchHeartlink Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0C6F00AE2C0B002A00126EFF /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00AD2C0B002A00126EFF /* ListView.swift */; };
+		0C6F00AF2C0B003E00126EFF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024F22BFC3D5F000FA0FB /* Date+Extension.swift */; };
+		0C6F00B02C0B005300126EFF /* ALP_MADApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */; };
+		0C6F00B12C0B006900126EFF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024E82BFC3C86000FA0FB /* Event.swift */; };
+		0C6F00B22C0B00C100126EFF /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024EA2BFC3CA5000FA0FB /* EventStore.swift */; };
+		0C6F00B52C0B028500126EFF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00B42C0B028500126EFF /* MainView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C6F00A62C0AFE3600126EFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04527CA02BF5D45400E8218C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C6F009A2C0AFE3400126EFF;
+			remoteInfo = "WatchHeartlink Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0C6F00A92C0AFE3600126EFF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0C6F00A82C0AFE3600126EFF /* WatchHeartlink Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		04527CA82BF5D45400E8218C /* ALP_MAD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALP_MAD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +102,12 @@
 		0C6F008B2C08785200126EFF /* EventsCalendarViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCalendarViewMac.swift; sourceTree = "<group>"; };
 		0C6F008F2C0994A500126EFF /* ListViewRowMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewRowMac.swift; sourceTree = "<group>"; };
 		0C6F00952C09A92E00126EFF /* EventListViewMacToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewMacToday.swift; sourceTree = "<group>"; };
+		0C6F009B2C0AFE3400126EFF /* WatchHeartlink Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchHeartlink Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C6F009F2C0AFE3400126EFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0C6F00A12C0AFE3600126EFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0C6F00A42C0AFE3600126EFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0C6F00AD2C0B002A00126EFF /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		0C6F00B42C0B028500126EFF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +125,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0C6F00982C0AFE3400126EFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,6 +140,7 @@
 			children = (
 				04527CAA2BF5D45400E8218C /* ALP_MAD */,
 				0C6F00652C083F6100126EFF /* MacHeartlink */,
+				0C6F009C2C0AFE3400126EFF /* WatchHeartlink Watch App */,
 				04527CA92BF5D45400E8218C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +150,7 @@
 			children = (
 				04527CA82BF5D45400E8218C /* ALP_MAD.app */,
 				0C6F00642C083F6100126EFF /* MacHeartlink.app */,
+				0C6F009B2C0AFE3400126EFF /* WatchHeartlink Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +249,26 @@
 			path = "Calendar Feature";
 			sourceTree = "<group>";
 		};
+		0C6F009C2C0AFE3400126EFF /* WatchHeartlink Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F009F2C0AFE3400126EFF /* ContentView.swift */,
+				0C6F00A12C0AFE3600126EFF /* Assets.xcassets */,
+				0C6F00A32C0AFE3600126EFF /* Preview Content */,
+				0C6F00AD2C0B002A00126EFF /* ListView.swift */,
+				0C6F00B42C0B028500126EFF /* MainView.swift */,
+			);
+			path = "WatchHeartlink Watch App";
+			sourceTree = "<group>";
+		};
+		0C6F00A32C0AFE3600126EFF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F00A42C0AFE3600126EFF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,10 +279,12 @@
 				04527CA42BF5D45400E8218C /* Sources */,
 				04527CA52BF5D45400E8218C /* Frameworks */,
 				04527CA62BF5D45400E8218C /* Resources */,
+				0C6F00A92C0AFE3600126EFF /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0C6F00A72C0AFE3600126EFF /* PBXTargetDependency */,
 			);
 			name = ALP_MAD;
 			productName = ALP_MAD;
@@ -237,6 +308,23 @@
 			productReference = 0C6F00642C083F6100126EFF /* MacHeartlink.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0C6F009A2C0AFE3400126EFF /* WatchHeartlink Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C6F00AC2C0AFE3600126EFF /* Build configuration list for PBXNativeTarget "WatchHeartlink Watch App" */;
+			buildPhases = (
+				0C6F00972C0AFE3400126EFF /* Sources */,
+				0C6F00982C0AFE3400126EFF /* Frameworks */,
+				0C6F00992C0AFE3400126EFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchHeartlink Watch App";
+			productName = "WatchHeartlink Watch App";
+			productReference = 0C6F009B2C0AFE3400126EFF /* WatchHeartlink Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -251,6 +339,9 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					0C6F00632C083F6100126EFF = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					0C6F009A2C0AFE3400126EFF = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -270,6 +361,7 @@
 			targets = (
 				04527CA72BF5D45400E8218C /* ALP_MAD */,
 				0C6F00632C083F6100126EFF /* MacHeartlink */,
+				0C6F009A2C0AFE3400126EFF /* WatchHeartlink Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -290,6 +382,15 @@
 			files = (
 				0C6F006E2C083F6300126EFF /* Preview Assets.xcassets in Resources */,
 				0C6F006B2C083F6300126EFF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C6F00992C0AFE3400126EFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6F00A52C0AFE3600126EFF /* Preview Assets.xcassets in Resources */,
+				0C6F00A22C0AFE3600126EFF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +439,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0C6F00972C0AFE3400126EFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6F00AE2C0B002A00126EFF /* ListView.swift in Sources */,
+				0C6F00B52C0B028500126EFF /* MainView.swift in Sources */,
+				0C6F00A02C0AFE3400126EFF /* ContentView.swift in Sources */,
+				0C6F00B22C0B00C100126EFF /* EventStore.swift in Sources */,
+				0C6F00B02C0B005300126EFF /* ALP_MADApp.swift in Sources */,
+				0C6F00AF2C0B003E00126EFF /* Date+Extension.swift in Sources */,
+				0C6F00B12C0B006900126EFF /* Event.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C6F00A72C0AFE3600126EFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C6F009A2C0AFE3400126EFF /* WatchHeartlink Watch App */;
+			targetProxy = 0C6F00A62C0AFE3600126EFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		04527CB42BF5D45500E8218C /* Debug */ = {
@@ -463,6 +586,7 @@
 		04527CB72BF5D45500E8218C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -492,6 +616,7 @@
 		04527CB82BF5D45500E8218C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -572,6 +697,64 @@
 			};
 			name = Release;
 		};
+		0C6F00AA2C0AFE3600126EFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchHeartlink Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchHeartlink;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.test.ALP-MAD";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.ALP-MAD.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		0C6F00AB2C0AFE3600126EFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchHeartlink Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchHeartlink;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.test.ALP-MAD";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.ALP-MAD.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -598,6 +781,15 @@
 			buildConfigurations = (
 				0C6F00702C083F6300126EFF /* Debug */,
 				0C6F00712C083F6300126EFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C6F00AC2C0AFE3600126EFF /* Build configuration list for PBXNativeTarget "WatchHeartlink Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C6F00AA2C0AFE3600126EFF /* Debug */,
+				0C6F00AB2C0AFE3600126EFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
