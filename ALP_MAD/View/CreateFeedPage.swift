@@ -13,6 +13,8 @@ import FirebaseStorage
 
 struct CreateFeedPage: View {
     
+    @Binding var isPresented: Bool
+    
     @State var viewModel = CreateFeedVM()
     @State var image: UIImage?
     @State var shouldShowImagePicker = false
@@ -24,6 +26,13 @@ struct CreateFeedPage: View {
         NavigationView {
             
             VStack {
+                
+                Text("Create a Feed to update your partner!")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundStyle(Color.purple)
+                
+                Spacer()
+                    .frame(height: 40)
                 
                 // Image
                 Button {
@@ -80,7 +89,9 @@ struct CreateFeedPage: View {
                         viewModel.user_name = user_name
                         viewModel.user_picture = user_picture
                         viewModel.date = Date()
-                        viewModel.createFeed(image)
+                        viewModel.createFeed(image) {
+                            self.isPresented = false
+                        }
                     } label: {
                         Text("Create Feed")
                     }
@@ -106,20 +117,18 @@ struct CreateFeedPage: View {
     }
     
     private func fetchCurrentUser() {
-        do {
-            let user = try AuthenticationManager.shared.getAuthenticatedUser()
-            self.user_name = user.email ?? "No Email"
-            self.user_picture = user.photoUrl ?? ""
-//            self.user_name = "Haha"
-//            self.user_picture = "profilePicture/0D09B0AE-C9A9-4A1F-9549-E16A277C97DF.jpeg"
-        } catch {
-            self.loginStatusMessage = "Failed to fetch user: \(error)"
-        }
+//        do {
+//            let user = try AuthenticationManager.shared.getAuthenticatedUser()
+//            self.user_name = user.email ?? "No Email"
+//            self.user_picture = user.photoUrl ?? ""
+//        } catch {
+//            self.loginStatusMessage = "Failed to fetch user: \(error)"
+//        }
     }
 }
 
 struct CreateFeedPage_Previews: PreviewProvider {
     static var previews: some View {
-        CreateFeedPage()
+        CreateFeedPage(isPresented: .constant(true))
     }
 }

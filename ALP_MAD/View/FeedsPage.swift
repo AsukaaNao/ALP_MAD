@@ -10,41 +10,53 @@ import SwiftUI
 
 struct FeedsPage: View {
     @StateObject private var feedVM = FeedVM()
+    @State private var isPresentingCreateFeedPage = false
     
     var body: some View {
-        ScrollView {
-            
-            Spacer()
-                .frame(height: 32)
-            NavigationLink(destination: CreateFeedPage()) {
-                Text("Create New Feed")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width: 290)
-                    .background(Color.purple)
-                    .cornerRadius(20)
-                    .padding()
-            }
-            
-            VStack(spacing: 20) {
-                if feedVM.feeds.isEmpty {
-                    Text("No feeds available. Create new ones to share with your partner!")
+        GeometryReader { geometry in
+            ScrollView {
+                
+                Spacer()
+                    .frame(height: 32)
+                
+                Button(action: {
+                    isPresentingCreateFeedPage = true
+                }) {
+                    Text("Create New Feed")
                         .font(.headline)
+                        .foregroundColor(.white)
                         .padding()
                         .frame(width: 290)
-                        .multilineTextAlignment(.center)
-        
-                } else {
-                    ForEach(feedVM.feeds) { feed in
-                        FeedRow(feed: feed)
+                        .background(Color.purple)
+                        .cornerRadius(20)
+                        .padding()
+                }
+                .sheet(isPresented: $isPresentingCreateFeedPage, onDismiss: {
+                    feedVM.fetchFeeds()
+                }) {
+                    CreateFeedPage(isPresented: $isPresentingCreateFeedPage)
+                }
+                
+                VStack(spacing: 20) {
+                    if feedVM.feeds.isEmpty {
+                        Text("No feeds available. Create new ones to share with your partner!")
+                            .font(.headline)
+                            .padding()
+                            .frame(width: 290)
+                            .multilineTextAlignment(.center)
+                        
+                    } else {
+                        ForEach(feedVM.feeds) { feed in
+                            FeedRow(feed: feed)
+                        }
                     }
                 }
+                .frame(width: geometry.size.width)
+                
             }
-            .padding()
-        }
-        .onAppear {
-            feedVM.fetchFeeds()
+            .onAppear {
+                feedVM.fetchFeeds()
+            }
         }
     }
 }

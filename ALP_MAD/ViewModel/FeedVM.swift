@@ -55,6 +55,7 @@ class FeedVM: ObservableObject {
                 return Feed(id: id, image: image, date: date, caption: caption, user_name: user_name, user_picture: user_picture)
             }
             
+            self.feeds.sort(by: { $0.date > $1.date })
             self.loadImages()
         }
     }

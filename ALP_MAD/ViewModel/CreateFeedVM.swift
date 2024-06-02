@@ -28,7 +28,7 @@ class CreateFeedVM: ObservableObject {
     
     let db = Firestore.firestore()
     
-    func createFeed(_ selectedImage: UIImage) {
+    func createFeed(_ selectedImage: UIImage, completion: @escaping () -> Void) {
         guard !caption.isEmpty else {
             print("No Email or password found")
             return
@@ -84,7 +84,7 @@ class CreateFeedVM: ObservableObject {
             
         }
         
-        
+        completion()
         
     }
     
