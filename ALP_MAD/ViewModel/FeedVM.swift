@@ -23,36 +23,92 @@ class FeedVM: ObservableObject {
     @Published var user_name = ""
     @Published var user_picture = ""
     
-    func uploadPhoto(_ selectedImage: UIImage) {
-            
-            // create reference
-            let storageRef = Storage.storage().reference()
-            
-            // turn image into data
-            let imageData = selectedImage.jpegData(compressionQuality: 0.8)
-            
-            guard imageData != nil else {
-                return
-            }
-            
-            //file path and name
-            let path = "feedPicture/\(UUID().uuidString).jpeg"
-            let fileRef = storageRef.child(path)
-            
-            //upload
-            _ = fileRef.putData(imageData!, metadata: nil) { metadata, error in
-                if error != nil && metadata != nil {
-                    // saveto firestore
-//                    var uid = "2t05MsX8uRQxbjUmRzUFsUaJrhp1"
-//                    do {
-//                        uid = try AuthenticationManager.shared.getAuthenticatedUser().uid
-//                    } catch {
-//                        print("Error")
-//                    }
-//                    self.db.collection("users").document(uid).setData(["profilePicture": path])
-                }
-            }
+    @Published var isPickerShowing = false
+    @Published private(set) var UID: String? = ""
+    
+    let db = Firestore.firestore()
+    
+    func createFeed(_ selectedImage: UIImage) {
+        guard !caption.isEmpty else {
+            print("No Email or password found")
+            return
         }
+        
+        Task {
+            do {
+                
+                let feedData: [String: Any] = [
+                    "image": "",
+                    "caption": caption,
+                    "date": date,
+                    "user_name": user_name,
+                    "user_picture": user_picture
+                ]
+                
+                var uid = "fer63Q4T9aCtdpXwkxe5"
+                try await db.collection("couples").document(uid).collection("feeds").addDocument(data: feedData)
+                
+                // create reference
+                let storageRef = Storage.storage().reference()
+                
+                // turn image into data
+                let imageData = selectedImage.jpegData(compressionQuality: 0.8)
+                
+                guard imageData != nil else {
+                    return
+                }
+                
+                //file path and name
+                let path = "feedPicture/\(UUID().uuidString).jpeg"
+                let fileRef = storageRef.child(path)
+                
+                //upload
+                _ = fileRef.putData(imageData!, metadata: nil) { metadata, error in
+                    if error != nil && metadata != nil {
+                        // saveto firestore
+                        var uid = "2t05MsX8uRQxbjUmRzUFsUaJrhp1"
+                        do {
+                            uid = try AuthenticationManager.shared.getAuthenticatedUser().uid
+                        } catch {
+                            print("Error")
+                        }
+                        self.db.collection("users").document(uid).setData(["image": path])
+                    }
+                }
+                
+                print("Success Create Feeds in Couples")
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+        
+        
+        
+    }
     
 }
+
+//Task {
+//    do {
+//        let authResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
+//        let uid = authResult.uid
+//
+//        let userData: [String: Any] = [
+//            "username": username,
+//            "email": email,
+//            "location": GeoPoint(latitude: 0.0, longitude: 0.0), // Dummy location, update as needed
+//            "tag": generateTag()
+//        ]
+//
+//        try await db.collection("users").document(uid).setData(userData)
+//
+//        print("Success Create User and Added to Firestore")
+//        print(authResult)
+//        completion(true)
+//    } catch {
+//        print(error.localizedDescription)
+//        completion(false)
+//    }
+//}
 

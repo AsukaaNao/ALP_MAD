@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseStorage
 import Firebase
+import FirebaseFirestore
 
 class LandingPageVM: ObservableObject {
     

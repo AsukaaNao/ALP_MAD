@@ -11,30 +11,14 @@ import Foundation
 import Firebase
 import FirebaseStorage
 
-class FirebaseManager: NSObject {
-    
-    let auth: Auth
-    let storage: Storage
-    
-    static let shared = FirebaseManager()
-    
-    override init() {
-        FirebaseApp.configure()
-        
-        self.auth = Auth.auth()
-        self.storage = Storage.storage()
-        
-        super.init()
-    }
-    
-}
-
 struct CreateFeedPage: View {
     
-    @StateObject private var viewModel = FeedVM()
-    
+    @State var viewModel = FeedVM()
+    @State var image: UIImage?
     @State var shouldShowImagePicker = false
     @State var loginStatusMessage = ""
+    @State var user_name = ""
+    @State var user_picture = ""
     
     var body: some View {
         NavigationView {
@@ -43,7 +27,7 @@ struct CreateFeedPage: View {
                 
                 // Image
                 Button {
-                    shouldShowImagePicker.toggle()
+                    shouldShowImagePicker = true
                 } label: {
                     
                     VStack {
@@ -95,64 +79,49 @@ struct CreateFeedPage: View {
                 
                 
                 // Create Button
-                Button {
-                    createFeed()
-                } label: {
-                    Text("Create Feed")
+                if let image = image {
+                    
+                    Button {
+                        fetchCurrentUser()
+                        viewModel.user_name = user_name
+                        viewModel.user_picture = user_picture
+                        viewModel.date = Date()
+                        viewModel.createFeed(image)
+                    } label: {
+                        Text("Create Feed")
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.purple)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.purple, lineWidth: 1)
+                    )
+                    .padding(.horizontal, 40)
                 }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.purple)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.purple, lineWidth: 1)
-                )
-                .padding(.horizontal, 40)
-                
                 
                 Text(self.loginStatusMessage)
                     .foregroundColor(.red)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .fullScreenCover(isPresented: $shouldShowImagePicker, onDismiss: nil) {
-                ImagePicker(image: $image)
+                                ImagePicker(selectedImage: $image, isPickerShowing: $shouldShowImagePicker)
             }
         }
     }
     
-    @State var image: UIImage?
-    
-    private func createFeed() {
-        self.persistImageToStorage()
-    }
-    
-    private func persistImageToStorage() {
-        let filename = UUID().uuidString
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid
-        else {return}
-        let ref = FirebaseManager.shared.storage.reference(withPath: uid)
-        guard let imageData = self.image?.jpegData(compressionQuality: 0.5) else { return }
-        ref.putData(imageData, metadata: nil) { metadata, err in
-            if let err = err {
-                self.loginStatusMessage = "Failed to push image to Storage: \(err)"
-                return
-            }
-            
-            ref.downloadURL { url, err in
-                if let err = err {
-                    self.loginStatusMessage = "Failed to retrieve downloadURL: \(err)"
-                    return
-                }
-                
-                self.loginStatusMessage = "Successfully stored image with url: \(url?.absoluteString ?? "")"
-                
-                
-            }
+    private func fetchCurrentUser() {
+        do {
+            let user = try AuthenticationManager.shared.getAuthenticatedUser()
+            self.user_name = user.email ?? "No Email"
+            self.user_picture = user.photoUrl ?? ""
+//            self.user_name = "Haha"
+//            self.user_picture = "profilePicture/0D09B0AE-C9A9-4A1F-9549-E16A277C97DF.jpeg"
+        } catch {
+            self.loginStatusMessage = "Failed to fetch user: \(error)"
         }
     }
-    
-    
     
 }
 

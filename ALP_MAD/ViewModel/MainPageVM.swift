@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import Firebase
 import FirebaseFirestore
 
 final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
