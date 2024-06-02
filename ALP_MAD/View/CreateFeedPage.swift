@@ -13,7 +13,7 @@ import FirebaseStorage
 
 struct CreateFeedPage: View {
     
-    @State var viewModel = FeedVM()
+    @State var viewModel = CreateFeedVM()
     @State var image: UIImage?
     @State var shouldShowImagePicker = false
     @State var loginStatusMessage = ""
@@ -57,22 +57,16 @@ struct CreateFeedPage: View {
                     .frame(height: 40)
                 
                 // Text Field
-                ZStack(alignment: .leading){
-                    if viewModel.caption.isEmpty {
-                        Text("Add a caption")
-                            .foregroundColor(.gray)
-                    }
-                    TextField("", text: $viewModel.caption)
-                }
-                .padding()
-                .foregroundColor(.black)
-                .background(Color.white)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.purple, lineWidth: 1)
-                )
-                .padding(.horizontal, 40)
+                TextField("Add a caption", text: $viewModel.caption)
+                    .padding()
+                    .foregroundColor(.black)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.purple, lineWidth: 1)
+                    )
+                    .padding(.horizontal, 40)
                 
                 Spacer()
                     .frame(height: 40)
@@ -106,7 +100,7 @@ struct CreateFeedPage: View {
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .fullScreenCover(isPresented: $shouldShowImagePicker, onDismiss: nil) {
-                                ImagePicker(selectedImage: $image, isPickerShowing: $shouldShowImagePicker)
+                ImagePicker(selectedImage: $image, isPickerShowing: $shouldShowImagePicker)
             }
         }
     }
@@ -122,17 +116,10 @@ struct CreateFeedPage: View {
             self.loginStatusMessage = "Failed to fetch user: \(error)"
         }
     }
-    
 }
-
-//#Preview {
-//    CreateFeedPage()
-//}
 
 struct CreateFeedPage_Previews: PreviewProvider {
     static var previews: some View {
         CreateFeedPage()
     }
 }
-
-

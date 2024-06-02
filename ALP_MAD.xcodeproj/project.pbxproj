@@ -25,9 +25,8 @@
 		0468FB822C0998150031ABDF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0468FB812C0998150031ABDF /* FirebaseAuth */; };
 		0468FB842C0998150031ABDF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0468FB832C0998150031ABDF /* FirebaseFirestore */; };
 		0468FB862C0998150031ABDF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0468FB852C0998150031ABDF /* FirebaseStorage */; };
+		04C06C272C0CC48C00F754D4 /* CreateFeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C06C262C0CC48C00F754D4 /* CreateFeedVM.swift */; };
 		04C681512BF8FF1C006D3576 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C681502BF8FF1C006D3576 /* Settings.swift */; };
-		04C6EA9B2C08187900858C29 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EA9A2C08187900858C29 /* User.swift */; };
-		04C6EA9D2C0818CC00858C29 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EA9C2C0818CC00858C29 /* Feed.swift */; };
 		04C6EAA32C08399800858C29 /* FeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAA22C08399800858C29 /* FeedVM.swift */; };
 		04C6EAA52C083A2000858C29 /* CreateFeedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAA42C083A2000858C29 /* CreateFeedPage.swift */; };
 		04C6EAA72C083A3E00858C29 /* FeedsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAA62C083A3E00858C29 /* FeedsPage.swift */; };
@@ -53,10 +52,9 @@
 		04527CCD2BF5DC6E00E8218C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		04527CCF2BF61E3900E8218C /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		04527CD12BF622BD00E8218C /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		04C06C262C0CC48C00F754D4 /* CreateFeedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFeedVM.swift; sourceTree = "<group>"; };
 		04C681502BF8FF1C006D3576 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		04C681522BF9114B006D3576 /* ALP-MAD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ALP-MAD-Info.plist"; sourceTree = SOURCE_ROOT; };
-		04C6EA9A2C08187900858C29 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		04C6EA9C2C0818CC00858C29 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		04C6EAA22C08399800858C29 /* FeedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVM.swift; sourceTree = "<group>"; };
 		04C6EAA42C083A2000858C29 /* CreateFeedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFeedPage.swift; sourceTree = "<group>"; };
 		04C6EAA62C083A3E00858C29 /* FeedsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsPage.swift; sourceTree = "<group>"; };
@@ -110,8 +108,6 @@
 				04527CCB2BF5D83900E8218C /* GoogleService-Info.plist */,
 				04527CAF2BF5D45500E8218C /* Assets.xcassets */,
 				04527CB12BF5D45500E8218C /* Preview Content */,
-				04C6EA9A2C08187900858C29 /* User.swift */,
-				04C6EA9C2C0818CC00858C29 /* Feed.swift */,
 			);
 			path = ALP_MAD;
 			sourceTree = "<group>";
@@ -147,6 +143,7 @@
 				044376792C005BC500BA8C04 /* MainPageVM.swift */,
 				04C6EAA22C08399800858C29 /* FeedVM.swift */,
 				04C6EAA82C089A4900858C29 /* ImagePicker.swift */,
+				04C06C262C0CC48C00F754D4 /* CreateFeedVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -238,11 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C6EA9B2C08187900858C29 /* User.swift in Sources */,
 				04527CBD2BF5D5AC00E8218C /* AuthenticationManager.swift in Sources */,
 				0443767A2C005BC500BA8C04 /* MainPageVM.swift in Sources */,
 				04C6EAA92C089A4900858C29 /* ImagePicker.swift in Sources */,
-				04C6EA9D2C0818CC00858C29 /* Feed.swift in Sources */,
 				04C6EAA52C083A2000858C29 /* CreateFeedPage.swift in Sources */,
 				04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */,
 				042633072C09849A00B2D495 /* LandingPageVM.swift in Sources */,
@@ -253,6 +248,7 @@
 				04C681512BF8FF1C006D3576 /* Settings.swift in Sources */,
 				04527CC62BF5D63900E8218C /* LoginPage.swift in Sources */,
 				04C6EAAB2C08C1D300858C29 /* FirebaseManager.swift in Sources */,
+				04C06C272C0CC48C00F754D4 /* CreateFeedVM.swift in Sources */,
 				04527CD02BF61E3900E8218C /* LoginVM.swift in Sources */,
 				04527CCE2BF5DC6E00E8218C /* RootView.swift in Sources */,
 				04C6EAA32C08399800858C29 /* FeedVM.swift in Sources */,
