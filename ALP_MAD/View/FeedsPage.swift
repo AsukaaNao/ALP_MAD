@@ -96,6 +96,9 @@ struct FeedRow: View {
                             )
                     }
                 }
+//                Text("Image ndak null")
+            } else {
+//                Text("Image empty")
             }
             
             Text(feed.date, style: .relative)

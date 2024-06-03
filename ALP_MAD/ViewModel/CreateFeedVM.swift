@@ -12,8 +12,12 @@ import FirebaseFirestore
 import Firebase
 import Photos
 import UIKit
-
 import FirebaseStorage
+
+struct UserForCreateFeed: Codable {
+    var user_name: String
+    var user_picture: String
+}
 
 class CreateFeedVM: ObservableObject {
     
@@ -23,6 +27,7 @@ class CreateFeedVM: ObservableObject {
     @Published var user_name = ""
     @Published var user_picture = ""
     
+    @Published var user = UserForCreateFeed(user_name: "null", user_picture: "null")
     @Published var isPickerShowing = false
     @Published private(set) var UID: String? = ""
     
@@ -30,65 +35,85 @@ class CreateFeedVM: ObservableObject {
     
     func createFeed(_ selectedImage: UIImage, completion: @escaping () -> Void) {
         guard !caption.isEmpty else {
-            print("No Email or password found")
+            print("Caption is empty")
             return
         }
         
         Task {
             do {
+                // Get the authenticated user's UID
+                let uid = "IcHejCmnEybsHdE2oPHkAPISFK52"
                 
-                let feedData: [String: Any] = [
-                    "image": "",
-                    "caption": caption,
-                    "date": date,
-                    "user_name": user_name,
-                    "user_picture": user_picture
-                ]
-                
-                // perlu diganti uid ke Auth
-                let uid = "fer63Q4T9aCtdpXwkxe5"
-                try await db.collection("couples").document(uid).collection("feeds").addDocument(data: feedData)
-                
-                // create reference
-                let storageRef = Storage.storage().reference()
-                
-                // turn image into data
-                let imageData = selectedImage.jpegData(compressionQuality: 0.8)
-                
-                guard imageData != nil else {
-                    return
+                // Fetch user data
+                if let user = try await fetchUser(uid: uid) {
+                    self.user = user
+                    print("User fetched: \(user)")
+                } else {
+                    print("User not found")
                 }
                 
-                //file path and name
+                // Create reference
+                let storageRef = Storage.storage().reference()
+                
+                // File path and name
                 let path = "feedPicture/\(UUID().uuidString).jpeg"
                 let fileRef = storageRef.child(path)
                 
-                //upload
-                _ = fileRef.putData(imageData!, metadata: nil) { metadata, error in
-                    if error != nil && metadata != nil {
-                        // saveto firestore
-                        var uid = "2t05MsX8uRQxbjUmRzUFsUaJrhp1"
-                        do {
-                            uid = try AuthenticationManager.shared.getAuthenticatedUser().uid
-                        } catch {
-                            print("Error")
-                        }
-                        self.db.collection("users").document(uid).setData(["image": path])
-                    }
+                // Turn image into data
+                guard let imageData = selectedImage.jpegData(compressionQuality: 0.8) else {
+                    print("Error converting image to data")
+                    return
                 }
                 
-                print("Success Create Feeds in Couples")
+                // Upload image
+                fileRef.putData(imageData, metadata: nil) { metadata, error in
+                    if error == nil && metadata != nil {
+                        // Prepare feed data
+                        let feedData: [String: Any] = [
+                            "image": path,
+                            "caption": self.caption,
+                            "date": self.date,
+                            "user_name": self.user.user_name,
+                            "user_picture": self.user.user_picture
+                        ]
+                        
+                        // Specify the couple ID (this should ideally be dynamic or passed as a parameter)
+                        let couple_id = "fer63Q4T9aCtdpXwkxe5"
+                        self.db.collection("couples").document(couple_id).collection("feeds").addDocument(data: feedData) { error in
+                            if let error = error {
+                                print("Error adding document: \(error)")
+                            } else {
+                                print("Successfully created feed in couples")
+                                completion()
+                            }
+                        }
+                    } else {
+                        print("Error uploading image: \(String(describing: error))")
+                    }
+                }
             } catch {
-                print(error.localizedDescription)
+                print("Error creating feed: \(error)")
             }
-            
         }
-        
-        completion()
-        
     }
     
+    func fetchUser(uid: String) async throws -> UserForCreateFeed? {
+        let document = try await db.collection("users").document(uid).getDocument()
+        
+        guard let data = document.data() else {
+            print("User not found")
+            return nil
+        }
+        
+        let user_name = data["name"] as? String ?? ""
+        let user_picture = data["profilePicture"] as? String ?? ""
+        
+        return UserForCreateFeed(user_name: user_name, user_picture: user_picture)
+    }
 }
+
+
+
 
 //Task {
 //    do {
