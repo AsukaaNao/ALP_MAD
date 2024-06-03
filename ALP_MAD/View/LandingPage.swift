@@ -8,6 +8,8 @@ struct LandingPage: View {
     @State var name: String = ""
     @State var tags: String = "#612HBJ"
     
+    @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    
     var body: some View {
         VStack(spacing: 20) {
             Text("Welcome to Heartlink")
@@ -85,7 +87,8 @@ struct LandingPage: View {
             .padding(.bottom, 20)
         }
         .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
-            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, sourceType: sourceType)
+//            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
         }
     }
 }

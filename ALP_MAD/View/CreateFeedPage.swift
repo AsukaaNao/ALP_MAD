@@ -11,6 +11,16 @@ import Foundation
 import Firebase
 import FirebaseStorage
 
+struct CircularImageView: View {
+    var image: UIImage
+    var body: some View {
+        Image(uiImage: image)
+            .resizable().scaledToFill()
+            .frame(width: 200, height: 200)
+            .clipShape(Circle())
+    }
+}
+
 struct CreateFeedPage: View {
     
     @Binding var isPresented: Bool
@@ -18,55 +28,83 @@ struct CreateFeedPage: View {
     @State var viewModel = CreateFeedVM()
     @State var image: UIImage?
     @State var shouldShowImagePicker = false
+    @State var isConfirmationDialogPresented: Bool = false
+    @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State var loginStatusMessage = ""
-    @State var user_name = ""
-    @State var user_picture = ""
+    @State private var caption: String = ""
+    
+    enum SourceType {
+        case camera
+        case photoLibrary
+    }
     
     var body: some View {
+        
         NavigationView {
             
             VStack {
                 
                 Text("Create a Feed to update your partner!")
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .fontWeight(.bold)
                     .foregroundStyle(Color.purple)
                 
                 Spacer()
                     .frame(height: 40)
                 
-                // Image
-                Button {
-                    shouldShowImagePicker = true
-                } label: {
-                    
-                    VStack {
-                        if let image = self.image {
-                            Image(uiImage: image)
-                                .resizable()
-                                .scaledToFill()
+                // Image Placeholder
+                VStack {
+                    if let image = self.image {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 200, height: 200)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.purple, lineWidth: 1)
+                            )
+                    } else {
+                        ZStack {
+                            Rectangle()
+                                .fill(Color.gray)
                                 .frame(width: 200, height: 200)
                                 .cornerRadius(10)
-                        } else {
-                            Text("Add Image")
-                                .foregroundColor(.black)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.purple, lineWidth: 1)
+                                )
+                            Text("+")
+                                .font(.system(size: 50))
+                                .foregroundColor(.white)
                         }
                     }
-                    .padding()
-                    .foregroundColor(.black)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.purple, lineWidth: 1)
-                    )
-                    
+                }
+                .onTapGesture {
+                    isConfirmationDialogPresented = true
+                }
+                .confirmationDialog("Choose an option", isPresented: $isConfirmationDialogPresented) {
+                    Button("Camera") {
+                        sourceType = .camera
+                        shouldShowImagePicker = true
+                    }
+                    Button("Photo Library") {
+                        sourceType = .photoLibrary
+                        shouldShowImagePicker = true
+                    }
+                }
+                .sheet(isPresented: $shouldShowImagePicker) {
+                    if sourceType == .camera {
+                        ImagePicker(selectedImage: $image, isPickerShowing: $shouldShowImagePicker, sourceType: .camera)
+                    } else {
+                        ImagePicker(selectedImage: $image, isPickerShowing: $shouldShowImagePicker, sourceType: .photoLibrary)
+                    }
                 }
                 
                 Spacer()
                     .frame(height: 40)
                 
-                // Text Field
-                TextField("Add a caption", text: $viewModel.caption)
+                // Caption Text Field
+                TextField("Add a caption", text: $caption)
                     .padding()
                     .foregroundColor(.black)
                     .background(Color.white)
@@ -79,51 +117,36 @@ struct CreateFeedPage: View {
                 
                 Spacer()
                     .frame(height: 40)
-                
                 
                 // Create Button
-                if let image = image {
-                    
-                    Button {
-                        fetchCurrentUser()
-                        viewModel.user_name = user_name
-                        viewModel.user_picture = user_picture
-                        viewModel.date = Date()
-                        viewModel.createFeed(image) {
-                            self.isPresented = false
-                        }
-                    } label: {
-                        Text("Create Feed")
+                Button {
+                    viewModel.caption = caption
+                    viewModel.date = Date()
+                    viewModel.createFeed(image!) {
+                        self.isPresented = false
                     }
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.purple)
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.purple, lineWidth: 1)
-                    )
-                    .padding(.horizontal, 40)
+                } label: {
+                    Text("Create Feed")
                 }
+                .padding()
+                .foregroundColor(.white)
+                .background(caption.isEmpty ? Color.gray : Color.purple)
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.purple, lineWidth: 1)
+                )
+                .padding(.horizontal, 40)
+                .disabled(caption.isEmpty)
                 
                 Text(self.loginStatusMessage)
                     .foregroundColor(.red)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .fullScreenCover(isPresented: $shouldShowImagePicker, onDismiss: nil) {
-                ImagePicker(selectedImage: $image, isPickerShowing: $shouldShowImagePicker)
+                ImagePicker(selectedImage: $image, isPickerShowing: $shouldShowImagePicker, sourceType: sourceType)
             }
         }
-    }
-    
-    private func fetchCurrentUser() {
-//        do {
-//            let user = try AuthenticationManager.shared.getAuthenticatedUser()
-//            self.user_name = user.email ?? "No Email"
-//            self.user_picture = user.photoUrl ?? ""
-//        } catch {
-//            self.loginStatusMessage = "Failed to fetch user: \(error)"
-//        }
     }
 }
 
