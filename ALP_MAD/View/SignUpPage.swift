@@ -26,7 +26,7 @@ struct SignUpPage: View {
                     .padding(.bottom, 20)
                 
                 ZStack(alignment: .leading){
-                    if viewModel.email.isEmpty {
+                    if viewModel.username.isEmpty {
                         Text("Username")
                             .foregroundColor(.purple)
                     }
@@ -121,12 +121,12 @@ struct SignUpPage: View {
             .padding()
             .navigationTitle("Sign Up With Email")
             .navigationDestination(isPresented: $isSignUpSuccess) {
-                Settings(showSignInView: .constant(true))
+                LandingPage(showSignInView: .constant(true))
             }
             .navigationDestination(isPresented: $navigateToLogIn) {
-                LoginPage()
+                LoginPage(showSignInView: .constant(true))
             }
-            .background(Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all))
+            .background(Color.white)
             .navigationBarHidden(true)
         }
     }

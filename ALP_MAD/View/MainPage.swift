@@ -36,6 +36,7 @@ struct UserAnnotationView: View {
 struct MainPage: View {
     @StateObject private var viewModel = MainPageViewModel()
     @Binding var showSignInView: Bool
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -62,6 +63,7 @@ struct MainPage: View {
                         do {
                             try viewModel.signOut()
                             showSignInView = true
+                            dismiss()
                         } catch {
                             print(error.localizedDescription)
                         }
@@ -95,6 +97,7 @@ struct MainPage: View {
                 secondaryButton: .cancel()
             )
         }
+        .navigationBarHidden(true)
     }
 }
 

@@ -4,6 +4,7 @@ struct LoginPage: View {
     @StateObject private var viewModel = LoginVM()
     @State private var isSignInSuccess = false
     @State private var navigateToSignUp = false
+    @Binding var showSignInView: Bool
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -83,18 +84,18 @@ struct LoginPage: View {
                     .bold()
                     .padding(10)
                 
-//                 SignInWithAppleButton { request in
-//                     // Handle request
-//                 } onCompletion: { result in
-//                     // Handle result
-//                 }
+                //                 SignInWithAppleButton { request in
+                //                     // Handle request
+                //                 } onCompletion: { result in
+                //                     // Handle result
+                //                 }
                 
                 HStack {
                     Text("Don't have an account?")
                         .foregroundColor(.gray)
                     Button {
                         navigateToSignUp = true
-//                        presentationMode.wrappedValue.dismiss()
+                        //                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Sign Up")
                             .foregroundColor(.purple)
@@ -105,18 +106,29 @@ struct LoginPage: View {
                 Spacer()
             }
             .padding()
+            .onAppear() {
+                viewModel.checkCoupleId()
+            }
+            //            .navigationDestination(isPresented: $isSignInSuccess) {
+            //                if viewModel.hasCoupleId {
+            //                    MainPage(showSignInView: .constant(true))
+            //                } else {
+            //                    LandingPage(showSignInView: .constant(true))
+            //                }
+            //            }
             .navigationDestination(isPresented: $isSignInSuccess) {
-                MainPage(showSignInView: .constant(true))
+                CoupleStatusView(viewModel: MainPageViewModel(), showSignInView: $showSignInView)
             }
             .navigationDestination(isPresented: $navigateToSignUp) {
                 SignUpPage()
             }
             .navigationBarHidden(true)
+            .background(Color.white)
         }
-        .background(Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all))
+        .background(Color.white.edgesIgnoringSafeArea(.all))
     }
 }
 
 #Preview {
-    LoginPage()
+    LoginPage(showSignInView: .constant(true))
 }
