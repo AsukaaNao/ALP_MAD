@@ -6,20 +6,15 @@
 //
 
 import SwiftUI
-import Firebase
 
 @main
 struct ALP_MADApp: App {
-    
-    init() {
-        FirebaseApp.configure()
-    }
-    
+    @StateObject var myEvents = EventStore(preview: true)
+
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//            CreateFeedPage()
-            FeedsPage()
+            ContentView()
+                .environmentObject(EventStore(preview: true))
         }
     }
 }
