@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043BDB8E2C1069B90085CB1D /* CoupleStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BDB8D2C1069B90085CB1D /* CoupleStatusView.swift */; };
 		043DF4622C084B150016DE54 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DF4612C084B150016DE54 /* LandingPage.swift */; };
 		043DF4642C084B570016DE54 /* LandingPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DF4632C084B570016DE54 /* LandingPageVM.swift */; };
 		043DF46A2C084D7D0016DE54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 043DF4692C084D7D0016DE54 /* FirebaseAuth */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043BDB8D2C1069B90085CB1D /* CoupleStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleStatusView.swift; sourceTree = "<group>"; };
 		043DF4612C084B150016DE54 /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
 		043DF4632C084B570016DE54 /* LandingPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVM.swift; sourceTree = "<group>"; };
 		044376792C005BC500BA8C04 /* MainPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageVM.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				043DF4612C084B150016DE54 /* LandingPage.swift */,
 				044702902C09E51400DDA280 /* ConnectPartnerPage.swift */,
 				044702942C0A2ED400DDA280 /* RequestPartnerPage.swift */,
+				043BDB8D2C1069B90085CB1D /* CoupleStatusView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043BDB8E2C1069B90085CB1D /* CoupleStatusView.swift in Sources */,
 				04527CBD2BF5D5AC00E8218C /* AuthenticationManager.swift in Sources */,
 				0443767A2C005BC500BA8C04 /* MainPageVM.swift in Sources */,
 				043DF4622C084B150016DE54 /* LandingPage.swift in Sources */,

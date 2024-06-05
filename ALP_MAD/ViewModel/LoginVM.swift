@@ -46,6 +46,7 @@ private func sha256(_ input: String) -> String {
 
 class LoginVM: ObservableObject {
     
+    @Published var username = ""
     @Published var email = ""
     @Published var password = ""
     @Published var errorMessage = ""
@@ -53,8 +54,18 @@ class LoginVM: ObservableObject {
     
     var db = Firestore.firestore()
     
-    func checkCoupleId(for userId: String) {
-        db.collection("users").document(userId).getDocument { document, error in
+    func checkCoupleId() {
+        var uid = ""
+        do {
+            let fetchUID = try AuthenticationManager.shared.getAuthenticatedUser().uid
+            uid = fetchUID
+        } catch {
+            print("Error getting authenticated user UID")
+        }
+        guard uid != "" else {
+            return
+        }
+        db.collection("users").document(uid).getDocument { document, error in
             if let document = document, document.exists {
                 let data = document.data()
                 print(data!)
@@ -77,10 +88,7 @@ class LoginVM: ObservableObject {
                 let userdata = try await AuthenticationManager.shared.signInWithEmailPassword(email: email, password: password)
                 print("Success Login")
                 print(userdata)
-                let uid = try AuthenticationManager.shared.getAuthenticatedUser().uid
-                checkCoupleId(for: uid)
-                //                let uid = try AuthenticationManager.shared.getAuthenticatedUser().uid
-                //                print(uid)
+                checkCoupleId()
                 completion(true)
             } catch {
                 print(error.localizedDescription)

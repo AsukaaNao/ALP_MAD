@@ -6,6 +6,7 @@ struct LandingPage: View {
     @State var isPickerShowing = false
     @State private var navigateToConnectPartnerPage = false
     @Binding var showSignInView: Bool
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
@@ -81,6 +82,11 @@ struct LandingPage: View {
                 
                 Spacer()
             }
+            .onAppear() {
+                if let uid = viewModel.getCurrentUserUID() {
+                    viewModel.fetchUserData(uid: uid)
+                }
+            }
             .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
                 ImagePicker(selectedImage: $viewModel.profilePicture, isPickerShowing: $isPickerShowing)
             }
@@ -93,6 +99,7 @@ struct LandingPage: View {
                     do {
                         try viewModel.signOut()
                         showSignInView = true
+                        dismiss()
                     } catch {
                         print(error.localizedDescription)
                     }
@@ -103,9 +110,10 @@ struct LandingPage: View {
             })
         }
         .navigationBarHidden(false)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    LandingPage(showSignInView: .constant(false))
+    LandingPage(showSignInView: .constant(true))
 }
