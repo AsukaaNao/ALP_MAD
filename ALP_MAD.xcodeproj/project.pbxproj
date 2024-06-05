@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0407A6AE2C10CEEE00F6823C /* RequestPartnerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6AB2C10CEEE00F6823C /* RequestPartnerPage.swift */; };
+		0407A6AF2C10CEEE00F6823C /* ConnectPartnerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6AC2C10CEEE00F6823C /* ConnectPartnerPage.swift */; };
+		0407A6B02C10CEEE00F6823C /* CoupleStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6AD2C10CEEE00F6823C /* CoupleStatusView.swift */; };
+		0407A6B32C10CEFE00F6823C /* ConnectPartnerPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6B12C10CEFD00F6823C /* ConnectPartnerPageVM.swift */; };
+		0407A6B42C10CEFE00F6823C /* RequestPartnerPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6B22C10CEFD00F6823C /* RequestPartnerPageVM.swift */; };
+		0407A6B62C10CF0B00F6823C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6B52C10CF0B00F6823C /* ImagePicker.swift */; };
+		0407A6BC2C10CF5300F6823C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0407A6BB2C10CF5300F6823C /* GoogleService-Info.plist */; };
+		0407A6BE2C10CF6700F6823C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0407A6BD2C10CF6700F6823C /* GoogleService-Info.plist */; };
+		0407A6C02C10CF7400F6823C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0407A6BF2C10CF7400F6823C /* GoogleService-Info.plist */; };
 		042633052C09848400B2D495 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042633042C09848300B2D495 /* LandingPage.swift */; };
 		042633072C09849A00B2D495 /* LandingPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042633062C09849A00B2D495 /* LandingPageVM.swift */; };
 		0443767A2C005BC500BA8C04 /* MainPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044376792C005BC500BA8C04 /* MainPageVM.swift */; };
@@ -22,7 +31,6 @@
 		04527CCE2BF5DC6E00E8218C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CCD2BF5DC6E00E8218C /* RootView.swift */; };
 		04527CD02BF61E3900E8218C /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CCF2BF61E3900E8218C /* LoginVM.swift */; };
 		04527CD22BF622BD00E8218C /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CD12BF622BD00E8218C /* MainPage.swift */; };
-		04649BB62C103E46009FA1BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04649BB52C103E46009FA1BC /* GoogleService-Info.plist */; };
 		04649BBF2C107540009FA1BC /* WatchHeartLink Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04649BBE2C107540009FA1BC /* WatchHeartLink Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04649BC42C107540009FA1BC /* WatchHeartLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04649BC32C107540009FA1BC /* WatchHeartLinkApp.swift */; };
 		04649BC62C107540009FA1BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04649BC52C107540009FA1BC /* ContentView.swift */; };
@@ -41,7 +49,6 @@
 		04C6EAA32C08399800858C29 /* FeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAA22C08399800858C29 /* FeedVM.swift */; };
 		04C6EAA52C083A2000858C29 /* CreateFeedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAA42C083A2000858C29 /* CreateFeedPage.swift */; };
 		04C6EAA72C083A3E00858C29 /* FeedsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAA62C083A3E00858C29 /* FeedsPage.swift */; };
-		04C6EAA92C089A4900858C29 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAA82C089A4900858C29 /* ImagePicker.swift */; };
 		04C6EAAB2C08C1D300858C29 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAAA2C08C1D300858C29 /* FirebaseManager.swift */; };
 		04DD14D62C107F8100E7D3DF /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DD14D52C107F8100E7D3DF /* WatchConnectivity.framework */; };
 		04DD5DCA2C0E395D00E3A398 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DD5DC92C0E395D00E3A398 /* WidgetKit.framework */; };
@@ -53,7 +60,6 @@
 		04DD5DDE2C0EB81900E3A398 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04DD5DDD2C0EB81900E3A398 /* FirebaseAuth */; };
 		04DD5DE02C0EB82000E3A398 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04DD5DDF2C0EB82000E3A398 /* FirebaseFirestore */; };
 		04DD5DE22C0EB82500E3A398 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04DD5DE12C0EB82500E3A398 /* FirebaseStorage */; };
-		04DD5DE42C0ED9B400E3A398 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DD5DE32C0ED9B400E3A398 /* GoogleService-Info.plist */; };
 		04DD5DEE2C0F63B800E3A398 /* MacHeartLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5DED2C0F63B800E3A398 /* MacHeartLinkApp.swift */; };
 		04DD5DF02C0F63B800E3A398 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5DEF2C0F63B800E3A398 /* ContentView.swift */; };
 		04DD5DF22C0F63BA00E3A398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DD5DF12C0F63BA00E3A398 /* Assets.xcassets */; };
@@ -108,6 +114,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0407A6AB2C10CEEE00F6823C /* RequestPartnerPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPartnerPage.swift; sourceTree = "<group>"; };
+		0407A6AC2C10CEEE00F6823C /* ConnectPartnerPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectPartnerPage.swift; sourceTree = "<group>"; };
+		0407A6AD2C10CEEE00F6823C /* CoupleStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoupleStatusView.swift; sourceTree = "<group>"; };
+		0407A6B12C10CEFD00F6823C /* ConnectPartnerPageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectPartnerPageVM.swift; sourceTree = "<group>"; };
+		0407A6B22C10CEFD00F6823C /* RequestPartnerPageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPartnerPageVM.swift; sourceTree = "<group>"; };
+		0407A6B52C10CF0B00F6823C /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0407A6BB2C10CF5300F6823C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MacHeartlink/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		0407A6BD2C10CF6700F6823C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WatchHeartlink Watch App/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		0407A6BF2C10CF7400F6823C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		042633042C09848300B2D495 /* LandingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
 		042633062C09849A00B2D495 /* LandingPageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageVM.swift; sourceTree = "<group>"; };
 		044376792C005BC500BA8C04 /* MainPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageVM.swift; sourceTree = "<group>"; };
@@ -125,7 +140,6 @@
 		04527CCD2BF5DC6E00E8218C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		04527CCF2BF61E3900E8218C /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		04527CD12BF622BD00E8218C /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
-		04649BB52C103E46009FA1BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04649BB92C107540009FA1BC /* WatchHeartLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchHeartLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04649BBE2C107540009FA1BC /* WatchHeartLink Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchHeartLink Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04649BC32C107540009FA1BC /* WatchHeartLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHeartLinkApp.swift; sourceTree = "<group>"; };
@@ -140,7 +154,6 @@
 		04C6EAA22C08399800858C29 /* FeedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVM.swift; sourceTree = "<group>"; };
 		04C6EAA42C083A2000858C29 /* CreateFeedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFeedPage.swift; sourceTree = "<group>"; };
 		04C6EAA62C083A3E00858C29 /* FeedsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsPage.swift; sourceTree = "<group>"; };
-		04C6EAA82C089A4900858C29 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		04C6EAAA2C08C1D300858C29 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		04DD14D52C107F8100E7D3DF /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		04DD5DC82C0E395D00E3A398 /* WidgetHeartLinkExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetHeartLinkExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +164,6 @@
 		04DD5DD22C0E395E00E3A398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DD5DD42C0E395E00E3A398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DD5DDC2C0E39B400E3A398 /* WidgetHeartLinkExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetHeartLinkExtension.entitlements; sourceTree = "<group>"; };
-		04DD5DE32C0ED9B400E3A398 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04DD5DEB2C0F63B800E3A398 /* MacHeartLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacHeartLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DD5DED2C0F63B800E3A398 /* MacHeartLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacHeartLinkApp.swift; sourceTree = "<group>"; };
 		04DD5DEF2C0F63B800E3A398 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -246,6 +258,7 @@
 				04527CCD2BF5DC6E00E8218C /* RootView.swift */,
 				04527CBC2BF5D5AC00E8218C /* AuthenticationManager.swift */,
 				04C6EAAA2C08C1D300858C29 /* FirebaseManager.swift */,
+				0407A6B52C10CF0B00F6823C /* ImagePicker.swift */,
 				04527CCB2BF5D83900E8218C /* GoogleService-Info.plist */,
 				04527CAF2BF5D45500E8218C /* Assets.xcassets */,
 				04527CB12BF5D45500E8218C /* Preview Content */,
@@ -271,6 +284,9 @@
 				04C681502BF8FF1C006D3576 /* Settings.swift */,
 				04C6EAA42C083A2000858C29 /* CreateFeedPage.swift */,
 				04C6EAA62C083A3E00858C29 /* FeedsPage.swift */,
+				0407A6AC2C10CEEE00F6823C /* ConnectPartnerPage.swift */,
+				0407A6AD2C10CEEE00F6823C /* CoupleStatusView.swift */,
+				0407A6AB2C10CEEE00F6823C /* RequestPartnerPage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,8 +299,9 @@
 				04527CCF2BF61E3900E8218C /* LoginVM.swift */,
 				044376792C005BC500BA8C04 /* MainPageVM.swift */,
 				04C6EAA22C08399800858C29 /* FeedVM.swift */,
-				04C6EAA82C089A4900858C29 /* ImagePicker.swift */,
 				04C06C262C0CC48C00F754D4 /* CreateFeedVM.swift */,
+				0407A6B12C10CEFD00F6823C /* ConnectPartnerPageVM.swift */,
+				0407A6B22C10CEFD00F6823C /* RequestPartnerPageVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -292,6 +309,7 @@
 		04649BC22C107540009FA1BC /* WatchHeartLink Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				0407A6BD2C10CF6700F6823C /* GoogleService-Info.plist */,
 				04649BD32C10756D009FA1BC /* Feeds Feature */,
 				04649BC32C107540009FA1BC /* WatchHeartLinkApp.swift */,
 				04649BC52C107540009FA1BC /* ContentView.swift */,
@@ -331,7 +349,7 @@
 		04DD5DCD2C0E395D00E3A398 /* WidgetHeartLink */ = {
 			isa = PBXGroup;
 			children = (
-				04DD5DE32C0ED9B400E3A398 /* GoogleService-Info.plist */,
+				0407A6BF2C10CF7400F6823C /* GoogleService-Info.plist */,
 				04DD5DCE2C0E395D00E3A398 /* WidgetHeartLinkBundle.swift */,
 				04DD5DD02C0E395D00E3A398 /* WidgetHeartLink.swift */,
 				04DD5DD22C0E395E00E3A398 /* Assets.xcassets */,
@@ -343,7 +361,7 @@
 		04DD5DEC2C0F63B800E3A398 /* MacHeartLink */ = {
 			isa = PBXGroup;
 			children = (
-				04649BB52C103E46009FA1BC /* GoogleService-Info.plist */,
+				0407A6BB2C10CF5300F6823C /* GoogleService-Info.plist */,
 				04DD5DFA2C1014D400E3A398 /* Feeds Feature */,
 				04DD5DED2C0F63B800E3A398 /* MacHeartLinkApp.swift */,
 				04DD5DEF2C0F63B800E3A398 /* ContentView.swift */,
@@ -557,7 +575,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04649BCB2C107541009FA1BC /* Preview Assets.xcassets in Resources */,
+				0407A6C02C10CF7400F6823C /* GoogleService-Info.plist in Resources */,
 				04649BC82C107541009FA1BC /* Assets.xcassets in Resources */,
+				0407A6BE2C10CF6700F6823C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +586,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DD5DD32C0E395E00E3A398 /* Assets.xcassets in Resources */,
-				04DD5DE42C0ED9B400E3A398 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,7 +595,7 @@
 			files = (
 				04DD5DF52C0F63BA00E3A398 /* Preview Assets.xcassets in Resources */,
 				04DD5DF22C0F63BA00E3A398 /* Assets.xcassets in Resources */,
-				04649BB62C103E46009FA1BC /* GoogleService-Info.plist in Resources */,
+				0407A6BC2C10CF5300F6823C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,12 +608,15 @@
 			files = (
 				04527CBD2BF5D5AC00E8218C /* AuthenticationManager.swift in Sources */,
 				0443767A2C005BC500BA8C04 /* MainPageVM.swift in Sources */,
-				04C6EAA92C089A4900858C29 /* ImagePicker.swift in Sources */,
+				0407A6AF2C10CEEE00F6823C /* ConnectPartnerPage.swift in Sources */,
 				04C6EAA52C083A2000858C29 /* CreateFeedPage.swift in Sources */,
 				04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */,
+				0407A6B02C10CEEE00F6823C /* CoupleStatusView.swift in Sources */,
 				042633072C09849A00B2D495 /* LandingPageVM.swift in Sources */,
 				04527CD22BF622BD00E8218C /* MainPage.swift in Sources */,
 				04527CC42BF5D62F00E8218C /* SignUpPage.swift in Sources */,
+				0407A6B42C10CEFE00F6823C /* RequestPartnerPageVM.swift in Sources */,
+				0407A6B32C10CEFE00F6823C /* ConnectPartnerPageVM.swift in Sources */,
 				042633052C09848400B2D495 /* LandingPage.swift in Sources */,
 				04C6EAA72C083A3E00858C29 /* FeedsPage.swift in Sources */,
 				04C681512BF8FF1C006D3576 /* Settings.swift in Sources */,
@@ -604,6 +626,8 @@
 				04527CD02BF61E3900E8218C /* LoginVM.swift in Sources */,
 				04527CCE2BF5DC6E00E8218C /* RootView.swift in Sources */,
 				04C6EAA32C08399800858C29 /* FeedVM.swift in Sources */,
+				0407A6AE2C10CEEE00F6823C /* RequestPartnerPage.swift in Sources */,
+				0407A6B62C10CF0B00F6823C /* ImagePicker.swift in Sources */,
 				04527CCA2BF5D67F00E8218C /* SignUpVM.swift in Sources */,
 				04527CAC2BF5D45400E8218C /* ALP_MADApp.swift in Sources */,
 			);
