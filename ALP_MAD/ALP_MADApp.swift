@@ -18,8 +18,14 @@ struct ALP_MADApp: App {
     
     var body: some Scene {
         WindowGroup {
+<<<<<<< HEAD
+//            ContentView()
+//            CreateFeedPage()
+            FeedsPage()
+=======
             ContentView()
                 .environmentObject(EventStore(preview: true))
+>>>>>>> main
         }
     }
 }

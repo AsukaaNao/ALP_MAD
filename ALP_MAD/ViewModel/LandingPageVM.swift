@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseStorage
 import Firebase
+import FirebaseFirestore
 
 class LandingPageVM: ObservableObject {
     
@@ -27,7 +28,7 @@ class LandingPageVM: ObservableObject {
         }
     }
     
-    private func getCurrentUserUID() -> String? {
+   func getCurrentUserUID() -> String? {
         do {
             return try AuthenticationManager.shared.getAuthenticatedUser().uid
         } catch {
@@ -36,10 +37,11 @@ class LandingPageVM: ObservableObject {
         }
     }
     
-    private func fetchUserData(uid: String) {
+    func fetchUserData(uid: String) {
         // Fetch user data from Firestore
         db.collection("users").document(uid).getDocument { document, error in
             if let document = document, document.exists {
+                print("Getting user data")
                 if let profilePictureURL = document.data()?["profilePicture"] as? String {
                     self.downloadProfilePicture(from: profilePictureURL)
                 }
@@ -121,6 +123,7 @@ class LandingPageVM: ObservableObject {
     func signOut() throws {
         try AuthenticationManager.shared.signOut()
         self.UID = ""
+        
         print("User logged out, UID is now: \(String(describing: self.UID))")
     }
 }

@@ -6,6 +6,9 @@ struct LandingPage: View {
     @State var isPickerShowing = false
     @State private var navigateToConnectPartnerPage = false
     @Binding var showSignInView: Bool
+    @Environment(\.dismiss) var dismiss
+    
+    @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
     var body: some View {
         NavigationStack {
@@ -81,6 +84,19 @@ struct LandingPage: View {
                 
                 Spacer()
             }
+            .onAppear() {
+                if let uid = viewModel.getCurrentUserUID() {
+                    viewModel.fetchUserData(uid: uid)
+                }
+            }
+<<<<<<< HEAD
+            .padding(.horizontal, 20)
+            .padding(.bottom, 20)
+        }
+        .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
+            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, sourceType: sourceType)
+//            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+=======
             .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
                 ImagePicker(selectedImage: $viewModel.profilePicture, isPickerShowing: $isPickerShowing)
             }
@@ -93,6 +109,7 @@ struct LandingPage: View {
                     do {
                         try viewModel.signOut()
                         showSignInView = true
+                        dismiss()
                     } catch {
                         print(error.localizedDescription)
                     }
@@ -101,11 +118,13 @@ struct LandingPage: View {
                 Image(systemName: "rectangle.portrait.and.arrow.right")
                     .foregroundColor(.purple)
             })
+>>>>>>> christian
         }
         .navigationBarHidden(false)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    LandingPage(showSignInView: .constant(false))
+    LandingPage(showSignInView: .constant(true))
 }

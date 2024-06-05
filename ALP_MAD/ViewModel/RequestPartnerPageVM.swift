@@ -19,7 +19,7 @@ class RequestPartnerPageVM: ObservableObject {
                 self.isLoading = false
                 return
             }
-            
+//            print(querySnapshot?.documents ?? "Busi")
             if let documents = querySnapshot?.documents, let document = documents.first {
                 do {
                     self.foundUser = try document.data(as: User1.self)
@@ -35,6 +35,7 @@ class RequestPartnerPageVM: ObservableObject {
     }
     
     func sendRequest(to user: User1) {
+        print("user : \(user)")
         guard let userID = user.id else { return }
         guard let currentUser = Auth.auth().currentUser else { return }
         

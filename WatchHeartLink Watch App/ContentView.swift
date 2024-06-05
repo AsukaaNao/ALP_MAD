@@ -1,8 +1,9 @@
 //
 //  ContentView.swift
-//  WatchHeartlink Watch App
+//  WatchHeartLink Watch App
 //
-//  Created by Shelfinna on 01/06/24.
+//  Created by MacBook Pro on 05/06/24.
+//  Copyright © 2024 test. All rights reserved.
 //
 
 import SwiftUI

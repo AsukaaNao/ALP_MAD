@@ -1,5 +1,6 @@
 import Foundation
 import MapKit
+import Firebase
 import FirebaseFirestore
 
 final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
@@ -92,10 +93,15 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
         try AuthenticationManager.shared.signOut()
         self.UID = ""
         self.hasCoupleId = false
+        self.couple_id = ""
         print("User logged out, UID is now: \(String(describing: self.UID))")
     }
     
     func fetchCoupleId(for userId: String) {
+        guard !userId.isEmpty else {
+            print("userId is empty")
+            return
+        }
         db.collection("users").document(userId).getDocument { [weak self] document, error in
             guard let self = self else { return }
             if let document = document, document.exists {
@@ -113,6 +119,10 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
     }
     
     func fetchUserUIDs() {
+        guard self.UID != "" else {
+            print("user not logged in")
+            return
+        }
         db.collection("users").document(self.UID!).getDocument { [weak self] document, error in
             guard let self = self else { return }
             if let document = document, document.exists {
@@ -127,6 +137,11 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
             }
         }
         print("coupleID : \(self.couple_id)")
+        
+        guard couple_id != "" else {
+            return
+        }
+        
         db.collection("couples").document(self.couple_id).getDocument { [weak self] document, error in
             guard let self = self else { return }
             if let error = error {
