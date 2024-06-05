@@ -1,6 +1,6 @@
 //
 //  FeedVM.swift
-//  ALP_MAD
+//  MacHeartLink
 //
 //  Created by MacBook Pro on 30/05/24.
 //  Copyright © 2024 test. All rights reserved.
@@ -11,7 +11,6 @@ import FirebaseAuth
 import FirebaseFirestore
 import Firebase
 import Photos
-import UIKit
 import FirebaseStorage
 
 struct Feed: Identifiable {

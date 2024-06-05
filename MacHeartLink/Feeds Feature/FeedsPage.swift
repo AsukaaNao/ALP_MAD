@@ -1,11 +1,12 @@
 //
-//  FeedsPage.swift
-//  ALP_MAD
+//  FeedsView.swift
+//  MacHeartLink
 //
-//  Created by MacBook Pro on 30/05/24.
+//  Created by MacBook Pro on 05/06/24.
 //  Copyright © 2024 test. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
 
 struct FeedsPage: View {
@@ -18,24 +19,6 @@ struct FeedsPage: View {
                 
                 Spacer()
                     .frame(height: 32)
-                
-                Button(action: {
-                    isPresentingCreateFeedPage = true
-                }) {
-                    Text("Create New Feed")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 290)
-                        .background(Color.purple)
-                        .cornerRadius(20)
-                        .padding()
-                }
-                .sheet(isPresented: $isPresentingCreateFeedPage, onDismiss: {
-                    feedVM.fetchFeeds()
-                }) {
-                    CreateFeedPage(isPresented: $isPresentingCreateFeedPage)
-                }
                 
                 VStack(spacing: 20) {
                     if feedVM.feeds.isEmpty {
@@ -67,7 +50,6 @@ struct FeedRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             if !feed.image.isEmpty, let url = URL(string: feed.image) {
-                Text(feed.image)
                 AsyncImage(url: url) { phase in
                     if let image = phase.image {
                         image
@@ -97,9 +79,6 @@ struct FeedRow: View {
                             )
                     }
                 }
-//                Text("Image ndak null")
-            } else {
-//                Text("Image empty")
             }
             
             Text(feed.date, style: .relative)
@@ -172,6 +151,8 @@ struct FeedRow: View {
     }
 }
 
-#Preview {
-    FeedsPage()
+struct FeedsPage_Previews: PreviewProvider {
+    static var previews: some View {
+        FeedsPage()
+    }
 }

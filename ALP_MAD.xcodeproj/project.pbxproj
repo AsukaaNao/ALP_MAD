@@ -22,6 +22,17 @@
 		04527CCE2BF5DC6E00E8218C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CCD2BF5DC6E00E8218C /* RootView.swift */; };
 		04527CD02BF61E3900E8218C /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CCF2BF61E3900E8218C /* LoginVM.swift */; };
 		04527CD22BF622BD00E8218C /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CD12BF622BD00E8218C /* MainPage.swift */; };
+		04649BB62C103E46009FA1BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04649BB52C103E46009FA1BC /* GoogleService-Info.plist */; };
+		04649BBF2C107540009FA1BC /* WatchHeartLink Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04649BBE2C107540009FA1BC /* WatchHeartLink Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04649BC42C107540009FA1BC /* WatchHeartLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04649BC32C107540009FA1BC /* WatchHeartLinkApp.swift */; };
+		04649BC62C107540009FA1BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04649BC52C107540009FA1BC /* ContentView.swift */; };
+		04649BC82C107541009FA1BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04649BC72C107541009FA1BC /* Assets.xcassets */; };
+		04649BCB2C107541009FA1BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04649BCA2C107541009FA1BC /* Preview Assets.xcassets */; };
+		04649BD52C10757E009FA1BC /* FeedsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04649BD42C10757E009FA1BC /* FeedsPage.swift */; };
+		04649BD72C107609009FA1BC /* FeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04649BD62C107609009FA1BC /* FeedVM.swift */; };
+		04649BDF2C1077C1009FA1BC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04649BDE2C1077C1009FA1BC /* FirebaseAuth */; };
+		04649BE12C1077C1009FA1BC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04649BE02C1077C1009FA1BC /* FirebaseFirestore */; };
+		04649BE32C1077C1009FA1BC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04649BE22C1077C1009FA1BC /* FirebaseStorage */; };
 		0468FB822C0998150031ABDF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0468FB812C0998150031ABDF /* FirebaseAuth */; };
 		0468FB842C0998150031ABDF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0468FB832C0998150031ABDF /* FirebaseFirestore */; };
 		0468FB862C0998150031ABDF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0468FB852C0998150031ABDF /* FirebaseStorage */; };
@@ -32,7 +43,69 @@
 		04C6EAA72C083A3E00858C29 /* FeedsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAA62C083A3E00858C29 /* FeedsPage.swift */; };
 		04C6EAA92C089A4900858C29 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAA82C089A4900858C29 /* ImagePicker.swift */; };
 		04C6EAAB2C08C1D300858C29 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6EAAA2C08C1D300858C29 /* FirebaseManager.swift */; };
+		04DD14D62C107F8100E7D3DF /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DD14D52C107F8100E7D3DF /* WatchConnectivity.framework */; };
+		04DD5DCA2C0E395D00E3A398 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DD5DC92C0E395D00E3A398 /* WidgetKit.framework */; };
+		04DD5DCC2C0E395D00E3A398 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DD5DCB2C0E395D00E3A398 /* SwiftUI.framework */; };
+		04DD5DCF2C0E395D00E3A398 /* WidgetHeartLinkBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5DCE2C0E395D00E3A398 /* WidgetHeartLinkBundle.swift */; };
+		04DD5DD12C0E395D00E3A398 /* WidgetHeartLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5DD02C0E395D00E3A398 /* WidgetHeartLink.swift */; };
+		04DD5DD32C0E395E00E3A398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DD5DD22C0E395E00E3A398 /* Assets.xcassets */; };
+		04DD5DD72C0E395E00E3A398 /* WidgetHeartLinkExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 04DD5DC82C0E395D00E3A398 /* WidgetHeartLinkExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04DD5DDE2C0EB81900E3A398 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04DD5DDD2C0EB81900E3A398 /* FirebaseAuth */; };
+		04DD5DE02C0EB82000E3A398 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04DD5DDF2C0EB82000E3A398 /* FirebaseFirestore */; };
+		04DD5DE22C0EB82500E3A398 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04DD5DE12C0EB82500E3A398 /* FirebaseStorage */; };
+		04DD5DE42C0ED9B400E3A398 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04DD5DE32C0ED9B400E3A398 /* GoogleService-Info.plist */; };
+		04DD5DEE2C0F63B800E3A398 /* MacHeartLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5DED2C0F63B800E3A398 /* MacHeartLinkApp.swift */; };
+		04DD5DF02C0F63B800E3A398 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5DEF2C0F63B800E3A398 /* ContentView.swift */; };
+		04DD5DF22C0F63BA00E3A398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DD5DF12C0F63BA00E3A398 /* Assets.xcassets */; };
+		04DD5DF52C0F63BA00E3A398 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DD5DF42C0F63BA00E3A398 /* Preview Assets.xcassets */; };
+		04DD5DFE2C10361500E3A398 /* FeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5DFD2C10361500E3A398 /* FeedVM.swift */; };
+		04DD5E002C10363A00E3A398 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04DD5DFF2C10363A00E3A398 /* FirebaseAuth */; };
+		04DD5E022C10363F00E3A398 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04DD5E012C10363F00E3A398 /* FirebaseFirestore */; };
+		04DD5E042C10364500E3A398 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04DD5E032C10364500E3A398 /* FirebaseStorage */; };
+		04DD5E082C10384A00E3A398 /* FeedsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5E072C10384A00E3A398 /* FeedsPage.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04649BC02C107540009FA1BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04527CA02BF5D45400E8218C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04649BBD2C107540009FA1BC;
+			remoteInfo = "WatchHeartLink Watch App";
+		};
+		04DD5DD52C0E395E00E3A398 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04527CA02BF5D45400E8218C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04DD5DC72C0E395D00E3A398;
+			remoteInfo = WidgetHeartLinkExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04649BCF2C107541009FA1BC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				04649BBF2C107540009FA1BC /* WatchHeartLink Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DD5DDB2C0E395F00E3A398 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04DD5DD72C0E395E00E3A398 /* WidgetHeartLinkExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		042633042C09848300B2D495 /* LandingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
@@ -52,6 +125,15 @@
 		04527CCD2BF5DC6E00E8218C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		04527CCF2BF61E3900E8218C /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		04527CD12BF622BD00E8218C /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		04649BB52C103E46009FA1BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04649BB92C107540009FA1BC /* WatchHeartLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchHeartLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04649BBE2C107540009FA1BC /* WatchHeartLink Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchHeartLink Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04649BC32C107540009FA1BC /* WatchHeartLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHeartLinkApp.swift; sourceTree = "<group>"; };
+		04649BC52C107540009FA1BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04649BC72C107541009FA1BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04649BCA2C107541009FA1BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04649BD42C10757E009FA1BC /* FeedsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsPage.swift; sourceTree = "<group>"; };
+		04649BD62C107609009FA1BC /* FeedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVM.swift; sourceTree = "<group>"; };
 		04C06C262C0CC48C00F754D4 /* CreateFeedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFeedVM.swift; sourceTree = "<group>"; };
 		04C681502BF8FF1C006D3576 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		04C681522BF9114B006D3576 /* ALP-MAD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ALP-MAD-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -60,6 +142,24 @@
 		04C6EAA62C083A3E00858C29 /* FeedsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsPage.swift; sourceTree = "<group>"; };
 		04C6EAA82C089A4900858C29 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		04C6EAAA2C08C1D300858C29 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		04DD14D52C107F8100E7D3DF /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		04DD5DC82C0E395D00E3A398 /* WidgetHeartLinkExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetHeartLinkExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DD5DC92C0E395D00E3A398 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		04DD5DCB2C0E395D00E3A398 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		04DD5DCE2C0E395D00E3A398 /* WidgetHeartLinkBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHeartLinkBundle.swift; sourceTree = "<group>"; };
+		04DD5DD02C0E395D00E3A398 /* WidgetHeartLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHeartLink.swift; sourceTree = "<group>"; };
+		04DD5DD22C0E395E00E3A398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04DD5DD42C0E395E00E3A398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DD5DDC2C0E39B400E3A398 /* WidgetHeartLinkExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetHeartLinkExtension.entitlements; sourceTree = "<group>"; };
+		04DD5DE32C0ED9B400E3A398 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04DD5DEB2C0F63B800E3A398 /* MacHeartLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacHeartLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DD5DED2C0F63B800E3A398 /* MacHeartLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacHeartLinkApp.swift; sourceTree = "<group>"; };
+		04DD5DEF2C0F63B800E3A398 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04DD5DF12C0F63BA00E3A398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04DD5DF42C0F63BA00E3A398 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04DD5DF62C0F63BA00E3A398 /* MacHeartLink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacHeartLink.entitlements; sourceTree = "<group>"; };
+		04DD5DFD2C10361500E3A398 /* FeedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVM.swift; sourceTree = "<group>"; };
+		04DD5E072C10384A00E3A398 /* FeedsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +168,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				0468FB822C0998150031ABDF /* FirebaseAuth in Frameworks */,
+				04DD14D62C107F8100E7D3DF /* WatchConnectivity.framework in Frameworks */,
 				0468FB842C0998150031ABDF /* FirebaseFirestore in Frameworks */,
 				0468FB862C0998150031ABDF /* FirebaseStorage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04649BBB2C107540009FA1BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04649BDF2C1077C1009FA1BC /* FirebaseAuth in Frameworks */,
+				04649BE12C1077C1009FA1BC /* FirebaseFirestore in Frameworks */,
+				04649BE32C1077C1009FA1BC /* FirebaseStorage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DD5DC52C0E395D00E3A398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DD5DCC2C0E395D00E3A398 /* SwiftUI.framework in Frameworks */,
+				04DD5DE02C0EB82000E3A398 /* FirebaseFirestore in Frameworks */,
+				04DD5DDE2C0EB81900E3A398 /* FirebaseAuth in Frameworks */,
+				04DD5DE22C0EB82500E3A398 /* FirebaseStorage in Frameworks */,
+				04DD5DCA2C0E395D00E3A398 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DD5DE82C0F63B800E3A398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DD5E002C10363A00E3A398 /* FirebaseAuth in Frameworks */,
+				04DD5E022C10363F00E3A398 /* FirebaseFirestore in Frameworks */,
+				04DD5E042C10364500E3A398 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +212,11 @@
 		04527C9F2BF5D45400E8218C = {
 			isa = PBXGroup;
 			children = (
+				04DD5DDC2C0E39B400E3A398 /* WidgetHeartLinkExtension.entitlements */,
 				04527CAA2BF5D45400E8218C /* ALP_MAD */,
+				04DD5DCD2C0E395D00E3A398 /* WidgetHeartLink */,
+				04DD5DEC2C0F63B800E3A398 /* MacHeartLink */,
+				04649BC22C107540009FA1BC /* WatchHeartLink Watch App */,
 				04527CA92BF5D45400E8218C /* Products */,
 				04C2F1052C08E2AE00A56802 /* Frameworks */,
 			);
@@ -89,6 +226,10 @@
 			isa = PBXGroup;
 			children = (
 				04527CA82BF5D45400E8218C /* HeartLink.app */,
+				04DD5DC82C0E395D00E3A398 /* WidgetHeartLinkExtension.appex */,
+				04DD5DEB2C0F63B800E3A398 /* MacHeartLink.app */,
+				04649BB92C107540009FA1BC /* WatchHeartLink.app */,
+				04649BBE2C107540009FA1BC /* WatchHeartLink Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,11 +289,86 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		04649BC22C107540009FA1BC /* WatchHeartLink Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				04649BD32C10756D009FA1BC /* Feeds Feature */,
+				04649BC32C107540009FA1BC /* WatchHeartLinkApp.swift */,
+				04649BC52C107540009FA1BC /* ContentView.swift */,
+				04649BC72C107541009FA1BC /* Assets.xcassets */,
+				04649BC92C107541009FA1BC /* Preview Content */,
+			);
+			path = "WatchHeartLink Watch App";
+			sourceTree = "<group>";
+		};
+		04649BC92C107541009FA1BC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				04649BCA2C107541009FA1BC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04649BD32C10756D009FA1BC /* Feeds Feature */ = {
+			isa = PBXGroup;
+			children = (
+				04649BD42C10757E009FA1BC /* FeedsPage.swift */,
+				04649BD62C107609009FA1BC /* FeedVM.swift */,
+			);
+			path = "Feeds Feature";
+			sourceTree = "<group>";
+		};
 		04C2F1052C08E2AE00A56802 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04DD14D52C107F8100E7D3DF /* WatchConnectivity.framework */,
+				04DD5DC92C0E395D00E3A398 /* WidgetKit.framework */,
+				04DD5DCB2C0E395D00E3A398 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04DD5DCD2C0E395D00E3A398 /* WidgetHeartLink */ = {
+			isa = PBXGroup;
+			children = (
+				04DD5DE32C0ED9B400E3A398 /* GoogleService-Info.plist */,
+				04DD5DCE2C0E395D00E3A398 /* WidgetHeartLinkBundle.swift */,
+				04DD5DD02C0E395D00E3A398 /* WidgetHeartLink.swift */,
+				04DD5DD22C0E395E00E3A398 /* Assets.xcassets */,
+				04DD5DD42C0E395E00E3A398 /* Info.plist */,
+			);
+			path = WidgetHeartLink;
+			sourceTree = "<group>";
+		};
+		04DD5DEC2C0F63B800E3A398 /* MacHeartLink */ = {
+			isa = PBXGroup;
+			children = (
+				04649BB52C103E46009FA1BC /* GoogleService-Info.plist */,
+				04DD5DFA2C1014D400E3A398 /* Feeds Feature */,
+				04DD5DED2C0F63B800E3A398 /* MacHeartLinkApp.swift */,
+				04DD5DEF2C0F63B800E3A398 /* ContentView.swift */,
+				04DD5DF12C0F63BA00E3A398 /* Assets.xcassets */,
+				04DD5DF62C0F63BA00E3A398 /* MacHeartLink.entitlements */,
+				04DD5DF32C0F63BA00E3A398 /* Preview Content */,
+			);
+			path = MacHeartLink;
+			sourceTree = "<group>";
+		};
+		04DD5DF32C0F63BA00E3A398 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				04DD5DF42C0F63BA00E3A398 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04DD5DFA2C1014D400E3A398 /* Feeds Feature */ = {
+			isa = PBXGroup;
+			children = (
+				04DD5E072C10384A00E3A398 /* FeedsPage.swift */,
+				04DD5DFD2C10361500E3A398 /* FeedVM.swift */,
+			);
+			path = "Feeds Feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +381,12 @@
 				04527CA42BF5D45400E8218C /* Sources */,
 				04527CA52BF5D45400E8218C /* Frameworks */,
 				04527CA62BF5D45400E8218C /* Resources */,
+				04DD5DDB2C0E395F00E3A398 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				04DD5DD62C0E395E00E3A398 /* PBXTargetDependency */,
 			);
 			name = ALP_MAD;
 			packageProductDependencies = (
@@ -180,6 +398,89 @@
 			productReference = 04527CA82BF5D45400E8218C /* HeartLink.app */;
 			productType = "com.apple.product-type.application";
 		};
+		04649BB82C107540009FA1BC /* WatchHeartLink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04649BD02C107541009FA1BC /* Build configuration list for PBXNativeTarget "WatchHeartLink" */;
+			buildPhases = (
+				04649BB72C107540009FA1BC /* Resources */,
+				04649BCF2C107541009FA1BC /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04649BC12C107540009FA1BC /* PBXTargetDependency */,
+			);
+			name = WatchHeartLink;
+			productName = WatchHeartLink;
+			productReference = 04649BB92C107540009FA1BC /* WatchHeartLink.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		04649BBD2C107540009FA1BC /* WatchHeartLink Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04649BCC2C107541009FA1BC /* Build configuration list for PBXNativeTarget "WatchHeartLink Watch App" */;
+			buildPhases = (
+				04649BBA2C107540009FA1BC /* Sources */,
+				04649BBB2C107540009FA1BC /* Frameworks */,
+				04649BBC2C107540009FA1BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchHeartLink Watch App";
+			packageProductDependencies = (
+				04649BDE2C1077C1009FA1BC /* FirebaseAuth */,
+				04649BE02C1077C1009FA1BC /* FirebaseFirestore */,
+				04649BE22C1077C1009FA1BC /* FirebaseStorage */,
+			);
+			productName = "WatchHeartLink Watch App";
+			productReference = 04649BBE2C107540009FA1BC /* WatchHeartLink Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04DD5DC72C0E395D00E3A398 /* WidgetHeartLinkExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DD5DD82C0E395F00E3A398 /* Build configuration list for PBXNativeTarget "WidgetHeartLinkExtension" */;
+			buildPhases = (
+				04DD5DC42C0E395D00E3A398 /* Sources */,
+				04DD5DC52C0E395D00E3A398 /* Frameworks */,
+				04DD5DC62C0E395D00E3A398 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetHeartLinkExtension;
+			packageProductDependencies = (
+				04DD5DDD2C0EB81900E3A398 /* FirebaseAuth */,
+				04DD5DDF2C0EB82000E3A398 /* FirebaseFirestore */,
+				04DD5DE12C0EB82500E3A398 /* FirebaseStorage */,
+			);
+			productName = WidgetHeartLinkExtension;
+			productReference = 04DD5DC82C0E395D00E3A398 /* WidgetHeartLinkExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		04DD5DEA2C0F63B800E3A398 /* MacHeartLink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DD5DF72C0F63BA00E3A398 /* Build configuration list for PBXNativeTarget "MacHeartLink" */;
+			buildPhases = (
+				04DD5DE72C0F63B800E3A398 /* Sources */,
+				04DD5DE82C0F63B800E3A398 /* Frameworks */,
+				04DD5DE92C0F63B800E3A398 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacHeartLink;
+			packageProductDependencies = (
+				04DD5DFF2C10363A00E3A398 /* FirebaseAuth */,
+				04DD5E012C10363F00E3A398 /* FirebaseFirestore */,
+				04DD5E032C10364500E3A398 /* FirebaseStorage */,
+			);
+			productName = MacHeartLink;
+			productReference = 04DD5DEB2C0F63B800E3A398 /* MacHeartLink.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -187,12 +488,24 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = test;
 				TargetAttributes = {
 					04527CA72BF5D45400E8218C = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					04649BB82C107540009FA1BC = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					04649BBD2C107540009FA1BC = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					04DD5DC72C0E395D00E3A398 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					04DD5DEA2C0F63B800E3A398 = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -213,6 +526,10 @@
 			projectRoot = "";
 			targets = (
 				04527CA72BF5D45400E8218C /* ALP_MAD */,
+				04DD5DC72C0E395D00E3A398 /* WidgetHeartLinkExtension */,
+				04DD5DEA2C0F63B800E3A398 /* MacHeartLink */,
+				04649BB82C107540009FA1BC /* WatchHeartLink */,
+				04649BBD2C107540009FA1BC /* WatchHeartLink Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -225,6 +542,41 @@
 				04527CB32BF5D45500E8218C /* Preview Assets.xcassets in Resources */,
 				04527CCC2BF5D83900E8218C /* GoogleService-Info.plist in Resources */,
 				04527CB02BF5D45500E8218C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04649BB72C107540009FA1BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04649BBC2C107540009FA1BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04649BCB2C107541009FA1BC /* Preview Assets.xcassets in Resources */,
+				04649BC82C107541009FA1BC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DD5DC62C0E395D00E3A398 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DD5DD32C0E395E00E3A398 /* Assets.xcassets in Resources */,
+				04DD5DE42C0ED9B400E3A398 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DD5DE92C0F63B800E3A398 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DD5DF52C0F63BA00E3A398 /* Preview Assets.xcassets in Resources */,
+				04DD5DF22C0F63BA00E3A398 /* Assets.xcassets in Resources */,
+				04649BB62C103E46009FA1BC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +609,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04649BBA2C107540009FA1BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04649BD52C10757E009FA1BC /* FeedsPage.swift in Sources */,
+				04649BC62C107540009FA1BC /* ContentView.swift in Sources */,
+				04649BD72C107609009FA1BC /* FeedVM.swift in Sources */,
+				04649BC42C107540009FA1BC /* WatchHeartLinkApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DD5DC42C0E395D00E3A398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DD5DD12C0E395D00E3A398 /* WidgetHeartLink.swift in Sources */,
+				04DD5DCF2C0E395D00E3A398 /* WidgetHeartLinkBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DD5DE72C0F63B800E3A398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DD5E082C10384A00E3A398 /* FeedsPage.swift in Sources */,
+				04DD5DF02C0F63B800E3A398 /* ContentView.swift in Sources */,
+				04DD5DEE2C0F63B800E3A398 /* MacHeartLinkApp.swift in Sources */,
+				04DD5DFE2C10361500E3A398 /* FeedVM.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04649BC12C107540009FA1BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04649BBD2C107540009FA1BC /* WatchHeartLink Watch App */;
+			targetProxy = 04649BC02C107540009FA1BC /* PBXContainerItemProxy */;
+		};
+		04DD5DD62C0E395E00E3A398 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04DD5DC72C0E395D00E3A398 /* WidgetHeartLinkExtension */;
+			targetProxy = 04DD5DD52C0E395E00E3A398 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		04527CB42BF5D45500E8218C /* Debug */ = {
@@ -382,6 +778,7 @@
 		04527CB72BF5D45500E8218C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ALP_MAD/ALP_MAD.entitlements;
@@ -419,6 +816,7 @@
 		04527CB82BF5D45500E8218C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ALP_MAD/ALP_MAD.entitlements;
@@ -453,6 +851,212 @@
 			};
 			name = Release;
 		};
+		04649BCD2C107541009FA1BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchHeartLink Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 88Q5WAW34B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchHeartLink;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MAD.WatchHeartLink.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		04649BCE2C107541009FA1BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchHeartLink Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 88Q5WAW34B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchHeartLink;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MAD.WatchHeartLink.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		04649BD12C107541009FA1BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88Q5WAW34B;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchHeartLink;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MAD.WatchHeartLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		04649BD22C107541009FA1BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88Q5WAW34B;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchHeartLink;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MAD.WatchHeartLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		04DD5DD92C0E395F00E3A398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetHeartLinkExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88Q5WAW34B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetHeartLink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetHeartLink;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 test. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HeartLink.ALP-MAD.WidgetHeartLink";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04DD5DDA2C0E395F00E3A398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetHeartLinkExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88Q5WAW34B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetHeartLink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetHeartLink;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 test. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HeartLink.ALP-MAD.WidgetHeartLink";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04DD5DF82C0F63BA00E3A398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacHeartLink/MacHeartLink.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacHeartLink/Preview Content\"";
+				DEVELOPMENT_TEAM = 88Q5WAW34B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 test. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HeartLink.ALP-MAD.MacHeartLink";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		04DD5DF92C0F63BA00E3A398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacHeartLink/MacHeartLink.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacHeartLink/Preview Content\"";
+				DEVELOPMENT_TEAM = 88Q5WAW34B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 test. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HeartLink.ALP-MAD.MacHeartLink";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -474,6 +1078,42 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		04649BCC2C107541009FA1BC /* Build configuration list for PBXNativeTarget "WatchHeartLink Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04649BCD2C107541009FA1BC /* Debug */,
+				04649BCE2C107541009FA1BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04649BD02C107541009FA1BC /* Build configuration list for PBXNativeTarget "WatchHeartLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04649BD12C107541009FA1BC /* Debug */,
+				04649BD22C107541009FA1BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DD5DD82C0E395F00E3A398 /* Build configuration list for PBXNativeTarget "WidgetHeartLinkExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DD5DD92C0E395F00E3A398 /* Debug */,
+				04DD5DDA2C0E395F00E3A398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DD5DF72C0F63BA00E3A398 /* Build configuration list for PBXNativeTarget "MacHeartLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DD5DF82C0F63BA00E3A398 /* Debug */,
+				04DD5DF92C0F63BA00E3A398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -488,6 +1128,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		04649BDE2C1077C1009FA1BC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		04649BE02C1077C1009FA1BC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		04649BE22C1077C1009FA1BC /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		0468FB812C0998150031ABDF /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -499,6 +1154,36 @@
 			productName = FirebaseFirestore;
 		};
 		0468FB852C0998150031ABDF /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		04DD5DDD2C0EB81900E3A398 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		04DD5DDF2C0EB82000E3A398 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		04DD5DE12C0EB82500E3A398 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		04DD5DFF2C10363A00E3A398 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		04DD5E012C10363F00E3A398 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		04DD5E032C10364500E3A398 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 045F18982C09618100C080C2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;

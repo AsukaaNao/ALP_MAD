@@ -83,6 +83,7 @@ class CreateFeedVM: ObservableObject {
                             if let error = error {
                                 print("Error adding document: \(error)")
                             } else {
+                                self.saveLatestFeed(feed: feedData)
                                 print("Successfully created feed in couples")
                                 completion()
                             }
@@ -110,6 +111,17 @@ class CreateFeedVM: ObservableObject {
         
         return UserForCreateFeed(user_name: user_name, user_picture: user_picture)
     }
+    
+    private func saveLatestFeed(feed: [String: Any]) {
+            if let userDefaults = UserDefaults(suiteName: "group.com.WidgetHeartLink") {
+                userDefaults.set(feed["caption"] as? String ?? "", forKey: "caption")
+                
+                if let imageUrl = feed["image"] as? String {
+                    userDefaults.set(imageUrl, forKey: "imageURL")
+                }
+            }
+        }
+    
 }
 
 
