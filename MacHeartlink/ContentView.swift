@@ -1,21 +1,25 @@
 //
 //  ContentView.swift
-//  MacHeartlink
+//  MacHeartLink
 //
-//  Created by Shelfinna on 30/05/24.
+//  Created by MacBook Pro on 04/06/24.
+//  Copyright © 2024 test. All rights reserved.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        EventsCalendarViewMac()
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
         }
+        .padding()
+    }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environmentObject(EventStore(preview: true))
-    }
+#Preview {
+    ContentView()
 }
