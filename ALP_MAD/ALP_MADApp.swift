@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct ALP_MADApp: App {
+    @StateObject var myEvents = EventStore(preview: true)
     
     init() {
         FirebaseApp.configure()
@@ -17,9 +18,14 @@ struct ALP_MADApp: App {
     
     var body: some Scene {
         WindowGroup {
+<<<<<<< HEAD
 //            ContentView()
 //            CreateFeedPage()
             FeedsPage()
+=======
+            ContentView()
+                .environmentObject(EventStore(preview: true))
+>>>>>>> main
         }
     }
 }
