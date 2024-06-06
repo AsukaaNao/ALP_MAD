@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EventsCalendarView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @EnvironmentObject var eventStore: EventStore
     @State private var dateSelected: DateComponents?
     @State private var displayEvents = false
@@ -19,7 +20,6 @@ struct EventsCalendarView: View {
             VStack {
                 ScrollView {
                     VStack {
-                        
                         CalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture), eventStore: eventStore, dateSelected: $dateSelected, displayEvents: $displayEvents)
                     }
                     
@@ -30,6 +30,8 @@ struct EventsCalendarView: View {
                         .font(.system(size: 23))
                         .fontWeight(.semibold)
                         .padding(10)
+                        .padding(.horizontal, horizontalSizeClass == .regular ? 40 : 0)
+                        .padding(.vertical, horizontalSizeClass == .regular ? 20 : 0)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Spacer()
@@ -52,7 +54,7 @@ struct EventsCalendarView: View {
                             Divider()
                                 .padding(.horizontal)
                         }
-                    }
+                    }.padding(.horizontal, horizontalSizeClass == .regular ? 40 : 0)
                 }
                 .padding(.vertical)
             }
