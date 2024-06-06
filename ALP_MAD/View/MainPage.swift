@@ -16,18 +16,18 @@ struct UserAnnotationView: View {
         VStack(spacing: 4) {
             ZStack {
                 // Pin shape
-//                Path { path in
-//                    let width: CGFloat = 50
-//                    let height: CGFloat = 70
-//                    let tailHeight: CGFloat = 20
-//                    
-//                    path.move(to: CGPoint(x: width / 2, y: 0))
-//                    path.addArc(center: CGPoint(x: width / 2, y: width / 2), radius: width / 2, startAngle: .degrees(0), endAngle: .degrees(180), clockwise: true)
-//                    path.addLine(to: CGPoint(x: width / 2 - 10, y: height - tailHeight))
-//                    path.addQuadCurve(to: CGPoint(x: width / 2 + 10, y: height - tailHeight), control: CGPoint(x: width / 2, y: height))
-//                    path.addLine(to: CGPoint(x: width / 2, y: width))
-//                }
-//                .fill(Color.red)
+                //                Path { path in
+                //                    let width: CGFloat = 50
+                //                    let height: CGFloat = 70
+                //                    let tailHeight: CGFloat = 20
+                //
+                //                    path.move(to: CGPoint(x: width / 2, y: 0))
+                //                    path.addArc(center: CGPoint(x: width / 2, y: width / 2), radius: width / 2, startAngle: .degrees(0), endAngle: .degrees(180), clockwise: true)
+                //                    path.addLine(to: CGPoint(x: width / 2 - 10, y: height - tailHeight))
+                //                    path.addQuadCurve(to: CGPoint(x: width / 2 + 10, y: height - tailHeight), control: CGPoint(x: width / 2, y: height))
+                //                    path.addLine(to: CGPoint(x: width / 2, y: width))
+                //                }
+                //                .fill(Color.red)
                 
                 if let image = profileImage {
                     Image(uiImage: image)
@@ -55,7 +55,7 @@ struct UserAnnotationView: View {
                 .background(Color.black.opacity(0.75))
                 .clipShape(Capsule())
                 .shadow(radius: 2)
-                .offset(y: -5)
+                .offset(y: -20)
         }
     }
 }
@@ -73,7 +73,7 @@ struct MainPage: View {
                     UserAnnotationView(userName: location.userName, profileImage: location.profileImage)
                 }
             }
-            .ignoresSafeArea()
+            .edgesIgnoringSafeArea(.top)
             .accentColor(Color(.systemPink))
             .onAppear {
                 viewModel.checkIfLocationServiceIsEnabled()
@@ -102,19 +102,14 @@ struct MainPage: View {
                 .foregroundColor(.white)
                 .cornerRadius(8)
                 
-                ForEach(viewModel.coupleUsers.keys.sorted(), id: \.self) { userId in
-                    if let userName = viewModel.coupleUsers[userId] {
-                        UserInfoView(userName: userName, userLocation: "Unknown Location") // Replace with actual location if available
-                            .background(Color.white)
-                            .cornerRadius(15)
-                            .shadow(radius: 10)
-                            .padding()
-                    }
-                }
+                UserInfoView(userName: "Giselle", userLocation: "Unknown Location") // Replace with actual location if available
+                    .background(Color.white)
+                    .cornerRadius(15)
+                    .shadow(radius: 10)
+                    .padding()
             }
             .padding()
         }
-        .ignoresSafeArea()
         .alert(isPresented: $viewModel.showAlert) {
             Alert(
                 title: Text("Location Permission"),
@@ -128,6 +123,7 @@ struct MainPage: View {
             )
         }
         .navigationBarHidden(false)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

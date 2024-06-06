@@ -106,6 +106,7 @@ struct ConnectPartnerPage: View {
             .navigationDestination(isPresented: $navigateToMainPage) { // Navigation to MainPage
                 MainPage(showSignInView: .constant(false))
             }
+            .navigationBarHidden(false)
         }
     }
 }
