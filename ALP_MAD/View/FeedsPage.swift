@@ -67,7 +67,6 @@ struct FeedRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             if !feed.image.isEmpty, let url = URL(string: feed.image) {
-                Text(feed.image)
                 AsyncImage(url: url) { phase in
                     if let image = phase.image {
                         image
@@ -118,7 +117,7 @@ struct FeedRow: View {
                                 .clipShape(Circle())
                                 .overlay(
                                     Circle()
-                                        .stroke(Color.purple, lineWidth: 1)
+                                        .stroke(Color.purple, lineWidth: 2)
                                 )
                         } else if phase.error != nil {
                             Color.gray
@@ -165,7 +164,7 @@ struct FeedRow: View {
         .frame(width: 290)
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.purple, lineWidth: 2)
+                .stroke(Color.purple, lineWidth: 3)
         )
         .background(Color.clear)
         .cornerRadius(20)

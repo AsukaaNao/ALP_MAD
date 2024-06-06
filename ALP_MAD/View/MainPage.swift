@@ -35,14 +35,14 @@ struct UserAnnotationView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 46, height: 46)
                         .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                        .overlay(Circle().stroke(Color.purple, lineWidth: 2))
                         .shadow(radius: 3)
                         .offset(y: -23)
                 } else {
                     Circle()
                         .fill(Color.gray)
                         .frame(width: 46, height: 46)
-                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                        .overlay(Circle().stroke(Color.purple, lineWidth: 2))
                         .shadow(radius: 3)
                         .offset(y: -23)
                 }
@@ -52,7 +52,7 @@ struct UserAnnotationView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .padding(6)
-                .background(Color.black.opacity(0.75))
+                .background(Color.purple.opacity(0.75))
                 .clipShape(Capsule())
                 .shadow(radius: 2)
                 .offset(y: -20)
@@ -83,30 +83,41 @@ struct MainPage: View {
                 viewModel.stopUpdatingLocation()
                 viewModel.stopFetchingLocations()
             }
-            VStack {
+            VStack(alignment: .trailing) {
                 Spacer()
                 
-                Button("Log Out") {
-                    Task {
-                        do {
-                            try viewModel.signOut()
-                            showSignInView = true
-                            dismiss()
-                        } catch {
-                            print(error.localizedDescription)
+                Menu {
+                    Button("Log Out") {
+                        Task {
+                            do {
+                                try viewModel.signOut()
+                                showSignInView = true
+                                dismiss()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
                         }
                     }
+                } label: {
+                    Image(systemName: "gear")
+                        .foregroundColor(.purple)
+                        .imageScale(.large)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .shadow(color: Color.purple.opacity(0.5) ,radius: 5)
                 }
-                .frame(width: UIScreen.main.bounds.width * 0.25, height: 44)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(8)
+                .padding(.trailing)
                 
-                UserInfoView(userName: "Giselle", userLocation: "Unknown Location") // Replace with actual location if available
-                    .background(Color.white)
-                    .cornerRadius(15)
-                    .shadow(radius: 10)
-                    .padding()
+                UserInfoView(
+                    userName: viewModel.partner.name,
+                    userLocation: viewModel.partner.location.latitude != 0.0 && viewModel.partner.location.longitude != 0.0 ? "\(viewModel.partner.location.latitude), \(viewModel.partner.location.longitude)" : "Unknown Location"
+                )
+                .background(Color.white)
+                .cornerRadius(15)
+                .shadow(color: Color.purple.opacity(0.4), radius: 10)
+                .padding()
+                
             }
             .padding()
         }
@@ -132,11 +143,17 @@ struct UserInfoView: View {
     var userName: String
     var userLocation: String
     
+    @State private var isNudging: Bool = false
+    @State private var showComingSoon = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(userName)
                 .font(.headline)
                 .fontWeight(.bold)
+            
+            Spacer()
+                .frame(height: 10)
             
             Text(userLocation)
                 .font(.caption)
@@ -147,31 +164,51 @@ struct UserInfoView: View {
             
             HStack {
                 Button(action: {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        self.isNudging = true
+                    }
+                    withAnimation(Animation.easeInOut(duration: 0.3).delay(0.5)) {
+                        self.isNudging = false
+                    }
                     // Nudge action
-                    
                 }) {
                     HStack {
-                        Image(systemName: "hand.thumbsup")
+                        Image(systemName: isNudging ? "hand.thumbsup.fill" : "hand.thumbsup")
+                            .rotationEffect(.degrees(isNudging ? -45 : 0))
+                            .foregroundColor(.purple)
                         Text("Nudge")
+                            .foregroundStyle(.purple)
                     }
+                    .scaleEffect(isNudging ? 1.5 : 1.0)
                 }
                 Spacer()
                 Button(action: {
                     // View notifications action
-                    
+                    showComingSoon = true
                 }) {
                     HStack {
                         Image(systemName: "bell")
+                            .foregroundColor(.purple)
                         Text("Notification")
+                            .foregroundStyle(.purple)
                     }
                 }
             }
             .padding()
-            Spacer()
-                .frame(height: 50)
+            //            Spacer()
+            //                .frame(height: 10)
         }
-        .padding()
+        .padding(30)
+        .alert(isPresented: $showComingSoon) {
+            Alert(
+                title: Text("Coming Soon!"),
+                message: Text("This feature is not available yet."),
+                dismissButton: .default(Text("OK"))
+            )
+        }
+        
     }
+    
 }
 
 #Preview {

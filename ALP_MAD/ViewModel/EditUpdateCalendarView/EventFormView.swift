@@ -49,8 +49,15 @@ struct EventFormView: View {
                                         dismiss()
                                     } label: {
                                         Text(viewModel.updating ? "Update Event" : "Add Event")
+                                                    .padding(.horizontal, 20)
+                                                    .padding(.vertical, 10)
+                                                    .background(
+                                                        viewModel.incomplete ? Color.gray : Color.purple
+                                                    )
+                                                    .foregroundColor(viewModel.incomplete ? Color.white : Color.white)
+                                                    .cornerRadius(8)
                                     }
-                                    .buttonStyle(.borderedProminent)
+//                                    .buttonStyle(.borderedProminent)
                                     .disabled(viewModel.incomplete)
                                     Spacer()
                                 }

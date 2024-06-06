@@ -19,7 +19,6 @@ struct EventsCalendarView: View {
             VStack {
                 ScrollView {
                     VStack {
-                        
                         CalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture), eventStore: eventStore, dateSelected: $dateSelected, displayEvents: $displayEvents)
                     }
                     
@@ -31,9 +30,10 @@ struct EventsCalendarView: View {
                         .fontWeight(.semibold)
                         .padding(10)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.purple)
                     
                     Spacer()
-                        .frame(height:20)
+                        .frame(height: 20)
                     
                     ForEach(Array(myEvents.events.sorted { $0.date < $1.date }.enumerated()), id: \.element.id) { index, event in
                         VStack {
@@ -51,6 +51,7 @@ struct EventsCalendarView: View {
                         if index < myEvents.events.count - 1 {
                             Divider()
                                 .padding(.horizontal)
+                                .background(Color.purple)
                         }
                     }
                 }
@@ -61,11 +62,13 @@ struct EventsCalendarView: View {
                     HStack {
                         Text("New")
                             .fontWeight(.medium)
+                            .foregroundColor(.purple)
                         Button {
                             formType = .new
                         } label: {
                             Image(systemName: "plus.circle.fill")
                                 .imageScale(.medium)
+                                .foregroundColor(.purple)
                         }
                     }
                 }

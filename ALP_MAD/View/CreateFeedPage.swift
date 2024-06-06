@@ -61,17 +61,17 @@ struct CreateFeedPage: View {
                             .cornerRadius(10)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.purple, lineWidth: 1)
+                                    .stroke(Color.purple, lineWidth: 2)
                             )
                     } else {
                         ZStack {
                             Rectangle()
-                                .fill(Color.gray)
+                                .fill(Color.purple)
                                 .frame(width: 200, height: 200)
                                 .cornerRadius(10)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.purple, lineWidth: 1)
+                                        .stroke(Color.purple, lineWidth: 2)
                                 )
                             Text("+")
                                 .font(.system(size: 50))

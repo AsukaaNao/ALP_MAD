@@ -75,9 +75,9 @@ struct LandingPage: View {
                     Text("Continue")
                         .foregroundColor(.white)
                         .padding()
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: 290)
                         .background(Color.purple)
-                        .cornerRadius(30)
+                        .cornerRadius(20)
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)

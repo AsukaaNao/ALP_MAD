@@ -33,6 +33,7 @@ struct EventsListView: View {
                     } label: {
                         Image(systemName: "plus.circle.fill")
                             .imageScale(.medium)
+                            .foregroundColor(.purple)
                     }
                 }
             }
