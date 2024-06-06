@@ -7,6 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0407A6D92C11459800F6823C /* ConnectPartnerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6C52C11459700F6823C /* ConnectPartnerPage.swift */; };
+		0407A6DA2C11459800F6823C /* CoupleStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6C62C11459700F6823C /* CoupleStatusView.swift */; };
+		0407A6DB2C11459800F6823C /* CreateFeedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6C72C11459700F6823C /* CreateFeedPage.swift */; };
+		0407A6DC2C11459800F6823C /* FeedsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6C82C11459700F6823C /* FeedsPage.swift */; };
+		0407A6DD2C11459800F6823C /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6C92C11459700F6823C /* LandingPage.swift */; };
+		0407A6DE2C11459800F6823C /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6CA2C11459700F6823C /* LoginPage.swift */; };
+		0407A6DF2C11459800F6823C /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6CB2C11459700F6823C /* MainPage.swift */; };
+		0407A6E02C11459800F6823C /* RequestPartnerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6CC2C11459700F6823C /* RequestPartnerPage.swift */; };
+		0407A6E12C11459800F6823C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6CD2C11459700F6823C /* Settings.swift */; };
+		0407A6E22C11459800F6823C /* SignUpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6CE2C11459700F6823C /* SignUpPage.swift */; };
+		0407A6E32C11459800F6823C /* ConnectPartnerPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6D02C11459700F6823C /* ConnectPartnerPageVM.swift */; };
+		0407A6E42C11459800F6823C /* CreateFeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6D12C11459700F6823C /* CreateFeedVM.swift */; };
+		0407A6E52C11459800F6823C /* FeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6D22C11459700F6823C /* FeedVM.swift */; };
+		0407A6E62C11459800F6823C /* LandingPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6D32C11459700F6823C /* LandingPageVM.swift */; };
+		0407A6E72C11459800F6823C /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6D42C11459700F6823C /* LoginVM.swift */; };
+		0407A6E82C11459800F6823C /* MainPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6D52C11459700F6823C /* MainPageVM.swift */; };
+		0407A6E92C11459800F6823C /* RequestPartnerPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6D62C11459700F6823C /* RequestPartnerPageVM.swift */; };
+		0407A6EA2C11459800F6823C /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6D72C11459700F6823C /* SignUpVM.swift */; };
+		0407A6F02C1145B900F6823C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6EB2C1145B900F6823C /* FirebaseManager.swift */; };
+		0407A6F12C1145B900F6823C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6EC2C1145B900F6823C /* RootView.swift */; };
+		0407A6F22C1145B900F6823C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0407A6ED2C1145B900F6823C /* GoogleService-Info.plist */; };
+		0407A6F32C1145B900F6823C /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6EE2C1145B900F6823C /* AuthenticationManager.swift */; };
+		0407A6F42C1145B900F6823C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6EF2C1145B900F6823C /* ImagePicker.swift */; };
+		0407A6F82C11469000F6823C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0407A6F72C11469000F6823C /* FirebaseAuth */; };
+		0407A6FA2C11469000F6823C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0407A6F92C11469000F6823C /* FirebaseFirestore */; };
+		0407A6FC2C11469000F6823C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0407A6FB2C11469000F6823C /* FirebaseStorage */; };
+		0407A7002C11470600F6823C /* FeedsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6FD2C11470600F6823C /* FeedsPage.swift */; };
+		0407A7012C11470600F6823C /* FeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A6FE2C11470600F6823C /* FeedVM.swift */; };
+		0407A7042C11478E00F6823C /* MacHeartLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A7032C11478E00F6823C /* MacHeartLinkApp.swift */; };
+		0407A7062C11479400F6823C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0407A7052C11479400F6823C /* GoogleService-Info.plist */; };
+		0407A7082C1147C600F6823C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0407A7072C1147C600F6823C /* FirebaseAuth */; };
+		0407A70A2C1147C600F6823C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0407A7092C1147C600F6823C /* FirebaseFirestore */; };
+		0407A70C2C1147C600F6823C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0407A70B2C1147C600F6823C /* FirebaseStorage */; };
+		0407A70F2C1147E900F6823C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0407A70D2C1147E900F6823C /* GoogleService-Info.plist */; };
+		0407A7102C1147E900F6823C /* WatchHeartLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A70E2C1147E900F6823C /* WatchHeartLinkApp.swift */; };
+		0407A7122C1147F100F6823C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A7112C1147F100F6823C /* ListView.swift */; };
+		0407A7162C1147F800F6823C /* FeedsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A7132C1147F800F6823C /* FeedsPage.swift */; };
+		0407A7172C1147F800F6823C /* FeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A7142C1147F800F6823C /* FeedVM.swift */; };
+		0407A7252C1148C200F6823C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0407A7242C1148C200F6823C /* WidgetKit.framework */; };
+		0407A7272C1148C200F6823C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0407A7262C1148C200F6823C /* SwiftUI.framework */; };
+		0407A7322C1148C400F6823C /* WidgetHeartlinkExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0407A7222C1148C200F6823C /* WidgetHeartlinkExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0407A73E2C114A4000F6823C /* WidgetHeartLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A7392C114A3F00F6823C /* WidgetHeartLink.swift */; };
+		0407A73F2C114A4000F6823C /* WidgetHeartLinkBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407A73A2C114A3F00F6823C /* WidgetHeartLinkBundle.swift */; };
+		0407A7412C114A7D00F6823C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0407A7402C114A7D00F6823C /* FirebaseAuth */; };
+		0407A7432C114A7D00F6823C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0407A7422C114A7D00F6823C /* FirebaseFirestore */; };
+		0407A7452C114A7D00F6823C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0407A7442C114A7D00F6823C /* FirebaseStorage */; };
 		04527CAC2BF5D45400E8218C /* ALP_MADApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */; };
 		04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAD2BF5D45400E8218C /* ContentView.swift */; };
 		04527CB02BF5D45500E8218C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04527CAF2BF5D45500E8218C /* Assets.xcassets */; };
@@ -29,7 +75,6 @@
 		0C6F00752C08402A00126EFF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024F22BFC3D5F000FA0FB /* Date+Extension.swift */; };
 		0C6F00772C08402A00126EFF /* ListViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024ED2BFC3CFA000FA0FB /* ListViewRow.swift */; };
 		0C6F00782C08402A00126EFF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024E82BFC3C86000FA0FB /* Event.swift */; };
-		0C6F00792C08402A00126EFF /* ALP_MADApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */; };
 		0C6F007A2C08402A00126EFF /* DaysEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5025032BFC3F86000FA0FB /* DaysEvent.swift */; };
 		0C6F007B2C08407800126EFF /* EventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FB2BFC3E79000FA0FB /* EventFormViewModel.swift */; };
 		0C6F007C2C08407800126EFF /* EventFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024FD2BFC3E9F000FA0FB /* EventFormView.swift */; };
@@ -45,13 +90,19 @@
 		0C6F00A82C0AFE3600126EFF /* WatchHeartlink Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0C6F009B2C0AFE3400126EFF /* WatchHeartlink Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0C6F00AE2C0B002A00126EFF /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00AD2C0B002A00126EFF /* ListView.swift */; };
 		0C6F00AF2C0B003E00126EFF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024F22BFC3D5F000FA0FB /* Date+Extension.swift */; };
-		0C6F00B02C0B005300126EFF /* ALP_MADApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */; };
 		0C6F00B12C0B006900126EFF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024E82BFC3C86000FA0FB /* Event.swift */; };
 		0C6F00B22C0B00C100126EFF /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5024EA2BFC3CA5000FA0FB /* EventStore.swift */; };
 		0C6F00B52C0B028500126EFF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F00B42C0B028500126EFF /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0407A7302C1148C400F6823C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04527CA02BF5D45400E8218C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0407A7212C1148C200F6823C;
+			remoteInfo = WidgetHeartlinkExtension;
+		};
 		0C6F00A62C0AFE3600126EFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04527CA02BF5D45400E8218C /* Project object */;
@@ -62,6 +113,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0407A7362C1148C400F6823C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0407A7322C1148C400F6823C /* WidgetHeartlinkExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C6F00A92C0AFE3600126EFF /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,6 +138,46 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0407A6C52C11459700F6823C /* ConnectPartnerPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectPartnerPage.swift; sourceTree = "<group>"; };
+		0407A6C62C11459700F6823C /* CoupleStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoupleStatusView.swift; sourceTree = "<group>"; };
+		0407A6C72C11459700F6823C /* CreateFeedPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFeedPage.swift; sourceTree = "<group>"; };
+		0407A6C82C11459700F6823C /* FeedsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsPage.swift; sourceTree = "<group>"; };
+		0407A6C92C11459700F6823C /* LandingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
+		0407A6CA2C11459700F6823C /* LoginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		0407A6CB2C11459700F6823C /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		0407A6CC2C11459700F6823C /* RequestPartnerPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPartnerPage.swift; sourceTree = "<group>"; };
+		0407A6CD2C11459700F6823C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0407A6CE2C11459700F6823C /* SignUpPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPage.swift; sourceTree = "<group>"; };
+		0407A6D02C11459700F6823C /* ConnectPartnerPageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectPartnerPageVM.swift; sourceTree = "<group>"; };
+		0407A6D12C11459700F6823C /* CreateFeedVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFeedVM.swift; sourceTree = "<group>"; };
+		0407A6D22C11459700F6823C /* FeedVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVM.swift; sourceTree = "<group>"; };
+		0407A6D32C11459700F6823C /* LandingPageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageVM.swift; sourceTree = "<group>"; };
+		0407A6D42C11459700F6823C /* LoginVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		0407A6D52C11459700F6823C /* MainPageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageVM.swift; sourceTree = "<group>"; };
+		0407A6D62C11459700F6823C /* RequestPartnerPageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPartnerPageVM.swift; sourceTree = "<group>"; };
+		0407A6D72C11459700F6823C /* SignUpVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
+		0407A6EB2C1145B900F6823C /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		0407A6EC2C1145B900F6823C /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		0407A6ED2C1145B900F6823C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0407A6EE2C1145B900F6823C /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		0407A6EF2C1145B900F6823C /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0407A6F52C1145E700F6823C /* ALP_MAD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ALP_MAD.entitlements; sourceTree = "<group>"; };
+		0407A6FD2C11470600F6823C /* FeedsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsPage.swift; sourceTree = "<group>"; };
+		0407A6FE2C11470600F6823C /* FeedVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVM.swift; sourceTree = "<group>"; };
+		0407A7032C11478E00F6823C /* MacHeartLinkApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacHeartLinkApp.swift; sourceTree = "<group>"; };
+		0407A7052C11479400F6823C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0407A70D2C1147E900F6823C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0407A70E2C1147E900F6823C /* WatchHeartLinkApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchHeartLinkApp.swift; sourceTree = "<group>"; };
+		0407A7112C1147F100F6823C /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		0407A7132C1147F800F6823C /* FeedsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsPage.swift; sourceTree = "<group>"; };
+		0407A7142C1147F800F6823C /* FeedVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVM.swift; sourceTree = "<group>"; };
+		0407A7222C1148C200F6823C /* WidgetHeartlinkExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetHeartlinkExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0407A7242C1148C200F6823C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0407A7262C1148C200F6823C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		0407A7372C114A3F00F6823C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0407A7382C114A3F00F6823C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0407A7392C114A3F00F6823C /* WidgetHeartLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetHeartLink.swift; sourceTree = "<group>"; };
+		0407A73A2C114A3F00F6823C /* WidgetHeartLinkBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetHeartLinkBundle.swift; sourceTree = "<group>"; };
 		04527CA82BF5D45400E8218C /* ALP_MAD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALP_MAD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_MADApp.swift; sourceTree = "<group>"; };
 		04527CAD2BF5D45400E8218C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,10 +213,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0407A71F2C1148C200F6823C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0407A7272C1148C200F6823C /* SwiftUI.framework in Frameworks */,
+				0407A7432C114A7D00F6823C /* FirebaseFirestore in Frameworks */,
+				0407A7412C114A7D00F6823C /* FirebaseAuth in Frameworks */,
+				0407A7452C114A7D00F6823C /* FirebaseStorage in Frameworks */,
+				0407A7252C1148C200F6823C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04527CA52BF5D45400E8218C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0407A6F82C11469000F6823C /* FirebaseAuth in Frameworks */,
+				0407A6FA2C11469000F6823C /* FirebaseFirestore in Frameworks */,
+				0407A6FC2C11469000F6823C /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +239,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0407A7082C1147C600F6823C /* FirebaseAuth in Frameworks */,
+				0407A70A2C1147C600F6823C /* FirebaseFirestore in Frameworks */,
+				0407A70C2C1147C600F6823C /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,12 +255,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0407A6CF2C11459700F6823C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C5024EC2BFC3CE7000FA0FB /* CalendarView */,
+				0407A6C52C11459700F6823C /* ConnectPartnerPage.swift */,
+				0407A6C62C11459700F6823C /* CoupleStatusView.swift */,
+				0407A6C72C11459700F6823C /* CreateFeedPage.swift */,
+				0407A6C82C11459700F6823C /* FeedsPage.swift */,
+				0407A6C92C11459700F6823C /* LandingPage.swift */,
+				0407A6CA2C11459700F6823C /* LoginPage.swift */,
+				0407A6CB2C11459700F6823C /* MainPage.swift */,
+				0407A6CC2C11459700F6823C /* RequestPartnerPage.swift */,
+				0407A6CD2C11459700F6823C /* Settings.swift */,
+				0407A6CE2C11459700F6823C /* SignUpPage.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0407A6D82C11459700F6823C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C5024FA2BFC3E4C000FA0FB /* EditUpdateCalendarView */,
+				0407A6D02C11459700F6823C /* ConnectPartnerPageVM.swift */,
+				0407A6D12C11459700F6823C /* CreateFeedVM.swift */,
+				0407A6D22C11459700F6823C /* FeedVM.swift */,
+				0407A6D32C11459700F6823C /* LandingPageVM.swift */,
+				0407A6D42C11459700F6823C /* LoginVM.swift */,
+				0407A6D52C11459700F6823C /* MainPageVM.swift */,
+				0407A6D62C11459700F6823C /* RequestPartnerPageVM.swift */,
+				0407A6D72C11459700F6823C /* SignUpVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0407A6FF2C11470600F6823C /* Feeds Feature */ = {
+			isa = PBXGroup;
+			children = (
+				0407A6FD2C11470600F6823C /* FeedsPage.swift */,
+				0407A6FE2C11470600F6823C /* FeedVM.swift */,
+			);
+			path = "Feeds Feature";
+			sourceTree = "<group>";
+		};
+		0407A7152C1147F800F6823C /* Feeds Feature */ = {
+			isa = PBXGroup;
+			children = (
+				0407A7132C1147F800F6823C /* FeedsPage.swift */,
+				0407A7142C1147F800F6823C /* FeedVM.swift */,
+			);
+			path = "Feeds Feature";
+			sourceTree = "<group>";
+		};
+		0407A7232C1148C200F6823C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0407A7242C1148C200F6823C /* WidgetKit.framework */,
+				0407A7262C1148C200F6823C /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0407A73B2C114A3F00F6823C /* WidgetHeartLink */ = {
+			isa = PBXGroup;
+			children = (
+				0407A7372C114A3F00F6823C /* Assets.xcassets */,
+				0407A7382C114A3F00F6823C /* Info.plist */,
+				0407A7392C114A3F00F6823C /* WidgetHeartLink.swift */,
+				0407A73A2C114A3F00F6823C /* WidgetHeartLinkBundle.swift */,
+			);
+			path = WidgetHeartLink;
+			sourceTree = "<group>";
+		};
 		04527C9F2BF5D45400E8218C = {
 			isa = PBXGroup;
 			children = (
 				04527CAA2BF5D45400E8218C /* ALP_MAD */,
 				0C6F00652C083F6100126EFF /* MacHeartlink */,
 				0C6F009C2C0AFE3400126EFF /* WatchHeartlink Watch App */,
+				0407A73B2C114A3F00F6823C /* WidgetHeartLink */,
+				0407A7232C1148C200F6823C /* Frameworks */,
 				04527CA92BF5D45400E8218C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,6 +345,7 @@
 				04527CA82BF5D45400E8218C /* ALP_MAD.app */,
 				0C6F00642C083F6100126EFF /* MacHeartlink.app */,
 				0C6F009B2C0AFE3400126EFF /* WatchHeartlink Watch App.app */,
+				0407A7222C1148C200F6823C /* WidgetHeartlinkExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,12 +353,18 @@
 		04527CAA2BF5D45400E8218C /* ALP_MAD */ = {
 			isa = PBXGroup;
 			children = (
-				0C5024FA2BFC3E4C000FA0FB /* EditUpdateCalendarView */,
-				0C5024F12BFC3D4C000FA0FB /* Extension */,
-				0C5024EC2BFC3CE7000FA0FB /* CalendarView */,
-				0C5024E72BFC3C65000FA0FB /* Model */,
 				04527CAB2BF5D45400E8218C /* ALP_MADApp.swift */,
 				04527CAD2BF5D45400E8218C /* ContentView.swift */,
+				0407A6F52C1145E700F6823C /* ALP_MAD.entitlements */,
+				0407A6ED2C1145B900F6823C /* GoogleService-Info.plist */,
+				0407A6EC2C1145B900F6823C /* RootView.swift */,
+				0407A6EE2C1145B900F6823C /* AuthenticationManager.swift */,
+				0407A6EB2C1145B900F6823C /* FirebaseManager.swift */,
+				0407A6EF2C1145B900F6823C /* ImagePicker.swift */,
+				0407A6CF2C11459700F6823C /* View */,
+				0407A6D82C11459700F6823C /* ViewModel */,
+				0C5024F12BFC3D4C000FA0FB /* Extension */,
+				0C5024E72BFC3C65000FA0FB /* Model */,
 				04527CAF2BF5D45500E8218C /* Assets.xcassets */,
 				04527CB12BF5D45500E8218C /* Preview Content */,
 			);
@@ -220,8 +421,11 @@
 		0C6F00652C083F6100126EFF /* MacHeartlink */ = {
 			isa = PBXGroup;
 			children = (
-				0C6F00812C08441D00126EFF /* Calendar Feature */,
+				0407A7052C11479400F6823C /* GoogleService-Info.plist */,
+				0407A7032C11478E00F6823C /* MacHeartLinkApp.swift */,
 				0C6F00682C083F6100126EFF /* ContentView.swift */,
+				0407A6FF2C11470600F6823C /* Feeds Feature */,
+				0C6F00812C08441D00126EFF /* Calendar Feature */,
 				0C6F006A2C083F6300126EFF /* Assets.xcassets */,
 				0C6F006F2C083F6300126EFF /* MacHeartlink.entitlements */,
 				0C6F006C2C083F6300126EFF /* Preview Content */,
@@ -252,7 +456,11 @@
 		0C6F009C2C0AFE3400126EFF /* WatchHeartlink Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				0407A70D2C1147E900F6823C /* GoogleService-Info.plist */,
+				0407A70E2C1147E900F6823C /* WatchHeartLinkApp.swift */,
 				0C6F009F2C0AFE3400126EFF /* ContentView.swift */,
+				0407A7112C1147F100F6823C /* ListView.swift */,
+				0407A7152C1147F800F6823C /* Feeds Feature */,
 				0C6F00A12C0AFE3600126EFF /* Assets.xcassets */,
 				0C6F00A32C0AFE3600126EFF /* Preview Content */,
 				0C6F00AD2C0B002A00126EFF /* ListView.swift */,
@@ -272,6 +480,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0407A7212C1148C200F6823C /* WidgetHeartlinkExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0407A7332C1148C400F6823C /* Build configuration list for PBXNativeTarget "WidgetHeartlinkExtension" */;
+			buildPhases = (
+				0407A71E2C1148C200F6823C /* Sources */,
+				0407A71F2C1148C200F6823C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetHeartlinkExtension;
+			packageProductDependencies = (
+				0407A7402C114A7D00F6823C /* FirebaseAuth */,
+				0407A7422C114A7D00F6823C /* FirebaseFirestore */,
+				0407A7442C114A7D00F6823C /* FirebaseStorage */,
+			);
+			productName = WidgetHeartlinkExtension;
+			productReference = 0407A7222C1148C200F6823C /* WidgetHeartlinkExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		04527CA72BF5D45400E8218C /* ALP_MAD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04527CB62BF5D45500E8218C /* Build configuration list for PBXNativeTarget "ALP_MAD" */;
@@ -280,13 +509,20 @@
 				04527CA52BF5D45400E8218C /* Frameworks */,
 				04527CA62BF5D45400E8218C /* Resources */,
 				0C6F00A92C0AFE3600126EFF /* Embed Watch Content */,
+				0407A7362C1148C400F6823C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				0C6F00A72C0AFE3600126EFF /* PBXTargetDependency */,
+				0407A7312C1148C400F6823C /* PBXTargetDependency */,
 			);
 			name = ALP_MAD;
+			packageProductDependencies = (
+				0407A6F72C11469000F6823C /* FirebaseAuth */,
+				0407A6F92C11469000F6823C /* FirebaseFirestore */,
+				0407A6FB2C11469000F6823C /* FirebaseStorage */,
+			);
 			productName = ALP_MAD;
 			productReference = 04527CA82BF5D45400E8218C /* ALP_MAD.app */;
 			productType = "com.apple.product-type.application";
@@ -304,6 +540,11 @@
 			dependencies = (
 			);
 			name = MacHeartlink;
+			packageProductDependencies = (
+				0407A7072C1147C600F6823C /* FirebaseAuth */,
+				0407A7092C1147C600F6823C /* FirebaseFirestore */,
+				0407A70B2C1147C600F6823C /* FirebaseStorage */,
+			);
 			productName = MacHeartlink;
 			productReference = 0C6F00642C083F6100126EFF /* MacHeartlink.app */;
 			productType = "com.apple.product-type.application";
@@ -332,9 +573,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					0407A7212C1148C200F6823C = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					04527CA72BF5D45400E8218C = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -355,6 +599,9 @@
 				Base,
 			);
 			mainGroup = 04527C9F2BF5D45400E8218C;
+			packageReferences = (
+				0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 04527CA92BF5D45400E8218C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,6 +609,7 @@
 				04527CA72BF5D45400E8218C /* ALP_MAD */,
 				0C6F00632C083F6100126EFF /* MacHeartlink */,
 				0C6F009A2C0AFE3400126EFF /* WatchHeartlink Watch App */,
+				0407A7212C1148C200F6823C /* WidgetHeartlinkExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -373,6 +621,7 @@
 			files = (
 				04527CB32BF5D45500E8218C /* Preview Assets.xcassets in Resources */,
 				04527CB02BF5D45500E8218C /* Assets.xcassets in Resources */,
+				0407A6F22C1145B900F6823C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +631,7 @@
 			files = (
 				0C6F006E2C083F6300126EFF /* Preview Assets.xcassets in Resources */,
 				0C6F006B2C083F6300126EFF /* Assets.xcassets in Resources */,
+				0407A7062C11479400F6823C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,29 +641,61 @@
 			files = (
 				0C6F00A52C0AFE3600126EFF /* Preview Assets.xcassets in Resources */,
 				0C6F00A22C0AFE3600126EFF /* Assets.xcassets in Resources */,
+				0407A70F2C1147E900F6823C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0407A71E2C1148C200F6823C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0407A73F2C114A4000F6823C /* WidgetHeartLinkBundle.swift in Sources */,
+				0407A73E2C114A4000F6823C /* WidgetHeartLink.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04527CA42BF5D45400E8218C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0407A6E72C11459800F6823C /* LoginVM.swift in Sources */,
+				0407A6E02C11459800F6823C /* RequestPartnerPage.swift in Sources */,
+				0407A6DE2C11459800F6823C /* LoginPage.swift in Sources */,
 				0C5025022BFC3F3A000FA0FB /* EventsListView.swift in Sources */,
 				04527CAE2BF5D45400E8218C /* ContentView.swift in Sources */,
+				0407A6D92C11459800F6823C /* ConnectPartnerPage.swift in Sources */,
 				0C5024E92BFC3C86000FA0FB /* Event.swift in Sources */,
+				0407A6E22C11459800F6823C /* SignUpPage.swift in Sources */,
+				0407A6DB2C11459800F6823C /* CreateFeedPage.swift in Sources */,
 				0C5025002BFC3EC8000FA0FB /* EventFormType.swift in Sources */,
 				0C5024F52BFC3DAC000FA0FB /* CalendarView.swift in Sources */,
+				0407A6E82C11459800F6823C /* MainPageVM.swift in Sources */,
+				0407A6F02C1145B900F6823C /* FirebaseManager.swift in Sources */,
 				0C5024FE2BFC3E9F000FA0FB /* EventFormView.swift in Sources */,
+				0407A6E32C11459800F6823C /* ConnectPartnerPageVM.swift in Sources */,
+				0407A6DD2C11459800F6823C /* LandingPage.swift in Sources */,
+				0407A6DC2C11459800F6823C /* FeedsPage.swift in Sources */,
+				0407A6F42C1145B900F6823C /* ImagePicker.swift in Sources */,
 				0C5024EB2BFC3CA5000FA0FB /* EventStore.swift in Sources */,
 				0C5024F72BFC3DCB000FA0FB /* EventsCalendarView.swift in Sources */,
+				0407A6E42C11459800F6823C /* CreateFeedVM.swift in Sources */,
+				0407A6E62C11459800F6823C /* LandingPageVM.swift in Sources */,
 				0C5025042BFC3F86000FA0FB /* DaysEvent.swift in Sources */,
+				0407A6E52C11459800F6823C /* FeedVM.swift in Sources */,
+				0407A6EA2C11459800F6823C /* SignUpVM.swift in Sources */,
+				0407A6DA2C11459800F6823C /* CoupleStatusView.swift in Sources */,
+				0407A6DF2C11459800F6823C /* MainPage.swift in Sources */,
 				0C5024F32BFC3D5F000FA0FB /* Date+Extension.swift in Sources */,
+				0407A6F32C1145B900F6823C /* AuthenticationManager.swift in Sources */,
 				04527CAC2BF5D45400E8218C /* ALP_MADApp.swift in Sources */,
 				0C5024EE2BFC3CFA000FA0FB /* ListViewRow.swift in Sources */,
+				0407A6E12C11459800F6823C /* Settings.swift in Sources */,
+				0407A6E92C11459800F6823C /* RequestPartnerPageVM.swift in Sources */,
 				0C5024FC2BFC3E79000FA0FB /* EventFormViewModel.swift in Sources */,
+				0407A6F12C1145B900F6823C /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,17 +706,19 @@
 				0C6F00772C08402A00126EFF /* ListViewRow.swift in Sources */,
 				0C6F00962C09A92E00126EFF /* EventListViewMacToday.swift in Sources */,
 				0C6F007D2C08407800126EFF /* EventFormType.swift in Sources */,
+				0407A7012C11470600F6823C /* FeedVM.swift in Sources */,
 				0C6F008C2C08785200126EFF /* EventsCalendarViewMac.swift in Sources */,
 				0C6F00832C08443B00126EFF /* EventListViewMac.swift in Sources */,
 				0C6F007A2C08402A00126EFF /* DaysEvent.swift in Sources */,
 				0C6F00902C0994A500126EFF /* ListViewRowMac.swift in Sources */,
-				0C6F00792C08402A00126EFF /* ALP_MADApp.swift in Sources */,
+				0407A7042C11478E00F6823C /* MacHeartLinkApp.swift in Sources */,
 				0C6F007C2C08407800126EFF /* EventFormView.swift in Sources */,
 				0C6F00692C083F6100126EFF /* ContentView.swift in Sources */,
 				0C6F00752C08402A00126EFF /* Date+Extension.swift in Sources */,
 				0C6F00782C08402A00126EFF /* Event.swift in Sources */,
 				0C6F00742C08402A00126EFF /* EventStore.swift in Sources */,
 				0C6F008A2C08767D00126EFF /* CalendarViewMac.swift in Sources */,
+				0407A7002C11470600F6823C /* FeedsPage.swift in Sources */,
 				0C6F007B2C08407800126EFF /* EventFormViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,15 +731,23 @@
 				0C6F00B52C0B028500126EFF /* MainView.swift in Sources */,
 				0C6F00A02C0AFE3400126EFF /* ContentView.swift in Sources */,
 				0C6F00B22C0B00C100126EFF /* EventStore.swift in Sources */,
-				0C6F00B02C0B005300126EFF /* ALP_MADApp.swift in Sources */,
+				0407A7162C1147F800F6823C /* FeedsPage.swift in Sources */,
+				0407A7172C1147F800F6823C /* FeedVM.swift in Sources */,
+				0407A7102C1147E900F6823C /* WatchHeartLinkApp.swift in Sources */,
 				0C6F00AF2C0B003E00126EFF /* Date+Extension.swift in Sources */,
 				0C6F00B12C0B006900126EFF /* Event.swift in Sources */,
+				0407A7122C1147F100F6823C /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0407A7312C1148C400F6823C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0407A7212C1148C200F6823C /* WidgetHeartlinkExtension */;
+			targetProxy = 0407A7302C1148C400F6823C /* PBXContainerItemProxy */;
+		};
 		0C6F00A72C0AFE3600126EFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0C6F009A2C0AFE3400126EFF /* WatchHeartlink Watch App */;
@@ -464,6 +756,60 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0407A7342C1148C400F6823C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetHeartlink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetHeartlink;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.ALP-MAD.WidgetHeartlink";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0407A7352C1148C400F6823C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetHeartlink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetHeartlink;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.ALP-MAD.WidgetHeartlink";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		04527CB42BF5D45500E8218C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -758,6 +1104,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0407A7332C1148C400F6823C /* Build configuration list for PBXNativeTarget "WidgetHeartlinkExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0407A7342C1148C400F6823C /* Debug */,
+				0407A7352C1148C400F6823C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04527CA32BF5D45400E8218C /* Build configuration list for PBXProject "ALP_MAD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -795,6 +1150,65 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.27.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0407A6F72C11469000F6823C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		0407A6F92C11469000F6823C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		0407A6FB2C11469000F6823C /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		0407A7072C1147C600F6823C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		0407A7092C1147C600F6823C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		0407A70B2C1147C600F6823C /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		0407A7402C114A7D00F6823C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		0407A7422C114A7D00F6823C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		0407A7442C114A7D00F6823C /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0407A6F62C11469000F6823C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04527CA02BF5D45400E8218C /* Project object */;
 }

@@ -89,16 +89,8 @@ struct LandingPage: View {
                     viewModel.fetchUserData(uid: uid)
                 }
             }
-<<<<<<< HEAD
-            .padding(.horizontal, 20)
-            .padding(.bottom, 20)
-        }
-        .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
-            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, sourceType: sourceType)
-//            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
-=======
             .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
-                ImagePicker(selectedImage: $viewModel.profilePicture, isPickerShowing: $isPickerShowing)
+                ImagePicker(selectedImage: $viewModel.profilePicture, isPickerShowing: $isPickerShowing, sourceType: sourceType)
             }
             .background(Color.white)
             .navigationDestination(isPresented: $navigateToConnectPartnerPage) {
@@ -118,7 +110,6 @@ struct LandingPage: View {
                 Image(systemName: "rectangle.portrait.and.arrow.right")
                     .foregroundColor(.purple)
             })
->>>>>>> christian
         }
         .navigationBarHidden(false)
         .navigationBarBackButtonHidden(true)
