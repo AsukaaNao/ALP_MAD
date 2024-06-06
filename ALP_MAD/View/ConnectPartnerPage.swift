@@ -5,6 +5,7 @@ struct ConnectPartnerPage: View {
     @State private var showTagPopup = false
     @State private var tag = ""
     @State private var navigateToRequestPartner = false
+    @State private var navigateToMainPage = false // State variable for navigating to MainPage
     
     var body: some View {
         NavigationStack {
@@ -73,6 +74,19 @@ struct ConnectPartnerPage: View {
                         .padding(.horizontal, 20)
                         .padding(.bottom, 20)
                 }
+                
+                Button(action: {
+                    navigateToMainPage = true // Trigger navigation to MainPage
+                }) {
+                    Text("Go to Main Page")
+                        .foregroundColor(Color.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(30)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 20)
+                }
             }
             .background(Color.white) // Explicit color
             .alert("Enter Tag", isPresented: $showTagPopup) {
@@ -88,6 +102,9 @@ struct ConnectPartnerPage: View {
             .preferredColorScheme(.light) // Force light mode
             .navigationDestination(isPresented: $navigateToRequestPartner) {
                 RequestPartnerPage(tag: tag)
+            }
+            .navigationDestination(isPresented: $navigateToMainPage) { // Navigation to MainPage
+                MainPage(showSignInView: .constant(false))
             }
         }
     }

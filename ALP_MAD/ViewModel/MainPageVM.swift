@@ -1,31 +1,29 @@
 import Foundation
 import MapKit
-import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
-    
     @Published private(set) var UID: String? = ""  // Private setter to control modification
     @Published var hasCoupleId: Bool = false
-    
-    var locationManager: CLLocationManager?
-    private var updateLocationTimer: Timer?
-    private var fetchLocationsTimer: Timer?
-    private var couple_id = ""
-    
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: -7.28522, longitude: 112.63184),
         span: MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025))
     @Published var showAlert = false
     @Published var alertMessage = ""
     @Published var userLocations: [IdentifiableCoordinate] = []
+    @Published var coupleUsers: [String: String] = [:] // Dictionary to store user IDs and their names
+    
+    var locationManager: CLLocationManager?
+    private var updateLocationTimer: Timer?
+    private var fetchLocationsTimer: Timer?
+    private var couple_id = ""
     
     private var db = Firestore.firestore()
     
     override init() {
         super.init()
         checkIfLocationServiceIsEnabled()
-        
     }
     
     func initializeLocationUpdates() {
@@ -160,11 +158,40 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
                 print("Document does not exist")
             }
             
-            self.fetchUserLocations(userUIDs: userUIDs)
+            print("User UID \(userUIDs)")
+            
+            self.fetchUserDetails(userUIDs: userUIDs)
         }
     }
     
-    func fetchUserLocations(userUIDs: [String]) {
+    func downloadProfilePicture(from path: String, completion: @escaping (UIImage?) -> Void) {
+        let storageRef = Storage.storage().reference(withPath: path)
+        
+        // Create a temporary file URL to store the downloaded data
+        let temporaryFileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString)
+        
+        // Download the file in chunks and write to the temporary file
+        let downloadTask = storageRef.write(toFile: temporaryFileURL) { url, error in
+            if let error = error {
+                print("Error downloading profile picture: \(error.localizedDescription)")
+                completion(nil)
+            } else {
+                if let url = url {
+                    do {
+                        // Read the data from the temporary file
+                        let data = try Data(contentsOf: url)
+                        let image = UIImage(data: data)
+                        completion(image)
+                    } catch {
+                        print("Error creating UIImage from downloaded data: \(error.localizedDescription)")
+                        completion(nil)
+                    }
+                }
+            }
+        }
+    }
+
+    func fetchUserDetails(userUIDs: [String]) {
         db.collection("users").whereField(FieldPath.documentID(), in: userUIDs).getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -172,16 +199,27 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
             }
             
             var locations: [IdentifiableCoordinate] = []
+            var userDict: [String: String] = [:]
             
             for document in querySnapshot!.documents {
                 let data = document.data()
-                if let geoPoint = data["location"] as? GeoPoint {
+                if let geoPoint = data["location"] as? GeoPoint,
+                   let userName = data["name"] as? String, // Ensure you have the user's name
+                   let profilePicturePath = data["profilePicture"] as? String { // Ensure you have the profile picture path
                     let coordinate = CLLocationCoordinate2D(latitude: geoPoint.latitude, longitude: geoPoint.longitude)
-                    let identifiableCoordinate = IdentifiableCoordinate(coordinate: coordinate)
-                    locations.append(identifiableCoordinate)
+                    var identifiableCoordinate = IdentifiableCoordinate(coordinate: coordinate, userName: userName)
+                    
+                    self.downloadProfilePicture(from: profilePicturePath) { image in
+                        DispatchQueue.main.async {
+                            identifiableCoordinate.profileImage = image
+                            userDict[document.documentID] = userName
+                            self.userLocations.append(identifiableCoordinate)
+                        }
+                    }
                 }
             }
             
+            self.coupleUsers = userDict
             self.userLocations = locations
         }
     }
@@ -231,7 +269,7 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
         
         let geoPoint = GeoPoint(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         
-        db.collection("users").document("2t05MsX8uRQxbjUmRzUFsUaJrhp1").updateData([
+        db.collection("users").document(uid).updateData([
             "location": geoPoint
         ]) { error in
             if let error = error {
@@ -241,7 +279,6 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
             }
         }
     }
-    
     
     deinit {
         stopUpdatingLocation()

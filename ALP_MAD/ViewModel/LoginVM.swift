@@ -77,6 +77,15 @@ class LoginVM: ObservableObject {
         }
     }
     
+//    func updateDisplayName(for user: User, with appleIDCredential: ASAuthorizationAppleIDCredential, force: Bool = false) {
+//        if let currentDisplayName = Auth.auth().currentUser?.displayName, !currentDisplayName.isEmpty {
+//
+//        } else {
+//            let changeRequest = user.createProfileChangeRequest()
+//            changeRequest.displayName = appleIDCredential.displayName()
+//
+//        }
+//    }
     
     func signIn(completion: @escaping (Bool) -> Void){
         guard !email.isEmpty, !password.isEmpty else {
@@ -104,41 +113,38 @@ class LoginVM: ObservableObject {
         request.nonce = sha256(nonce)
     }
     
-    //    func handleSignInWithAppleCompletion(_ result: Result<ASAuthorization, Error>) {
-    //        if case .failure(let failure) = result {
-    //            errorMessage = failure.localizedDescription
-    //        } else if case .success(let success) = result {
-    //            guard let appleIDCredential = success.credential as? ASAuthorizationAppleIDCredential else {
-    //                print("Unable to retrieve AppleIDCredential")
-    //                return
-    //            }
-    //
-    //            guard let nonce = currentNonce else {
-    //                fatalError("Invalid state: A login callback was received, but no login request was sent.")
-    //            }
-    //
-    //            guard let appleIDToken = appleIDCredential.identityToken else {
-    //                print("Unable to fetch identity token")
-    //                return
-    //            }
-    //
-    //            guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-    //                print("Unable to serialize identity token string from data: \(appleIDToken.debugDescription)")
-    //                return
-    //            }
-    //
-    //            let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-    //
-    //            Task {
-    //                do {
-    //                    let authResult = try await Auth.auth().signIn(with: credential)
+    func handleSignInWithAppleCompletion(_ result: Result<ASAuthorization, Error>) {
+        if case .failure(let failure) = result {
+            errorMessage = failure.localizedDescription
+        } else if case .success(let success) = result {
+            if let appleIDCredential = success.credential as? ASAuthorizationAppleIDCredential {
+                guard let nonce = currentNonce else {
+                    fatalError("Invalid state: A login callback was received, but no login request was sent.")
+                }
+                
+                guard let appleIDToken = appleIDCredential.identityToken else {
+                    print("Unable to fetch identity token")
+                    return
+                }
+                
+                guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+                    print("Unable to serialize identity token string from data: \(appleIDToken.debugDescription)")
+                    return
+                }
+                
+                let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
+                Task {
+                    do {
+                        let authResult = try await Auth.auth().signIn(with: credential)
     //                    self.user = authResult.user
     //                    self.authenticationState = .authenticated
-    //                } catch {
-    //                    self.errorMessage = error.localizedDescription
+                    } catch {
+                        self.errorMessage = error.localizedDescription
+                        print("Error Authenticating: \(error.localizedDescription)")
     //                    self.authenticationState = .unauthenticated
-    //                }
-    //            }
-    //        }
-    //    }
+                    }
+                }
+            }
+        }
+    }
 }

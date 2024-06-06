@@ -1,4 +1,5 @@
 import SwiftUI
+import AuthenticationServices
 
 struct LoginPage: View {
     @StateObject private var viewModel = LoginVM()
@@ -84,11 +85,15 @@ struct LoginPage: View {
                     .bold()
                     .padding(10)
                 
-                //                 SignInWithAppleButton { request in
-                //                     // Handle request
-                //                 } onCompletion: { result in
-                //                     // Handle result
-                //                 }
+                SignInWithAppleButton { request in
+                    viewModel.handleSignInWithAppleRequest(request)
+                } onCompletion: { result in
+                    viewModel.handleSignInWithAppleCompletion(result)
+                }
+                .signInWithAppleButtonStyle(.black)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 50)
+                .padding(.horizontal, 40)
+                .cornerRadius(10)
                 
                 HStack {
                     Text("Don't have an account?")
@@ -109,13 +114,6 @@ struct LoginPage: View {
             .onAppear() {
                 viewModel.checkCoupleId()
             }
-            //            .navigationDestination(isPresented: $isSignInSuccess) {
-            //                if viewModel.hasCoupleId {
-            //                    MainPage(showSignInView: .constant(true))
-            //                } else {
-            //                    LandingPage(showSignInView: .constant(true))
-            //                }
-            //            }
             .navigationDestination(isPresented: $isSignInSuccess) {
                 CoupleStatusView(viewModel: MainPageViewModel(), showSignInView: $showSignInView)
             }
