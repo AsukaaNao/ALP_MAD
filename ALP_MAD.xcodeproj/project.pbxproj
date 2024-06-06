@@ -114,6 +114,7 @@
 		04527CBA2BF5D58E00E8218C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3FAD12AD2C098A9A00D0E052 /* AlertScreen.swift */,
 				04527CC32BF5D62F00E8218C /* SignUpPage.swift */,
 				04527CC52BF5D63900E8218C /* LoginPage.swift */,
 				04527CD12BF622BD00E8218C /* MainPage.swift */,
@@ -131,7 +132,6 @@
 				044376792C005BC500BA8C04 /* MainPageVM.swift */,
 				043DF4632C084B570016DE54 /* LandingPageVM.swift */,
 				04862A432C08EBD6003078CF /* ImagePicker.swift */,
-				3FAD12AD2C098A9A00D0E052 /* AlertScreen.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
