@@ -47,7 +47,7 @@ struct UserAnnotationView: View {
 }
 
 struct MainPage: View {
-    @StateObject private var viewModel = MainPageVM()
+    @StateObject private var viewModel = MainPageViewModel()
     @Binding var showSignInView: Bool
 
     var body: some View {
@@ -68,21 +68,21 @@ struct MainPage: View {
                 viewModel.stopFetchingLocations()
             }
             VStack {
-                Spacer()
-                Button("Log Out") {
-                    Task {
-                        do {
-                            try viewModel.signOut()
-                            showSignInView = true
-                        } catch {
-                            print(error.localizedDescription)
-                        }
-                    }
-                }
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(8)
-                .padding()
+//                Spacer()
+//                Button("Log Out") {
+//                    Task {
+//                        do {
+//                            try viewModel.signOut()
+//                            showSignInView = true
+//                        } catch {
+//                            print(error.localizedDescription)
+//                        }
+//                    }
+//                }
+//                .background(Color.blue)
+//                .foregroundColor(.white)
+//                .cornerRadius(8)
+//                .padding()
                 
                 UserInfoView(
                     userName: viewModel.partner.name,
@@ -90,6 +90,9 @@ struct MainPage: View {
                 )
             }
             .padding()
+        }
+        .navigationDestination(isPresented: $showSignInView) { // Navigation to MainPage
+            LoginPage(showSignInView: .constant(true))
         }
         .alert(isPresented: $viewModel.showAlert) {
             Alert(

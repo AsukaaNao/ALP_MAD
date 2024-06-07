@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject private var viewModel = MainPageVM()
+    @StateObject private var viewModel = MainPageViewModel()
     @State private var showSignInView: Bool = false
 
     var body: some View {

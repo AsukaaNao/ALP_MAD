@@ -11,7 +11,7 @@ struct UserForMainPage: Identifiable {
     var profilePicture: String = ""
 }
 
-final class MainPageVM: NSObject, ObservableObject, CLLocationManagerDelegate {
+final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published private(set) var UID: String? = ""  // Private setter to control modification
     @Published var hasCoupleId: Bool = false
     @Published var region = MKCoordinateRegion(

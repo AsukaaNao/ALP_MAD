@@ -121,7 +121,7 @@ struct LoginPage: View {
                 viewModel.checkCoupleId()
             }
             .navigationDestination(isPresented: $isSignInSuccess) {
-                CoupleStatusView(viewModel: MainPageVM(), showSignInView: $showSignInView)
+                CoupleStatusView(viewModel: MainPageViewModel(), showSignInView: $showSignInView)
             }
             .navigationDestination(isPresented: $navigateToSignUp) {
                 SignUpPage()
