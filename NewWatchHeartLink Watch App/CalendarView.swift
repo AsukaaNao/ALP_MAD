@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct CalendarView: View {
     @EnvironmentObject var eventStore: EventStore
     @Binding var dateSelected: DateComponents?
     
@@ -28,7 +28,9 @@ struct MainView: View {
                                     }
                                 }
                         }
+                        
                     }
+                    
                 }
             }
             .navigationTitle("Today's Event")
@@ -36,7 +38,7 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct Calendar_Previews: PreviewProvider {
     static var dateComponents: DateComponents {
         var dateComponents = Calendar.current.dateComponents(
             [.month,
@@ -50,7 +52,7 @@ struct MainView_Previews: PreviewProvider {
         return dateComponents
     }
     static var previews: some View {
-        MainView(dateSelected: .constant(dateComponents))
+        CalendarView(dateSelected: .constant(dateComponents))
             .environmentObject(EventStore(preview: true)
             )
     }

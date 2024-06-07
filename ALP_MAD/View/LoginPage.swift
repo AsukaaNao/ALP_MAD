@@ -73,9 +73,9 @@ struct LoginPage: View {
                         .bold()
                         .foregroundColor(.white)
                         .frame(height: 55)
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: .infinity, maxHeight: 50)
                         .background(.purple)
-                        .cornerRadius(10)
+                        .cornerRadius(20)
                         .padding(.horizontal, 40)
                 }
                 .padding(.top, 30)
@@ -85,15 +85,21 @@ struct LoginPage: View {
                     .bold()
                     .padding(10)
                 
-                SignInWithAppleButton { request in
-                    viewModel.handleSignInWithAppleRequest(request)
-                } onCompletion: { result in
-                    viewModel.handleSignInWithAppleCompletion(result)
+                ZStack {
+                    SignInWithAppleButton { request in
+                        viewModel.handleSignInWithAppleRequest(request)
+                    } onCompletion: { result in
+                        viewModel.handleSignInWithAppleCompletion(result)
+                    }
+                    .signInWithAppleButtonStyle(.black)
+                    .frame(maxWidth: .infinity, maxHeight: 50)
+                    .padding(.horizontal, 40)
                 }
-                .signInWithAppleButtonStyle(.black)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 50)
-                .padding(.horizontal, 40)
-                .cornerRadius(10)
+                .frame(maxWidth: 285)
+                .background(Color.black)
+                .cornerRadius(20)
+                .clipped()
+
                 
                 HStack {
                     Text("Don't have an account?")

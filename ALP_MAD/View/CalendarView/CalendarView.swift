@@ -18,10 +18,12 @@ struct CalendarView: UIViewRepresentable {
         view.delegate = context.coordinator
         view.calendar = Calendar(identifier: .gregorian)
         view.availableDateRange = interval
+        view.tintColor = UIColor.purple // Set the arrow color to purple
         let dateSelection = UICalendarSelectionSingleDate(delegate: context.coordinator)
         view.selectionBehavior = dateSelection
         return view
     }
+
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self, eventStore: _eventStore)
     }
@@ -50,12 +52,12 @@ struct CalendarView: UIViewRepresentable {
         func calendarView(_ calendarView: UICalendarView,
                           decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
             let foundEvents = eventStore.events
-                .filter {$0.date.startOfDay == dateComponents.date?.startOfDay}
+                .filter { $0.date.startOfDay == dateComponents.date?.startOfDay }
             if foundEvents.isEmpty { return nil }
 
             if foundEvents.count > 1 {
                 return .image(UIImage(systemName: "doc.on.doc.fill"),
-                              color: .red,
+                              color: .purple, // Use UIColor.purple
                               size: .large)
             }
             let singleEvent = foundEvents.first!
@@ -63,6 +65,7 @@ struct CalendarView: UIViewRepresentable {
                 let icon = UILabel()
                 icon.font = .systemFont(ofSize: 14)
                 icon.text = singleEvent.eventType.icon
+                icon.textColor = .purple // Use UIColor.purple
                 return icon
             }
         }
@@ -72,7 +75,7 @@ struct CalendarView: UIViewRepresentable {
             parent.dateSelected = dateComponents
             guard let dateComponents else { return }
             let foundEvents = eventStore.events
-                .filter {$0.date.startOfDay == dateComponents.date?.startOfDay}
+                .filter { $0.date.startOfDay == dateComponents.date?.startOfDay }
             if !foundEvents.isEmpty {
                 parent.displayEvents.toggle()
             }
@@ -82,8 +85,5 @@ struct CalendarView: UIViewRepresentable {
                            canSelectDate dateComponents: DateComponents?) -> Bool {
             return true
         }
-        
     }
-    
-    
 }

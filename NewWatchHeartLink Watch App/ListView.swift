@@ -18,23 +18,29 @@ struct ListView: View {
                         .font(.system(size: 40))
                     VStack(alignment: .leading){
                         Text(event.note)
-                            .font(.caption)
+//                            .font(.caption)
+                            .font(.system(size: 14))
                         Text(event.date.formatted(.dateTime.hour().minute()))
-                            .font(.footnote)
+//                            .font(.footnote)
+                            .font(.system(size: 12))
                     }
                 }
             }
             Spacer()
         }
-        .padding()
+        .padding(7)
+        .background(Color.purple)
+        .listRowInsets(EdgeInsets())
+        .cornerRadius(10)
+
     }
 }
 
 
 
 struct ListView_Previews: PreviewProvider {
-   static let event = Event(eventType: .date, date: Date(), note: "Let's party")
-   static var previews: some View {
-       ListView(event: event)
-   }
+    static let event = Event(eventType: .date, date: Date(), note: "Let's party")
+    static var previews: some View {
+        ListView(event: event)
+    }
 }

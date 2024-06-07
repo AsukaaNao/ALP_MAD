@@ -30,7 +30,7 @@ struct SignUpPage: View {
                         Text("Username")
                             .foregroundColor(.purple)
                     }
-                    TextField("", text: $viewModel.email)
+                    TextField("", text: $viewModel.username)
                 }
                 .padding()
                 .foregroundColor(.black)
@@ -91,9 +91,9 @@ struct SignUpPage: View {
                         .bold()
                         .foregroundColor(.white)
                         .frame(height: 55)
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: 290)
                         .background(.purple)
-                        .cornerRadius(10)
+                        .cornerRadius(20)
                         .padding(.horizontal, 40)
                 }
                 .padding(.top, 30)

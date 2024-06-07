@@ -17,6 +17,7 @@ import FirebaseStorage
 struct UserForCreateFeed: Codable {
     var user_name: String
     var user_picture: String
+    var couple_id: String
 }
 
 class CreateFeedVM: ObservableObject {
@@ -27,7 +28,7 @@ class CreateFeedVM: ObservableObject {
     @Published var user_name = ""
     @Published var user_picture = ""
     
-    @Published var user = UserForCreateFeed(user_name: "null", user_picture: "null")
+    @Published var user = UserForCreateFeed(user_name: "null", user_picture: "null", couple_id: "null")
     @Published var isPickerShowing = false
     @Published private(set) var UID: String? = ""
     
@@ -42,7 +43,11 @@ class CreateFeedVM: ObservableObject {
         Task {
             do {
                 // Get the authenticated user's UID
-                let uid = "IcHejCmnEybsHdE2oPHkAPISFK52"
+                let uid = "dummy_user_Giselle"
+                guard let uid = Auth.auth().currentUser?.uid else {
+                               print("No authenticated user found")
+                               return
+                           }
                 
                 // Fetch user data
                 if let user = try await fetchUser(uid: uid) {
@@ -78,7 +83,7 @@ class CreateFeedVM: ObservableObject {
                         ]
                         
                         // Specify the couple ID (this should ideally be dynamic or passed as a parameter)
-                        let couple_id = "fer63Q4T9aCtdpXwkxe5"
+                        let couple_id = self.user.couple_id
                         self.db.collection("couples").document(couple_id).collection("feeds").addDocument(data: feedData) { error in
                             if let error = error {
                                 print("Error adding document: \(error)")
@@ -108,8 +113,9 @@ class CreateFeedVM: ObservableObject {
         
         let user_name = data["name"] as? String ?? ""
         let user_picture = data["profilePicture"] as? String ?? ""
+        let couple_id = data["couple_id"] as? String ?? ""
         
-        return UserForCreateFeed(user_name: user_name, user_picture: user_picture)
+        return UserForCreateFeed(user_name: user_name, user_picture: user_picture, couple_id: couple_id)
     }
     
     private func saveLatestFeed(feed: [String: Any]) {

@@ -66,11 +66,12 @@ struct ConnectPartnerPage: View {
                     showTagPopup = true
                 }) {
                     Text("Request Partner")
+                        .fontWeight(.bold)
                         .foregroundColor(Color.white) // Explicit color
                         .padding()
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: 290)
                         .background(Color.purple) // Explicit color
-                        .cornerRadius(30)
+                        .cornerRadius(20)
                         .padding(.horizontal, 20)
                         .padding(.bottom, 20)
                 }
@@ -79,11 +80,12 @@ struct ConnectPartnerPage: View {
                     navigateToMainPage = true // Trigger navigation to MainPage
                 }) {
                     Text("Go to Main Page")
+                        .fontWeight(.bold)
                         .foregroundColor(Color.white)
                         .padding()
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: 290)
                         .background(Color.blue)
-                        .cornerRadius(30)
+                        .cornerRadius(20)
                         .padding(.horizontal, 20)
                         .padding(.bottom, 20)
                 }

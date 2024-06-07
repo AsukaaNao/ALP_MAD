@@ -32,10 +32,22 @@ struct ListViewRow: View {
                 formType = .update(event)
             } label: {
                 Text("Edit")
+                    .foregroundColor(.white)
             }
             
-            .buttonStyle(.bordered)
+            .buttonStyle(PurpleButtonStyle())
         }
+    }
+}
+
+struct PurpleButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
+            .background(Color.purple)
+            .cornerRadius(8)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }
 }
 

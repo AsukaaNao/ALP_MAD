@@ -29,33 +29,56 @@ class FeedVM: ObservableObject {
     let db = Firestore.firestore()
     
     func fetchFeeds() {
-        // perlu diganti document with Auth
-        let uid = "fer63Q4T9aCtdpXwkxe5"
-        db.collection("couples").document(uid).collection("feeds").getDocuments { (snapshot, error) in
+        // Get authenticated user's UID
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("No authenticated user found")
+            return
+        }
+        
+        // Fetch user data to get couple_id
+        db.collection("users").document(uid).getDocument { (document, error) in
             if let error = error {
-                print("Error fetching feeds: \(error)")
+                print("Error fetching user document: \(error)")
                 return
             }
             
-            guard let documents = snapshot?.documents else {
-                print("No feeds found")
+            guard let document = document, document.exists, let data = document.data() else {
+                print("User document does not exist")
                 return
             }
             
-            self.feeds = documents.compactMap { document -> Feed? in
-                let data = document.data()
-                let id = document.documentID
-                let image = data["image"] as? String ?? ""
-                let caption = data["caption"] as? String ?? ""
-                let timestamp = data["date"] as? Timestamp
-                let date = timestamp?.dateValue() ?? Date()
-                let user_name = data["user_name"] as? String ?? ""
-                let user_picture = data["user_picture"] as? String ?? ""
-                return Feed(id: id, image: image, date: date, caption: caption, user_name: user_name, user_picture: user_picture)
+            guard let couple_id = data["couple_id"] as? String else {
+                print("User does not have a couple_id")
+                return
             }
             
-            self.feeds.sort(by: { $0.date > $1.date })
-            self.loadImages()
+            // Fetch feeds using couple_id
+            self.db.collection("couples").document(couple_id).collection("feeds").getDocuments { (snapshot, error) in
+                if let error = error {
+                    print("Error fetching feeds: \(error)")
+                    return
+                }
+                
+                guard let documents = snapshot?.documents else {
+                    print("No feeds found")
+                    return
+                }
+                
+                self.feeds = documents.compactMap { document -> Feed? in
+                    let data = document.data()
+                    let id = document.documentID
+                    let image = data["image"] as? String ?? ""
+                    let caption = data["caption"] as? String ?? ""
+                    let timestamp = data["date"] as? Timestamp
+                    let date = timestamp?.dateValue() ?? Date()
+                    let user_name = data["user_name"] as? String ?? ""
+                    let user_picture = data["user_picture"] as? String ?? ""
+                    return Feed(id: id, image: image, date: date, caption: caption, user_name: user_name, user_picture: user_picture)
+                }
+                
+                self.feeds.sort(by: { $0.date > $1.date })
+                self.loadImages()
+            }
         }
     }
     
@@ -94,6 +117,4 @@ class FeedVM: ObservableObject {
             }
         }
     }
-    
 }
-
