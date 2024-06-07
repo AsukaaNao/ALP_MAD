@@ -14,7 +14,6 @@ import Firebase
 
 struct WidgetHeartLinkEntryView: View {
     var entry: Feed
-    
     var body: some View {
         ZStack {
             if !entry.image.isEmpty, let url = URL(string: entry.image) {
@@ -36,16 +35,22 @@ struct WidgetHeartLinkEntryView: View {
                     }
                 }
             } else {
+                Image("Picnic")
+                    .frame(width: 50, height: 50)
                 Color.blue
                     .frame(width: 200, height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
+            Image("Picnic")
+                .frame(width: 100, height: 100)
+            
             Text(entry.caption)
                 .font(.headline)
                 .padding()
                 .multilineTextAlignment(.center)
         }
         .padding()
+        .containerBackground(for: .widget) { Color.clear }
     }
 }
 
@@ -61,7 +66,9 @@ struct Feed: Identifiable, TimelineEntry {
 struct Provider: TimelineProvider {
     
     init() {
-        FirebaseApp.configure()
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
     }
     
     func placeholder(in context: Context) -> Feed {
@@ -82,9 +89,9 @@ struct Provider: TimelineProvider {
     
     private func fetchLatestFeed(completion: @escaping (Feed) -> ()) {
         let db = Firestore.firestore()
-        let uid = "fer63Q4T9aCtdpXwkxe5"
+        let uid = "dummy_user_Giselle"
         
-        db.collection("couples").document(uid).collection("feeds")
+        db.collection("couples").document("dummy_couple_1").collection("feeds")
             .order(by: "date", descending: true)
             .limit(to: 1)
             .getDocuments { (snapshot, error) in
@@ -113,26 +120,26 @@ struct Provider: TimelineProvider {
                 var feed = Feed(id: id, image: "", date: date, caption: caption, user_name: user_name, user_picture: user_picture)
                 
                 loadImage(imagePath: imagePath) { imageURL in
-                                    feed.image = imageURL
-                                    completion(feed)
-                                }
+                    feed.image = imageURL
+                    completion(feed)
+                }
             }
     }
     
     private func loadImage(imagePath: String, completion: @escaping (String) -> ()) {
-            let storageRef = Storage.storage().reference().child(imagePath)
-            
-            storageRef.downloadURL { url, error in
-                if let error = error {
-                    print("Error fetching image URL: \(error)")
-                    completion("")
-                } else if let url = url {
-                    completion(url.absoluteString)
-                } else {
-                    completion("")
-                }
+        let storageRef = Storage.storage().reference().child(imagePath)
+        
+        storageRef.downloadURL { url, error in
+            if let error = error {
+                print("Error fetching image URL: \(error)")
+                completion("")
+            } else if let url = url {
+                completion(url.absoluteString)
+            } else {
+                completion("")
             }
         }
+    }
 }
 
 struct WidgetHeartLink: Widget {
@@ -140,19 +147,16 @@ struct WidgetHeartLink: Widget {
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                WidgetHeartLinkEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                WidgetHeartLinkEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
+            WidgetHeartLinkEntryView(entry: entry)
         }
         .configurationDisplayName("Latest Feed Widget")
         .description("Shows the latest feed's image and caption.")
     }
 }
 
-
-
+struct WidgetHeartLink_Previews: PreviewProvider {
+    static var previews: some View {
+        WidgetHeartLinkEntryView(entry: Feed(id: "1", image: "Picnic", date: Date(), caption: "Picnic with Ning~", user_name: "Giselle 🐣💕", user_picture: "Giselle"))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+    }
+}
