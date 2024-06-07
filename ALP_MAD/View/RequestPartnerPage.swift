@@ -4,6 +4,8 @@ struct RequestPartnerPage: View {
     @StateObject private var viewModel = RequestPartnerPageVM()
     var tag: String
     
+    @State private var navigateBack = false
+    
     var body: some View {
         VStack {
             Text("Searching partner...")
@@ -63,7 +65,10 @@ struct RequestPartnerPage: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom, 20)
                     .alert(isPresented: $viewModel.requestSent) {
-                        Alert(title: Text("Request Sent"), message: Text("Your request has been sent successfully!"), dismissButton: .default(Text("OK")))
+                        Alert(title: Text("Request Sent"), message: Text("Your request has been sent successfully!"), dismissButton: .default(Text("OK")) {
+                            navigateBack = true
+                        }
+                        )
                     }
                 }
             } else {
@@ -80,6 +85,24 @@ struct RequestPartnerPage: View {
         .padding()
         .background(Color.white)
         .navigationBarTitle("Request Partner", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    navigateBack = true
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .frame(width: 8)
+                        Text("Back")
+                    }
+                }
+            }
+        }
+        .navigationDestination(isPresented: $navigateBack) {
+            ConnectPartnerPage()
+        }
+        
     }
 }
 

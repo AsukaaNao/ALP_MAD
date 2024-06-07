@@ -7,6 +7,7 @@ struct UserRequest: Identifiable {
     let id: String
     let uid: String
     let name: String
+    let tag: String
     var profilePicture: UIImage?
 }
 
@@ -19,6 +20,8 @@ class ConnectPartnerPageVM: ObservableObject {
     
     init() {
         fetchUserRequests()
+//        userRequests.append(UserRequest(id: "", uid: "", name: "Dummy", tag: "LOM4RE", profilePicture: nil))
+
     }
     
     func fetchUserRequests() {
@@ -42,9 +45,10 @@ class ConnectPartnerPageVM: ObservableObject {
                 let id = doc.documentID
                 let uid = data["uid"] as? String ?? "" // Assuming 'uid' field exists in request document
                 let name = data["name"] as? String ?? "Unknown"
+                let tag = data["tag"] as? String ?? ""
                 let profilePicturePath = data["profilePicture"] as? String ?? ""
                 
-                let request = UserRequest(id: id, uid: uid, name: name, profilePicture: nil)
+                let request = UserRequest(id: id, uid: uid, name: name, tag: tag, profilePicture: nil)
                 
                 self.fetchProfilePicture(for: request, path: profilePicturePath)
                 

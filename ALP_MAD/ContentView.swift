@@ -28,7 +28,7 @@ struct ContentView: View {
                 }
                 .background(Color(.systemBackground))
         }
-        .accentColor(.blue) // Customize tab icon and text color
+        .accentColor(.purple) // Customize tab icon and text color
         .background(Color(.systemBackground).edgesIgnoringSafeArea(.all)) // Ensuring full background color
     }
 }

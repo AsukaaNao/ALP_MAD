@@ -34,8 +34,9 @@ class SignUpVM: ObservableObject {
                 let uid = authResult.uid
                 
                 let userData: [String: Any] = [
-                    "username": username,
+                    "name": username,
                     "email": email,
+                    "password": password,
                     "location": GeoPoint(latitude: 0.0, longitude: 0.0), // Dummy location, update as needed
                     "tag": generateTag()
                 ]

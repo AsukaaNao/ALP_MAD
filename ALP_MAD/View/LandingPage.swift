@@ -9,7 +9,8 @@ struct LandingPage: View {
     @Environment(\.dismiss) var dismiss
     
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
-    
+    @State var isConfirmationDialogPresented: Bool = false
+
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
@@ -39,7 +40,7 @@ struct LandingPage: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                                isPickerShowing = true
+                                isConfirmationDialogPresented = true
                             }) {
                                 Image(systemName: "camera.fill")
                                     .foregroundColor(.white)
@@ -47,6 +48,7 @@ struct LandingPage: View {
                                     .background(Color.purple)
                                     .clipShape(Circle())
                                     .shadow(radius: 10)
+                                    .aspectRatio(contentMode: .fit)
                             }
                             .offset(x: -10, y: -10)
                         }
@@ -89,7 +91,17 @@ struct LandingPage: View {
                     viewModel.fetchUserData(uid: uid)
                 }
             }
-            .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
+            .confirmationDialog("Choose an option", isPresented: $isConfirmationDialogPresented) {
+                Button("Camera") {
+                    sourceType = .camera
+                    isPickerShowing = true
+                }
+                Button("Photo Library") {
+                    sourceType = .photoLibrary
+                    isPickerShowing = true
+                }
+            }
+            .sheet(isPresented: $isPickerShowing) {
                 ImagePicker(selectedImage: $viewModel.profilePicture, isPickerShowing: $isPickerShowing, sourceType: sourceType)
             }
             .background(Color.white)

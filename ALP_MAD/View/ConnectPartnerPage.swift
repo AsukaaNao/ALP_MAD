@@ -14,6 +14,12 @@ struct ConnectPartnerPage: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.purple) // Explicit color
+                Text("Connect with your partner through their Tag!")
+                
+                if (viewModel.userRequests.isEmpty) {
+                    Text("there are currently no requests...")
+                        .foregroundStyle(Color.gray)
+                }
                 
                 List(viewModel.userRequests) { request in
                     HStack {
@@ -32,10 +38,14 @@ struct ConnectPartnerPage: View {
                                 .padding(.trailing, 8)
                         }
                         
-                        Text(request.name)
-                            .font(.title3)
-                            .fontWeight(.medium)
-                            .foregroundColor(Color.black) // Explicit color
+                        VStack(alignment: .leading) {
+                            Text(request.name)
+                                .font(.title3)
+                                .fontWeight(.medium)
+                                .foregroundColor(Color.black) // Explicit color
+                            Text("#\(request.tag)")
+                                .font(.caption)
+                        }
                         
                         Spacer()
                         
@@ -56,6 +66,7 @@ struct ConnectPartnerPage: View {
                         }
                     }
                     .padding(.vertical, 4)
+                    .padding(.horizontal, 8)
                 }
                 .listStyle(PlainListStyle())
                 .background(Color.white) // Explicit color
@@ -84,7 +95,7 @@ struct ConnectPartnerPage: View {
                         .foregroundColor(Color.white)
                         .padding()
                         .frame(maxWidth: 290)
-                        .background(Color.blue)
+                        .background(Color.gray)
                         .cornerRadius(20)
                         .padding(.horizontal, 20)
                         .padding(.bottom, 20)
@@ -106,10 +117,13 @@ struct ConnectPartnerPage: View {
                 RequestPartnerPage(tag: tag)
             }
             .navigationDestination(isPresented: $navigateToMainPage) { // Navigation to MainPage
-                MainPage(showSignInView: .constant(false))
+                RootView()
+//                MainPage(showSignInView: .constant(false))
             }
             .navigationBarHidden(false)
         }
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 

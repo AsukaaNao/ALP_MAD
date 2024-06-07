@@ -37,7 +37,7 @@ struct LoginPage: View {
                 .background(Color.white)
                 .cornerRadius(10)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 20)
                         .stroke(.secondary, lineWidth: 1)
                 )
                 .padding(.horizontal, 40)
@@ -55,7 +55,7 @@ struct LoginPage: View {
                 .background(Color.white)
                 .cornerRadius(10)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 20)
                         .stroke(.secondary, lineWidth: 1)
                 )
                 .padding(.horizontal, 40)
