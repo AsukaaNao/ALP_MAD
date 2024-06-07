@@ -84,11 +84,10 @@ struct MainPage: View {
                 .cornerRadius(8)
                 .padding()
                 
-                UserInfoView(userName: "Giselle", userLocation: "Unknown Location") // Replace with actual location if available
-                    .background(Color.white)
-                    .cornerRadius(15)
-                    .shadow(radius: 10)
-                    .padding()
+                UserInfoView(
+                    userName: viewModel.partner.name,
+                    userLocation: viewModel.partner.location.latitude != 0.0 && viewModel.partner.location.longitude != 0.0 ? "\(viewModel.partner.location.latitude), \(viewModel.partner.location.longitude)" : "Unknown Location"
+                )
             }
             .padding()
         }

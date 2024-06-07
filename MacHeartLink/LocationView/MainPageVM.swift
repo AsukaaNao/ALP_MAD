@@ -4,6 +4,13 @@ import FirebaseFirestore
 import FirebaseStorage
 import AppKit
 
+struct UserForMainPage: Identifiable {
+    var id = ""
+    var name: String = ""
+    var location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+    var profilePicture: String = ""
+}
+
 final class MainPageVM: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published private(set) var UID: String? = ""  // Private setter to control modification
     @Published var hasCoupleId: Bool = false
@@ -31,6 +38,51 @@ final class MainPageVM: NSObject, ObservableObject, CLLocationManagerDelegate {
         startUpdatingLocation()
         startFetchingLocations(couple_id: self.couple_id)
     }
+    
+    @Published var partner: UserForMainPage = UserForMainPage(id: "dummy_data_Giselle", name: "Giselle 🐣💕", location: CLLocationCoordinate2D(latitude: -7.285888671875, longitude: 112.63179420736837), profilePicture: "profilePicture/Giselle.jpeg")
+    
+    func fetchPartner() {
+        guard hasCoupleId else { return }
+
+        db.collection("couples").document(self.couple_id).getDocument { [weak self] document, error in
+            guard let self = self else { return }
+            if let document = document, document.exists {
+                let data = document.data()
+                if let user1 = data?["user_1"] as? String, let user2 = data?["user_2"] as? String {
+                    let partnerUID = (user1 == self.UID) ? user2 : user1
+                    
+                    self.db.collection("users").document(partnerUID).getDocument { (document, error) in
+                        guard let document = document, document.exists else {
+                            print("User document does not exist")
+                            return
+                        }
+                        let data = document.data()
+                        let geoPoint = data?["location"] as? GeoPoint
+                        let userName = data?["name"] as? String ?? ""
+                        let profilePicturePath = data?["profilePicture"] as? String ?? ""
+                        let coordinate = CLLocationCoordinate2D(latitude: geoPoint?.latitude ?? 0.0, longitude: geoPoint?.longitude ?? 0.0)
+
+                        var identifiableCoordinate = IdentifiableCoordinate(coordinate: coordinate, userName: userName)
+
+                        self.downloadProfilePicture(from: profilePicturePath) { image in
+                            DispatchQueue.main.async {
+                                identifiableCoordinate.profileImage = image
+                                self.partner = UserForMainPage(
+                                    id: document.documentID,
+                                    name: userName,
+                                    location: coordinate,
+                                    profilePicture: profilePicturePath
+                                )
+                            }
+                        }
+                    }
+                } else {
+                    print("Couple document does not exist")
+                }
+            }
+        }
+    }
+
     
     func getUserUID() {
         do {
