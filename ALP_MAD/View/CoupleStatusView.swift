@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CoupleStatusView: View {
-    @ObservedObject var viewModel: MainPageViewModel
+    @ObservedObject var viewModel: MainPageVM
     @Binding var showSignInView: Bool
 
     var body: some View {

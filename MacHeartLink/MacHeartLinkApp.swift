@@ -17,8 +17,10 @@ struct MacHeartLinkApp: App {
     }
     
     var body: some Scene {
-        WindowGroup {
-            FeedsPage()
+        WindowGroup {   
+//            FeedsPage()
+            ContentView()
+                .environmentObject(EventStore(preview: true))
         }
     }
 }

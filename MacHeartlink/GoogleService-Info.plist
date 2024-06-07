@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.test.ALP-MAD</string>
+	<string>Shelfinna.MacHeartlink</string>
 	<key>PROJECT_ID</key>
 	<string>fir-testswift-d6850</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:518977495604:ios:35d713f95ab0e9b84ee061</string>
+	<string>1:518977495604:ios:bdf3ecab308324b54ee061</string>
 </dict>
 </plist>

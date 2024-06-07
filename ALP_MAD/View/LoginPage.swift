@@ -115,12 +115,11 @@ struct LoginPage: View {
                 viewModel.checkCoupleId()
             }
             .navigationDestination(isPresented: $isSignInSuccess) {
-                CoupleStatusView(viewModel: MainPageViewModel(), showSignInView: $showSignInView)
+                CoupleStatusView(viewModel: MainPageVM(), showSignInView: $showSignInView)
             }
             .navigationDestination(isPresented: $navigateToSignUp) {
                 SignUpPage()
             }
-            .navigationBarHidden(true)
             .background(Color.white)
         }
         .background(Color.white.edgesIgnoringSafeArea(.all))

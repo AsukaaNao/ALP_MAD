@@ -1,10 +1,3 @@
-//
-//  LoginVM.swift
-//  ALP_MAD
-//
-//  Created by MacBook Pro on 16/05/24.
-//
-
 import Foundation
 import FirebaseAuth
 import CryptoKit
@@ -27,7 +20,6 @@ private func randomNonceString(length: Int = 32) -> String {
     Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
     
     let nonce = randomBytes.map { byte in
-        // Pick a random character from the set, wrapping around if needed.
         charset[Int(byte) % charset.count]
     }
     
@@ -60,51 +52,58 @@ class LoginVM: ObservableObject {
             let fetchUID = try AuthenticationManager.shared.getAuthenticatedUser().uid
             uid = fetchUID
         } catch {
-            print("Error getting authenticated user UID")
+            print("Error getting authenticated user UID: \(error.localizedDescription)")
+            return
         }
-        guard uid != "" else {
+        guard !uid.isEmpty else {
+            print("UID is empty")
             return
         }
         db.collection("users").document(uid).getDocument { document, error in
-            if let document = document, document.exists {
-                let data = document.data()
-                print(data!)
-                self.hasCoupleId = data?["couple_id"] != nil
-                print(self.hasCoupleId)
-            } else {
-                print("User document does not exist")
+            if let error = error {
+                print("Error fetching user document: \(error.localizedDescription)")
+                return
             }
+            guard let document = document, document.exists else {
+                print("User document does not exist")
+                return
+            }
+            let data = document.data()
+            self.hasCoupleId = data?["couple_id"] != nil
+            print("Has couple ID: \(self.hasCoupleId)")
         }
     }
     
-//    func updateDisplayName(for user: User, with appleIDCredential: ASAuthorizationAppleIDCredential, force: Bool = false) {
-//        if let currentDisplayName = Auth.auth().currentUser?.displayName, !currentDisplayName.isEmpty {
-//
-//        } else {
-//            let changeRequest = user.createProfileChangeRequest()
-//            changeRequest.displayName = appleIDCredential.displayName()
-//
-//        }
-//    }
-    
-    func signIn(completion: @escaping (Bool) -> Void){
+    func signIn(completion: @escaping (Bool) -> Void) {
         guard !email.isEmpty, !password.isEmpty else {
             print("No Email or password found")
+            completion(false)
             return
         }
         Task {
-            do{
+            do {
                 let userdata = try await AuthenticationManager.shared.signInWithEmailPassword(email: email, password: password)
                 print("Success Login")
                 print(userdata)
                 checkCoupleId()
                 completion(true)
             } catch {
-                print(error.localizedDescription)
+                if let nsError = error as NSError? {
+                    if let failureReason = nsError.userInfo[NSLocalizedFailureReasonErrorKey] as? String {
+                        print("Error during sign-in: \(failureReason)")
+                    } else {
+                        print("Error during sign-in: \(error.localizedDescription)")
+                    }
+                } else {
+                    print("Error during sign-in: \(error.localizedDescription)")
+                }
+                self.errorMessage = "Error during sign-in: \(error.localizedDescription)"
                 completion(false)
             }
         }
     }
+
+
     
     func handleSignInWithAppleRequest(_ request: ASAuthorizationAppleIDRequest) {
         request.requestedScopes = [.fullName, .email]
@@ -114,35 +113,39 @@ class LoginVM: ObservableObject {
     }
     
     func handleSignInWithAppleCompletion(_ result: Result<ASAuthorization, Error>) {
-        if case .failure(let failure) = result {
-            errorMessage = failure.localizedDescription
-        } else if case .success(let success) = result {
-            if let appleIDCredential = success.credential as? ASAuthorizationAppleIDCredential {
-                guard let nonce = currentNonce else {
-                    fatalError("Invalid state: A login callback was received, but no login request was sent.")
-                }
-                
-                guard let appleIDToken = appleIDCredential.identityToken else {
-                    print("Unable to fetch identity token")
-                    return
-                }
-                
-                guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-                    print("Unable to serialize identity token string from data: \(appleIDToken.debugDescription)")
-                    return
-                }
-                
-                let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-                Task {
-                    do {
-                        let authResult = try await Auth.auth().signIn(with: credential)
-    //                    self.user = authResult.user
-    //                    self.authenticationState = .authenticated
-                    } catch {
-                        self.errorMessage = error.localizedDescription
-                        print("Error Authenticating: \(error.localizedDescription)")
-    //                    self.authenticationState = .unauthenticated
-                    }
+        switch result {
+        case .failure(let error):
+            errorMessage = "Apple sign-in failed: \(error.localizedDescription)"
+            print(errorMessage)
+        case .success(let success):
+            guard let appleIDCredential = success.credential as? ASAuthorizationAppleIDCredential else {
+                errorMessage = "Unable to get Apple ID credential."
+                print(errorMessage)
+                return
+            }
+            
+            guard let nonce = currentNonce else {
+                fatalError("Invalid state: A login callback was received, but no login request was sent.")
+            }
+            
+            guard let appleIDToken = appleIDCredential.identityToken else {
+                print("Unable to fetch identity token")
+                return
+            }
+            
+            guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+                print("Unable to serialize identity token string from data: \(appleIDToken.debugDescription)")
+                return
+            }
+            
+            let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
+            Task {
+                do {
+                    let authResult = try await Auth.auth().signIn(with: credential)
+                    print("Apple sign-in succeeded: \(authResult.user.uid)")
+                } catch {
+                    self.errorMessage = "Error Authenticating with Apple: \(error.localizedDescription)"
+                    print("Error Authenticating: \(error.localizedDescription)")
                 }
             }
         }

@@ -127,7 +127,6 @@ struct SignUpPage: View {
                 LoginPage(showSignInView: .constant(true))
             }
             .background(Color.white)
-            .navigationBarHidden(true)
         }
     }
 }
