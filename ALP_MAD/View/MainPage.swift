@@ -108,7 +108,7 @@ struct MainPage: View {
                         .shadow(color: Color.purple.opacity(0.5) ,radius: 5)
                 }
                 .padding(.trailing)
-                
+                                
                 UserInfoView(
                     userName: viewModel.partner.name,
                     userLocation: viewModel.partner.location.latitude != 0.0 && viewModel.partner.location.longitude != 0.0 ? "\(viewModel.partner.location.latitude), \(viewModel.partner.location.longitude)" : "Unknown Location"
@@ -120,6 +120,10 @@ struct MainPage: View {
                 
             }
             .padding()
+        }
+        .onAppear() {
+            viewModel.getUserUID()
+            viewModel.fetchPartner()
         }
         .alert(isPresented: $viewModel.showAlert) {
             Alert(

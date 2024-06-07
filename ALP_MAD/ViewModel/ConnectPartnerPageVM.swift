@@ -92,41 +92,60 @@ class ConnectPartnerPageVM: ObservableObject {
             }
             
             // Retrieve the document ID of the new couple document
-            let coupleID = self.db.collection("couples").document().documentID
-            
-            // Update couple_id on both users
-            let userUpdates = [
-                "couple_id": coupleID
-            ]
-            
-            let group = DispatchGroup()
-            
-            group.enter()
-            self.db.collection("users").document(uid).updateData(userUpdates) { error in
-                if let error = error {
-                    print("Error updating user couple_id: \(error)")
-                }
-                group.leave()
-            }
-            
-            group.enter()
-            self.db.collection("users").document(request.uid).updateData(userUpdates) { error in
-                if let error = error {
-                    print("Error updating partner couple_id: \(error)")
-                }
-                group.leave()
-            }
-            
-            // Delete the request after creating the couple document and updating the users
-            group.notify(queue: .main) {
-                self.db.collection("users").document(uid).collection("requests").document(request.id).delete { error in
+            self.db.collection("couples")
+                .order(by: "created_at", descending: true)
+                .limit(to: 1)
+                .getDocuments { querySnapshot, error in
                     if let error = error {
-                        print("Error deleting request: \(error)")
+                        print("Error getting couples documents: \(error)")
                         return
                     }
-                    self.userRequests.removeAll { $0.id == request.id }
+                    
+                    guard let document = querySnapshot?.documents.first else {
+                        print("No couple documents found")
+                        return
+                    }
+                    
+                    let coupleID = document.documentID
+                    
+                    // Update couple_id on both users
+                    let userUpdates = [
+                        "couple_id": coupleID
+                    ]
+                    
+                    let group = DispatchGroup()
+                    
+                    print("\(coupleID) id generated (couple)")
+                    print("\(uid) : uid")
+                    print("\(request.uid) : requester id")
+                    
+                    group.enter()
+                    self.db.collection("users").document(uid).updateData(userUpdates) { error in
+                        if let error = error {
+                            print("Error updating user couple_id: \(error)")
+                        }
+                        group.leave()
+                    }
+                    
+                    group.enter()
+                    self.db.collection("users").document(request.uid).updateData(userUpdates) { error in
+                        if let error = error {
+                            print("Error updating partner couple_id: \(error)")
+                        }
+                        group.leave()
+                    }
+                    
+                    // Delete the request after creating the couple document and updating the users
+                    group.notify(queue: .main) {
+                        self.db.collection("users").document(uid).collection("requests").document(request.id).delete { error in
+                            if let error = error {
+                                print("Error deleting request: \(error)")
+                                return
+                            }
+                            self.userRequests.removeAll { $0.id == request.id }
+                        }
+                    }
                 }
-            }
         }
     }
     

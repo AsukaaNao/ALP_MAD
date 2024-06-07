@@ -2,11 +2,13 @@ import SwiftUI
 import Combine
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseStorage
 
 class RequestPartnerPageVM: ObservableObject {
     @Published var foundUser: User1?
     @Published var isLoading = false
     @Published var requestSent = false
+    @Published var profilePicture: UIImage?
     private var cancellables = Set<AnyCancellable>()
     private var db = Firestore.firestore()
     
@@ -19,10 +21,15 @@ class RequestPartnerPageVM: ObservableObject {
                 self.isLoading = false
                 return
             }
-//            print(querySnapshot?.documents ?? "Busi")
+            
             if let documents = querySnapshot?.documents, let document = documents.first {
                 do {
-                    self.foundUser = try document.data(as: User1.self)
+                    var user = try document.data(as: User1.self)
+                    print(user)
+                    self.foundUser = user
+                    if let profilePictureUrl = user.profilePicture {
+                        self.downloadProfilePicture(from: profilePictureUrl)
+                    }
                 } catch let error {
                     print("Error decoding user: \(error.localizedDescription)")
                 }
@@ -34,8 +41,24 @@ class RequestPartnerPageVM: ObservableObject {
         }
     }
     
+    private func downloadProfilePicture(from path: String) {
+        let storageRef = Storage.storage().reference(withPath: path)
+        
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("Error downloading profile picture: \(error.localizedDescription)")
+                return
+            }
+            
+            if let data = data, let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.profilePicture = image
+                }
+            }
+        }
+    }
+    
     func sendRequest(to user: User1) {
-        print("user : \(user)")
         guard let userID = user.id else { return }
         guard let currentUser = Auth.auth().currentUser else { return }
         
@@ -47,7 +70,7 @@ class RequestPartnerPageVM: ObservableObject {
                             "uid": currentUserData.id ?? "",
                             "name": currentUserData.name,
                             "tag": currentUserData.tag,
-                            "profilePictureUrl": currentUserData.profilePictureUrl ?? ""
+                            "profilePicture": currentUserData.profilePicture ?? "ndak muncul"
                         ]
                         
                         self.db.collection("users").document(userID).collection("requests").addDocument(data: requestData) { error in
@@ -72,5 +95,5 @@ struct User1: Identifiable, Codable {
     @DocumentID var id: String?
     let name: String
     let tag: String
-    let profilePictureUrl: String?
+    let profilePicture: String?
 }

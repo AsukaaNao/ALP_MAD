@@ -21,17 +21,21 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
     @Published var userLocations: [IdentifiableCoordinate] = []
     @Published var coupleUsers: [String: String] = [:] // Dictionary to store user IDs and their names
     
-    @Published var partner: UserForMainPage = UserForMainPage(id: "dummy_data_Giselle", name: "Giselle 🐣💕", location: CLLocationCoordinate2D(latitude: -7.285888671875, longitude: 112.63179420736837), profilePicture: "profilePicture/Giselle.jpeg")
+    @Published var partner: UserForMainPage = UserForMainPage(id: "dummy_data_Giselle", name: "null", location: CLLocationCoordinate2D(latitude: -7.285888671875, longitude: 112.63179420736837), profilePicture: "profilePicture/Giselle.jpeg")
     
     func fetchPartner() {
+        print("---- start fetching")
         guard hasCoupleId else { return }
 
         db.collection("couples").document(self.couple_id).getDocument { [weak self] document, error in
             guard let self = self else { return }
+            print("lolos guard")
             if let document = document, document.exists {
+                print("masuk if pertama")
                 let data = document.data()
                 if let user1 = data?["user_1"] as? String, let user2 = data?["user_2"] as? String {
-                    let partnerUID = (user1 == self.UID) ? user2 : user1
+                    print("masuk if kedua")
+                    let partnerUID = (user1 == self.UID) ? user2 : user1  // Corrected this line
                     
                     self.db.collection("users").document(partnerUID).getDocument { (document, error) in
                         guard let document = document, document.exists else {
@@ -45,6 +49,8 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
                         let coordinate = CLLocationCoordinate2D(latitude: geoPoint?.latitude ?? 0.0, longitude: geoPoint?.longitude ?? 0.0)
 
                         var identifiableCoordinate = IdentifiableCoordinate(coordinate: coordinate, userName: userName)
+                        
+                        print("getting partner id.....")
 
                         self.downloadProfilePicture(from: profilePicturePath) { image in
                             DispatchQueue.main.async {
@@ -64,6 +70,7 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
             }
         }
     }
+
 
     
     var locationManager: CLLocationManager?
@@ -128,6 +135,7 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
                 } catch {
                     print("Error getting authenticated user UID")
                 }
+                print("FETCHING COUPLEeeee")
                 fetchCoupleId(for: self.UID!)
             }
         @unknown default:
@@ -158,6 +166,7 @@ final class MainPageViewModel: NSObject, ObservableObject, CLLocationManagerDele
                 if let coupleId = document.data()?["couple_id"] as? String {
                     self.hasCoupleId = true
                     self.couple_id = coupleId
+                    self.fetchPartner()
                     self.fetchUserUIDs()
                 } else {
                     self.hasCoupleId = false

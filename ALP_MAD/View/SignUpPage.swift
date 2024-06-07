@@ -119,7 +119,7 @@ struct SignUpPage: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("Sign Up With Email")
+//            .navigationTitle("Sign Up With Email")
             .navigationDestination(isPresented: $isSignUpSuccess) {
                 LandingPage(showSignInView: .constant(true))
             }
@@ -127,6 +127,7 @@ struct SignUpPage: View {
                 LoginPage(showSignInView: .constant(true))
             }
             .background(Color.white)
+            .navigationBarBackButtonHidden()
         }
     }
 }

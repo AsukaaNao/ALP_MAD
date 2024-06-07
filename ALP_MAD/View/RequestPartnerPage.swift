@@ -3,8 +3,9 @@ import SwiftUI
 struct RequestPartnerPage: View {
     @StateObject private var viewModel = RequestPartnerPageVM()
     var tag: String
-    
-    @State private var navigateBack = false
+    @Environment(\.dismiss) var dismiss
+    @State private var navigateToCustomDestination = false // State variable for custom navigation
+    @State private var navigateBack = false // State variable for navigating back
     
     var body: some View {
         VStack {
@@ -22,20 +23,13 @@ struct RequestPartnerPage: View {
                     .scaleEffect(1.5)
             } else if let user = viewModel.foundUser {
                 VStack(spacing: 20) {
-                    if let profilePictureUrl = user.profilePictureUrl, let url = URL(string: profilePictureUrl) {
-                        AsyncImage(url: url) { image in
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 200, height: 200)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.purple, lineWidth: 4))
-                        } placeholder: {
-                            Circle()
-                                .fill(Color.gray.opacity(0.5))
-                                .frame(width: 200, height: 200)
-                                .overlay(Circle().stroke(Color.purple, lineWidth: 4))
-                        }
+                    if let profilePicture = viewModel.profilePicture {
+                        Image(uiImage: profilePicture)
+                            .resizable()
+                            .scaledToFill() // Ensures the image fills the frame while maintaining the aspect ratio
+                            .frame(width: 200, height: 200)
+                            .clipShape(Circle()) // Clips the image into a circle shape
+                            .overlay(Circle().stroke(Color.purple, lineWidth: 4)) // Adds a circular border
                     } else {
                         Circle()
                             .fill(Color.gray.opacity(0.5))
@@ -65,9 +59,12 @@ struct RequestPartnerPage: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom, 20)
                     .alert(isPresented: $viewModel.requestSent) {
-                        Alert(title: Text("Request Sent"), message: Text("Your request has been sent successfully!"), dismissButton: .default(Text("OK")) {
-                            navigateBack = true
-                        }
+                        Alert(
+                            title: Text("Request Sent"),
+                            message: Text("Your request has been sent successfully!"),
+                            dismissButton: .default(Text("OK")) {
+                                navigateBack = true
+                            }
                         )
                     }
                 }
@@ -85,24 +82,27 @@ struct RequestPartnerPage: View {
         .padding()
         .background(Color.white)
         .navigationBarTitle("Request Partner", displayMode: .inline)
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(true) // Hide default back button
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    navigateBack = true
+                    navigateToCustomDestination = true
                 }) {
                     HStack {
                         Image(systemName: "chevron.left")
-                            .frame(width: 8)
                         Text("Back")
                     }
                 }
             }
         }
-        .navigationDestination(isPresented: $navigateBack) {
-            ConnectPartnerPage()
+        .navigationDestination(isPresented: $navigateToCustomDestination) {
+            // Replace `RootView()` with the destination view you want to navigate to
+            RootView()
         }
-        
+        .navigationDestination(isPresented: $navigateBack) {
+            // Replace `RootView()` with the destination view you want to navigate to when navigating back
+            RootView()
+        }
     }
 }
 

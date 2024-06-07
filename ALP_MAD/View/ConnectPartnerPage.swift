@@ -26,6 +26,7 @@ struct ConnectPartnerPage: View {
                         if let profilePicture = request.profilePicture {
                             Image(uiImage: profilePicture)
                                 .resizable()
+                                .scaledToFill()
                                 .frame(width: 50, height: 50)
                                 .clipShape(Circle())
                                 .overlay(Circle().stroke(Color.purple, lineWidth: 2))

@@ -25,6 +25,7 @@ struct LandingPage: View {
                     if let profilePicture = viewModel.profilePicture {
                         Image(uiImage: profilePicture)
                             .resizable()
+                            .scaledToFill()
                             .frame(width: 200, height: 200)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(Color.purple, lineWidth: 4))
