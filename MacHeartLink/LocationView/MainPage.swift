@@ -49,6 +49,7 @@ struct UserAnnotationView: View {
 struct MainPage: View {
     @StateObject private var viewModel = MainPageViewModel()
     @Binding var showSignInView: Bool
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         ZStack {
@@ -68,7 +69,7 @@ struct MainPage: View {
                 viewModel.stopFetchingLocations()
             }
             VStack {
-//                Spacer()
+                Spacer()
 //                Button("Log Out") {
 //                    Task {
 //                        do {
@@ -83,7 +84,32 @@ struct MainPage: View {
 //                .foregroundColor(.white)
 //                .cornerRadius(8)
 //                .padding()
-                
+                HStack {
+                    Spacer()
+                    Menu {
+                        Button("Log Out") {
+                            Task {
+                                do {
+                                    try viewModel.signOut()
+                                    showSignInView = true
+                                    dismiss()
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "gear")
+                            .foregroundColor(.purple)
+                            .imageScale(.large)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(8)
+                            .shadow(color: Color.purple.opacity(0.5) ,radius: 5)
+                    }
+                    .padding(.trailing)
+                    .frame(maxWidth: 200)
+                }
                 UserInfoView(
                     userName: viewModel.partner.name,
                     userLocation: viewModel.partner.location.latitude != 0.0 && viewModel.partner.location.longitude != 0.0 ? "\(viewModel.partner.location.latitude), \(viewModel.partner.location.longitude)" : "Unknown Location"
@@ -152,6 +178,7 @@ struct UserInfoView: View {
                 .frame(height: 50)
         }
         .padding()
+        .background(Color.white)
     }
 }
 

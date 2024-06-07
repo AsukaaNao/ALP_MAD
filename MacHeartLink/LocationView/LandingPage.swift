@@ -70,7 +70,7 @@ struct LandingPage: View {
                     Text("Go to Main Page")
                         .foregroundColor(Color.white)
                         .padding()
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: 340)
                         .background(Color.purple)
                         .cornerRadius(30)
                         .padding(.horizontal, 20)
